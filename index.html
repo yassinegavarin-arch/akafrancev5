@@ -68,13 +68,30 @@
             background: var(--color-bg);
             z-index: 1000;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             border-right: 1px solid var(--color-line);
         }
 
+        /* Bande rouge continue - du haut jusqu'en bas */
+        .red-stripe {
+            width: 32px;
+            min-width: 32px;
+            height: 100%;
+            background: var(--color-brand);
+            flex-shrink: 0;
+        }
+
+        /* Conteneur du contenu de la sidebar */
+        .sidebar-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
         .sidebar-header {
-            padding: 2rem;
-            position: relative;
+            padding: 1.5rem;
+            padding-left: 1rem;
         }
 
         .sidebar-logo {
@@ -85,26 +102,16 @@
         }
 
         .sidebar-logo img {
-            height: 60px;
+            height: 55px;
             width: auto;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Liseré rouge vertical */
-        .red-line {
-            position: absolute;
-            left: 2rem;
-            top: 100%;
-            width: 30px;
-            height: calc(100vh - 140px);
-            background: var(--color-brand);
-            z-index: 1;
+            /* Décaler le logo vers la gauche pour que sa partie rouge soit sur la bande */
+            margin-left: -42px;
         }
 
         .sidebar-nav {
             flex: 1;
-            padding: 2rem;
-            padding-left: calc(2rem + 45px); /* Espace pour le liseré élargi */
+            padding: 1.5rem;
+            padding-left: 1rem;
             display: flex;
             flex-direction: column;
             gap: 0.25rem;
@@ -135,10 +142,10 @@
         .nav-item.active::before {
             content: '';
             position: absolute;
-            left: -35px;
+            left: -1rem;
             top: 50%;
             transform: translateY(-50%);
-            width: 12px;
+            width: 8px;
             height: 2px;
             background: var(--color-brand);
         }
@@ -160,8 +167,8 @@
         }
 
         .sidebar-footer {
-            padding: 1.5rem 2rem;
-            padding-left: calc(2rem + 45px);
+            padding: 1.5rem;
+            padding-left: 1rem;
             border-top: 1px solid var(--color-line);
         }
 
@@ -1136,33 +1143,37 @@
 
     <!-- Sidebar -->
     <aside class="sidebar">
-        <div class="sidebar-header">
-            <a href="#top" class="sidebar-logo">
-                <img src="logo-AKA-HD_transparant.png" alt="AKA France">
-            </a>
-            <!-- Liseré rouge vertical -->
-            <div class="red-line"></div>
-        </div>
+        <!-- Bande rouge continue -->
+        <div class="red-stripe"></div>
         
-        <nav class="sidebar-nav">
-            <a href="#top" class="nav-item active">Accueil</a>
-            <a href="#apropos" class="nav-item">À propos</a>
-            
-            <div class="nav-section">
-                <div class="nav-section-title">Savoir-faire</div>
-                <a href="#services" class="nav-item">Nos métiers</a>
+        <!-- Contenu de la sidebar -->
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <a href="#top" class="sidebar-logo">
+                    <img src="logo-AKA-HD_transparant.png" alt="AKA France">
+                </a>
             </div>
             
-            <a href="#organisation" class="nav-item">Organisation</a>
-            <a href="#equipe" class="nav-item">Équipe</a>
-            <a href="#qualite" class="nav-item">Qualité</a>
-            <a href="#contact" class="nav-item">Contact</a>
-        </nav>
-        
-        <div class="sidebar-footer">
-            <div class="sidebar-contact">
-                <a href="tel:0240000000">02 40 00 00 00</a><br>
-                <span style="font-size: 12px; opacity: 0.7;">Nantes, France</span>
+            <nav class="sidebar-nav">
+                <a href="#top" class="nav-item active">Accueil</a>
+                <a href="#apropos" class="nav-item">À propos</a>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Savoir-faire</div>
+                    <a href="#services" class="nav-item">Nos métiers</a>
+                </div>
+                
+                <a href="#organisation" class="nav-item">Organisation</a>
+                <a href="#equipe" class="nav-item">Équipe</a>
+                <a href="#qualite" class="nav-item">Qualité</a>
+                <a href="#contact" class="nav-item">Contact</a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="sidebar-contact">
+                    <a href="tel:0240000000">02 40 00 00 00</a><br>
+                    <span style="font-size: 12px; opacity: 0.7;">Nantes, France</span>
+                </div>
             </div>
         </div>
     </aside>
