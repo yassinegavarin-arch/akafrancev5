@@ -6,7 +6,6 @@
     <title>AKA France — Alliance Industrielle Franco-Chinoise</title>
     <link rel="icon" type="image/png" href="faviconV5.png">
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -39,16 +38,8 @@
             --spacing-2xl: 120px;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: var(--font-body);
             font-weight: 400;
@@ -71,8 +62,6 @@
             flex-direction: column;
             border-right: 1px solid var(--color-line);
         }
-
-        /* Bande rouge continue - positionnée avec un petit décalage */
         .red-stripe {
             position: absolute;
             left: 23px;
@@ -82,8 +71,6 @@
             background: var(--color-brand);
             z-index: 1;
         }
-
-        /* Conteneur du contenu de la sidebar */
         .sidebar-content {
             flex: 1;
             display: flex;
@@ -92,27 +79,8 @@
             position: relative;
             z-index: 2;
         }
-
-        .sidebar-header {
-            padding: 1.5rem;
-            padding-left: 23px;
-        }
-
-        .sidebar-logo {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            text-decoration: none;
-        }
-
-        .sidebar-logo img {
-            height: 55px;
-            width: auto;
-            position: relative;
-            margin-left: -4px;
-            /* Le logo est positionné pour que sa partie rouge soit exactement sur le liseré */
-        }
-
+        .sidebar-header { padding: 1.5rem; padding-left: 23px; }
+        .sidebar-logo img { height: 55px; width: auto; position: relative; margin-left: -4px; }
         .sidebar-nav {
             flex: 1;
             padding: 1.5rem;
@@ -121,7 +89,6 @@
             flex-direction: column;
             gap: 0.25rem;
         }
-
         .nav-item {
             font-family: var(--font-body);
             font-size: 14px;
@@ -134,16 +101,8 @@
             position: relative;
             text-transform: uppercase;
         }
-
-        .nav-item:hover,
-        .nav-item.active {
-            color: var(--color-brand);
-        }
-
-        .nav-item.active {
-            font-weight: 600;
-        }
-
+        .nav-item:hover, .nav-item.active { color: var(--color-brand); }
+        .nav-item.active { font-weight: 600; }
         .nav-item.active::before {
             content: '';
             position: absolute;
@@ -154,13 +113,7 @@
             height: 2px;
             background: var(--color-brand);
         }
-
-        .nav-section {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--color-line);
-        }
-
+        .nav-section { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--color-line); }
         .nav-section-title {
             font-family: var(--font-body);
             font-size: 11px;
@@ -170,174 +123,20 @@
             color: var(--color-brand);
             margin-bottom: 0.75rem;
         }
-
-        .sidebar-footer {
-            padding: 1.5rem;
-            padding-left: 65px;
-            border-top: 1px solid var(--color-line);
-        }
-
-        .sidebar-contact {
-            font-size: 13px;
-            color: var(--color-text-light);
-        }
-
-        .sidebar-contact a {
-            color: var(--color-brand);
-            text-decoration: none;
-        }
+        .sidebar-footer { padding: 1.5rem; padding-left: 65px; border-top: 1px solid var(--color-line); }
+        .sidebar-contact { font-size: 13px; color: var(--color-text-light); }
+        .sidebar-contact a { color: var(--color-brand); text-decoration: none; }
 
         /* ===== MAIN CONTENT ===== */
-        .main-content {
-            margin-left: var(--sidebar-width);
-            min-height: 100vh;
-        }
+        .main-content { margin-left: var(--sidebar-width); min-height: 100vh; }
 
-        /* ===== HERO ===== */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .slideshow-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-        }
-
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1.5s ease-in-out;
-            object-fit: cover;
-        }
-
-        .slide.active {
-            opacity: 1;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            z-index: 1;
-            background: linear-gradient(
-                135deg,
-                rgba(28, 25, 23, 0.75) 0%,
-                rgba(28, 25, 23, 0.5) 50%,
-                rgba(28, 25, 23, 0.65) 100%
-            );
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            padding: 100px 80px;
-            color: #fff;
-            max-width: 900px;
-        }
-
-        .hero-kicker {
-            font-family: var(--font-body);
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: var(--spacing-md);
-        }
-
-        .hero-title {
-            font-family: var(--font-display);
-            font-size: clamp(48px, 7vw, 100px);
-            font-weight: 500;
-            line-height: 1;
-            letter-spacing: 0.02em;
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .hero-subtitle {
-            font-family: var(--font-body);
-            font-size: clamp(16px, 2vw, 22px);
-            font-weight: 400;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            opacity: 0.9;
-            margin-bottom: var(--spacing-lg);
-        }
-
-        .hero-desc {
-            font-family: var(--font-body);
-            font-size: 17px;
-            font-weight: 300;
-            line-height: 1.8;
-            opacity: 0.85;
-            max-width: 550px;
-            margin-bottom: var(--spacing-lg);
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 14px 28px;
-            font-family: var(--font-body);
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: all 0.4s ease;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background: var(--color-brand);
-            color: #fff;
-        }
-
-        .btn-primary:hover {
-            background: var(--color-brand-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(196, 30, 36, 0.3);
-        }
-
-        /* ===== SECTIONS ===== */
-        .section {
-            padding: 100px 80px;
-        }
-
-        .section-light {
-            background: var(--color-warm-white);
-        }
-
-        .section-cream {
-            background: var(--color-cream);
-        }
-
-        .section-dark {
-            background: var(--color-brown);
-            color: #fff;
-        }
-
-        .section-darker {
-            background: var(--color-bg-dark);
-            color: #fff;
-        }
-
-        .section-white {
-            background: #fff;
-        }
+        /* ===== SECTIONS (Standardized) ===== */
+        .section { padding: 100px 80px; }
+        .section-light { background: var(--color-warm-white); }
+        .section-cream { background: var(--color-cream); }
+        .section-dark { background: var(--color-brown); color: #fff; }
+        .section-darker { background: var(--color-bg-dark); color: #fff; }
+        .section-white { background: #fff; }
 
         .section-label {
             font-family: var(--font-body);
@@ -348,12 +147,7 @@
             color: var(--color-brand);
             margin-bottom: var(--spacing-sm);
         }
-
-        .section-dark .section-label,
-        .section-darker .section-label {
-            color: rgba(255, 255, 255, 0.5);
-        }
-
+        .section-dark .section-label, .section-darker .section-label { color: rgba(255, 255, 255, 0.5); }
         .section-title {
             font-family: var(--font-display);
             font-size: clamp(32px, 4vw, 48px);
@@ -362,12 +156,7 @@
             margin-bottom: var(--spacing-md);
             color: var(--color-brown);
         }
-
-        .section-dark .section-title,
-        .section-darker .section-title {
-            color: #fff;
-        }
-
+        .section-dark .section-title, .section-darker .section-title { color: #fff; }
         .section-desc {
             font-family: var(--font-body);
             font-size: 16px;
@@ -377,546 +166,67 @@
             line-height: 1.7;
         }
 
-        .section-dark .section-desc,
-        .section-darker .section-desc {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        /* ===== STATS ===== */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2px;
-            background: var(--color-line);
-            margin-top: var(--spacing-lg);
-        }
-
-        .stat {
-            background: var(--color-warm-white);
-            padding: var(--spacing-lg);
-            text-align: center;
-            transition: all 0.4s ease;
-        }
-
-        .stat:hover {
-            background: #fff;
-        }
-
-        .stat-number {
-            font-family: var(--font-display);
-            font-size: clamp(42px, 5vw, 64px);
-            font-weight: 500;
-            color: var(--color-brand);
-            line-height: 1;
-            margin-bottom: var(--spacing-xs);
-        }
-
-        .stat-label {
-            font-family: var(--font-body);
-            font-size: 14px;
-            font-weight: 500;
-            margin-bottom: var(--spacing-xs);
-            color: var(--color-brown);
-        }
-
-        .stat-desc {
-            font-family: var(--font-body);
-            font-size: 13px;
-            font-weight: 300;
-            color: var(--color-text-light);
-            line-height: 1.5;
-        }
-
-        /* ===== ABOUT ===== */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-xl);
-            align-items: center;
-            margin-top: var(--spacing-lg);
-        }
-
-        .about-text p {
-            font-family: var(--font-body);
-            font-size: 16px;
-            font-weight: 300;
-            line-height: 1.8;
-            color: var(--color-text-light);
-            margin-bottom: var(--spacing-md);
-        }
-
-        .about-highlight {
-            margin-top: var(--spacing-md);
-            padding: var(--spacing-md);
-            background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-warm-white) 100%);
-            border-left: 4px solid var(--color-brand);
-        }
-
-        .about-highlight-title {
-            font-family: var(--font-body);
-            font-size: 15px;
-            font-weight: 600;
-            margin-bottom: 6px;
-            color: var(--color-brown);
-        }
-
-        .about-highlight-text {
-            font-family: var(--font-body);
-            font-size: 14px;
-            font-weight: 300;
-            color: var(--color-text-light);
-        }
-
-        .about-visual {
-            position: relative;
-        }
-
-        .about-image-main {
-            width: 100%;
-            aspect-ratio: 4/5;
-            object-fit: cover;
-        }
-
-        .about-image-float {
-            position: absolute;
-            bottom: -20px;
-            left: -20px;
-            width: 40%;
-            aspect-ratio: 1;
-            object-fit: cover;
-            border: 6px solid var(--color-bg);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-
-        .about-badge {
-            position: absolute;
-            top: 20px;
-            right: -15px;
-            width: 110px;
-            height: 110px;
-            background: var(--color-brand);
-            color: #fff;
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .about-badge-number {
-            font-family: var(--font-display);
-            font-size: 42px;
-            font-weight: 500;
-            line-height: 1;
-        }
-
-        .about-badge-text {
-            font-family: var(--font-body);
-            font-size: 10px;
-            font-weight: 500;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            margin-top: 4px;
-        }
-
-        /* ===== SERVICES ===== */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-top: var(--spacing-lg);
-        }
-
-        .service-card {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 4px;
-            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
         }
+        .slideshow-bg { position: absolute; inset: 0; z-index: 0; }
+        .slide { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1.5s ease; object-fit: cover; }
+        .slide.active { opacity: 1; }
+        .hero-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(135deg, rgba(28,25,23,0.75) 0%, rgba(28,25,23,0.5) 50%, rgba(28,25,23,0.65) 100%); }
+        .hero-content { position: relative; z-index: 2; padding: 100px 80px; color: #fff; max-width: 900px; }
+        .hero-title { font-family: var(--font-display); font-size: clamp(48px, 7vw, 100px); font-weight: 500; line-height: 1; margin-bottom: var(--spacing-sm); }
+        .hero-subtitle { font-family: var(--font-body); font-size: clamp(16px, 2vw, 22px); letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.9; margin-bottom: var(--spacing-lg); }
+        .btn { display: inline-flex; align-items: center; padding: 14px 28px; font-family: var(--font-body); font-size: 13px; font-weight: 500; text-transform: uppercase; text-decoration: none; transition: all 0.4s ease; border: none; background: var(--color-brand); color: #fff; }
+        .btn:hover { background: var(--color-brand-dark); transform: translateY(-2px); box-shadow: 0 10px 25px rgba(196,30,36,0.3); }
 
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--color-brand);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-        }
+        /* ===== STATS ===== */
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--color-line); margin-top: var(--spacing-lg); }
+        .stat { background: var(--color-warm-white); padding: var(--spacing-lg); text-align: center; }
+        .stat-number { font-family: var(--font-display); font-size: clamp(42px, 5vw, 64px); color: var(--color-brand); line-height: 1; }
 
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
+        /* ===== SERVICES ===== */
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: var(--spacing-lg); }
+        .service-card { background: #fff; padding: 2rem; border-radius: 4px; border-top: 3px solid transparent; transition: all 0.4s ease; }
+        .service-card:hover { border-top-color: var(--color-brand); transform: translateY(-5px); box-shadow: 0 15px 40px rgba(74,55,40,0.1); }
+        .service-icon { width: 50px; height: 50px; background: var(--color-cream); border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
+        .service-icon svg { width: 24px; stroke: var(--color-brown); }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(74, 55, 40, 0.1);
-        }
-
-        .service-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--color-cream);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.25rem;
-        }
-
-        .service-icon svg {
-            width: 24px;
-            height: 24px;
-            stroke: var(--color-brown);
-        }
-
-        .service-card h3 {
-            font-family: var(--font-display);
-            font-size: 1.3rem;
-            font-weight: 500;
-            color: var(--color-brown);
-            margin-bottom: 0.75rem;
-        }
-
-        .service-card p {
-            font-family: var(--font-body);
-            font-size: 14px;
-            font-weight: 300;
-            color: var(--color-text-light);
-            line-height: 1.6;
-        }
-
-        /* ===== ORGANISATION ===== */
-        .org-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-top: var(--spacing-lg);
-        }
-
-        .org-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-            padding: 2.5rem;
-        }
-
-        .org-card-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.25rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .org-flag {
-            font-size: 1.75rem;
-        }
-
-        .org-card h3 {
-            font-family: var(--font-display);
-            font-size: 1.6rem;
-            font-weight: 500;
-            color: #fff;
-        }
-
-        .org-card h4 {
-            font-family: var(--font-body);
-            font-size: 0.85rem;
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .org-details {
-            list-style: none;
-        }
-
-        .org-details li {
-            padding: 0.6rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9rem;
-            gap: 1rem;
-        }
-
-        .org-details li:last-child {
-            border-bottom: none;
-        }
-
-        .org-details .label {
-            font-family: var(--font-body);
-            font-weight: 300;
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .org-details .value {
-            font-family: var(--font-body);
-            font-weight: 400;
-            color: #fff;
-            text-align: right;
-        }
+        /* ===== ORG CARD ===== */
+        .org-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: var(--spacing-lg); }
+        .org-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 2.5rem; }
+        .org-details { list-style: none; }
+        .org-details li { padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; font-size: 0.9rem; }
+        .org-details .value { color: #fff; font-weight: 400; }
 
         /* ===== TEAM ===== */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: var(--spacing-md);
-            margin-top: var(--spacing-lg);
-        }
-
-        .team-member {
-            background: #fff;
-            padding: var(--spacing-md);
-            text-align: center;
-            transition: all 0.4s ease;
-        }
-
-        .team-member:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-        }
-
-        .team-avatar {
-            width: 100%;
-            aspect-ratio: 1;
-            background: linear-gradient(135deg, var(--color-cream-dark) 0%, var(--color-cream) 100%);
-            margin-bottom: var(--spacing-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--font-display);
-            font-size: 40px;
-            font-weight: 500;
-            color: var(--color-brand);
-        }
-
-        .team-name {
-            font-family: var(--font-display);
-            font-size: 20px;
-            font-weight: 500;
-            color: var(--color-brown);
-            margin-bottom: 4px;
-        }
-
-        .team-role {
-            font-family: var(--font-body);
-            font-size: 12px;
-            font-weight: 400;
-            color: var(--color-text-light);
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
+        .team-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--spacing-md); margin-top: var(--spacing-lg); }
+        .team-member { background: #fff; padding: var(--spacing-md); text-align: center; }
+        .team-avatar { width: 100%; aspect-ratio: 1; background: var(--color-cream); display: flex; align-items: center; justify-content: center; font-size: 40px; color: var(--color-brand); margin-bottom: 1rem; }
 
         /* ===== QUALITY ===== */
-        .quality-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin-top: var(--spacing-lg);
-        }
-
-        .quality-text p {
-            font-family: var(--font-body);
-            font-size: 16px;
-            font-weight: 300;
-            color: var(--color-text-light);
-            line-height: 1.8;
-            margin-bottom: 1.25rem;
-        }
-
-        .quality-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.25rem;
-        }
-
-        .quality-feature {
-            background: var(--color-cream);
-            padding: 1.5rem;
-            border-radius: 4px;
-            text-align: center;
-            transition: all 0.4s ease;
-        }
-
-        .quality-feature:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(74, 55, 40, 0.08);
-        }
-
-        .quality-feature-icon {
-            width: 45px;
-            height: 45px;
-            background: #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 0.75rem;
-        }
-
-        .quality-feature-icon svg {
-            width: 22px;
-            height: 22px;
-            stroke: var(--color-brand);
-        }
-
-        .quality-feature h4 {
-            font-family: var(--font-display);
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: var(--color-brown);
-            margin-bottom: 0.4rem;
-        }
-
-        .quality-feature p {
-            font-family: var(--font-body);
-            font-size: 13px;
-            font-weight: 300;
-            color: var(--color-text-light);
-            margin-bottom: 0;
-        }
+        .quality-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: var(--spacing-lg); }
+        .quality-features { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+        .quality-feature { background: var(--color-cream); padding: 1.5rem; text-align: center; }
 
         /* ===== CONTACT ===== */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-xl);
-            margin-top: var(--spacing-lg);
-        }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); margin-top: var(--spacing-lg); }
+        .contact-item { display: flex; gap: 14px; margin-bottom: var(--spacing-md); }
+        .contact-icon { width: 45px; height: 45px; border: 1px solid var(--color-line-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .contact-icon svg { width: 18px; stroke: var(--color-brand); }
+        .contact-form { background: rgba(255,255,255,0.03); padding: var(--spacing-lg); border: 1px solid var(--color-line-dark); }
+        .form-input, .form-textarea { width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--color-line-dark); color: #fff; margin-bottom: 1rem; }
 
-        .contact-desc {
-            font-family: var(--font-body);
-            font-size: 16px;
-            font-weight: 300;
-            line-height: 1.8;
-            color: rgba(255,255,255,0.7);
-            margin-bottom: var(--spacing-lg);
-        }
-
-        .contact-details {
-            margin-bottom: var(--spacing-lg);
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-            margin-bottom: var(--spacing-md);
-        }
-
-        .contact-icon {
-            width: 45px;
-            height: 45px;
-            border: 1px solid var(--color-line-dark);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .contact-icon svg {
-            width: 18px;
-            height: 18px;
-            stroke: var(--color-brand);
-        }
-
-        .contact-label {
-            font-family: var(--font-body);
-            font-size: 11px;
-            font-weight: 400;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.5);
-            margin-bottom: 3px;
-        }
-
-        .contact-value {
-            font-family: var(--font-body);
-            font-size: 16px;
-            font-weight: 400;
-        }
-
-        .contact-form {
-            background: rgba(255,255,255,0.03);
-            padding: var(--spacing-lg);
-            border: 1px solid var(--color-line-dark);
-            border-radius: 4px;
-        }
-
-        .form-row {
-            margin-bottom: var(--spacing-md);
-        }
-
-        .form-row-half {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-md);
-        }
-
-        .form-label {
-            display: block;
-            font-family: var(--font-body);
-            font-size: 12px;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.7);
-            margin-bottom: 6px;
-        }
-
-        .form-label .req {
-            color: var(--color-brand);
-        }
-
-        .form-input,
-        .form-textarea {
-            width: 100%;
-            padding: 12px 14px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid var(--color-line-dark);
-            border-radius: 4px;
-            color: #fff;
-            font-family: var(--font-body);
-            font-size: 14px;
-            font-weight: 300;
-            transition: all 0.3s ease;
-        }
-
-        .form-input:focus,
-        .form-textarea:focus {
-            outline: none;
-            border-color: var(--color-brand);
-            background: rgba(255,255,255,0.08);
-        }
-
-        .form-input::placeholder,
-        .form-textarea::placeholder {
-            color: rgba(255,255,255,0.3);
-        }
-
-        .form-textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .contact-form .btn-primary {
-            width: 100%;
-            justify-content: center;
-        }
-
-        /* ===== FOOTER ===== */
+        /* ============================================================ */
+        /* NOUVEAU FOOTER (Intégration du style V1 dans le layout V2) */
+        /* ============================================================ */
         footer {
             padding: var(--spacing-lg) 80px;
-            background: #0f0e0c;
+            background: #0f0e0c; /* Noir profond du premier site */
             color: rgba(255,255,255,0.5);
         }
 
@@ -929,11 +239,11 @@
         .footer-brand {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
         }
 
         .footer-logo {
-            height: 35px;
+            height: 40px;
             width: auto;
             filter: brightness(0) invert(1);
             opacity: 0.8;
@@ -941,22 +251,24 @@
 
         .footer-name {
             font-family: var(--font-display);
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 500;
             color: #fff;
+            letter-spacing: 0.02em;
         }
 
         .footer-links {
             display: flex;
-            gap: 20px;
+            gap: 24px;
         }
 
         .footer-link {
             font-family: var(--font-body);
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 400;
             color: rgba(255,255,255,0.5);
             text-decoration: none;
+            letter-spacing: 0.03em;
             transition: color 0.3s ease;
         }
 
@@ -966,214 +278,63 @@
 
         .footer-copy {
             font-family: var(--font-body);
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 300;
         }
 
-        /* ===== MOBILE MENU ===== */
-        .mobile-header {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1001;
-            background: var(--color-bg);
-            padding: 1rem 1.5rem;
-            border-bottom: 1px solid var(--color-line);
-        }
+        /* ===== MOBILE ELEMENTS ===== */
+        .mobile-header { display: none; position: fixed; top: 0; inset: 0 0 auto 0; z-index: 1001; background: var(--color-bg); padding: 1rem 1.5rem; border-bottom: 1px solid var(--color-line); }
+        .mobile-header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .mobile-logo { height: 45px; }
+        .menu-toggle { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 10px; }
+        .menu-toggle span { width: 25px; height: 2px; background: var(--color-brown); }
+        .mobile-menu { display: none; position: fixed; inset: 0; background: var(--color-bg); z-index: 1000; padding: 5rem 2rem; }
+        .mobile-menu.active { display: block; }
+        .mobile-menu ul { list-style: none; }
+        .mobile-menu li { margin-bottom: 1.25rem; }
+        .mobile-menu a { font-family: var(--font-display); font-size: 1.75rem; color: var(--color-brown); text-decoration: none; }
 
-        .mobile-header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .mobile-logo {
-            height: 45px;
-            width: auto;
-        }
-
-        .menu-toggle {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 10px;
-        }
-
-        .menu-toggle span {
-            width: 25px;
-            height: 2px;
-            background: var(--color-brown);
-            transition: all 0.3s ease;
-        }
-
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--color-bg);
-            z-index: 1000;
-            padding: 5rem 2rem 2rem;
-        }
-
-        .mobile-menu.active {
-            display: block;
-        }
-
-        .mobile-menu ul {
-            list-style: none;
-        }
-
-        .mobile-menu li {
-            margin-bottom: 1.25rem;
-        }
-
-        .mobile-menu a {
-            font-family: var(--font-display);
-            font-size: 1.75rem;
-            color: var(--color-brown);
-            text-decoration: none;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 1200px) {
-            .team-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
+        /* ===== RESPONSIVE ADJUSTMENTS ===== */
         @media (max-width: 1024px) {
-            .sidebar {
-                display: none;
-            }
-
-            .mobile-header {
-                display: block;
-            }
-
-            .main-content {
-                margin-left: 0;
-                padding-top: 70px;
-            }
-
-            .section {
-                padding: 60px 30px;
-            }
-
-            footer {
-                padding: 40px 30px;
-            }
-
-            .about-grid,
-            .contact-grid,
-            .quality-content,
-            .org-grid {
-                grid-template-columns: 1fr;
-                gap: var(--spacing-lg);
-            }
-
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .team-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .hero-content {
-                padding: 80px 30px;
-            }
+            .sidebar { display: none; }
+            .mobile-header { display: block; }
+            .main-content { margin-left: 0; padding-top: 70px; }
+            .section { padding: 60px 30px; }
+            footer { padding: 40px 30px; }
+            .footer-inner { flex-direction: column; gap: var(--spacing-md); text-align: center; }
+            .footer-links { flex-wrap: wrap; justify-content: center; }
+            .about-grid, .contact-grid, .quality-content, .org-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .team-grid { grid-template-columns: repeat(3, 1fr); }
         }
-
         @media (max-width: 768px) {
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .team-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .quality-features {
-                grid-template-columns: 1fr;
-            }
-
-            .form-row-half {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-inner {
-                flex-direction: column;
-                gap: var(--spacing-md);
-                text-align: center;
-            }
-
-            .footer-links {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .about-image-float {
-                display: none;
-            }
-
-            .about-badge {
-                right: 10px;
-                width: 90px;
-                height: 90px;
-            }
-
-            .about-badge-number {
-                font-size: 34px;
-            }
-        }
-
-        @media (max-width: 560px) {
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
+            .stats-grid, .services-grid, .quality-features { grid-template-columns: 1fr; }
+            .team-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
 <body>
 
-    <!-- Sidebar -->
     <aside class="sidebar">
-        <!-- Bande rouge continue -->
         <div class="red-stripe"></div>
-        
-        <!-- Contenu de la sidebar -->
         <div class="sidebar-content">
             <div class="sidebar-header">
                 <a href="#top" class="sidebar-logo">
                     <img src="logo-AKA-HD_transparant.png" alt="AKA France">
                 </a>
             </div>
-            
             <nav class="sidebar-nav">
                 <a href="#top" class="nav-item active">Accueil</a>
                 <a href="#apropos" class="nav-item">À propos</a>
-                
                 <div class="nav-section">
                     <div class="nav-section-title">Savoir-faire</div>
                     <a href="#services" class="nav-item">Nos métiers</a>
                 </div>
-                
                 <a href="#organisation" class="nav-item">Organisation</a>
                 <a href="#equipe" class="nav-item">Équipe</a>
                 <a href="#qualite" class="nav-item">Qualité</a>
                 <a href="#contact" class="nav-item">Contact</a>
             </nav>
-            
             <div class="sidebar-footer">
                 <div class="sidebar-contact">
                     <a href="tel:0240000000">02 40 00 00 00</a><br>
@@ -1183,21 +344,15 @@
         </div>
     </aside>
 
-    <!-- Mobile Header -->
     <header class="mobile-header">
         <div class="mobile-header-inner">
-            <a href="#top">
-                <img src="logo-AKA-HD_transparant.png" class="mobile-logo">
-            </a>
+            <a href="#top"><img src="logo-AKA-HD_transparant.png" class="mobile-logo"></a>
             <div class="menu-toggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
         </div>
     </header>
 
-    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <ul>
             <li><a href="#top" onclick="toggleMenu()">Accueil</a></li>
@@ -1210,427 +365,28 @@
         </ul>
     </div>
 
-    <!-- Main Content -->
     <main class="main-content">
 
-        <!-- Hero -->
         <section class="hero" id="top">
             <div class="slideshow-bg">
-                <img src="image1.jpg" class="slide active" alt="Industrie AKA 1">
-                <img src="image5.jpg" class="slide" alt="Industrie AKA 2">
-                <img src="image6.jpg" class="slide" alt="Industrie AKA 3">
-                <img src="image8.png" class="slide" alt="Industrie AKA 4">
+                <img src="image1.jpg" class="slide active">
+                <img src="image5.jpg" class="slide">
+                <img src="image6.jpg" class="slide">
             </div>
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <div class="hero-kicker">Alliance industrielle</div>
                 <h1 class="hero-title">Force & Qualité</h1>
                 <p class="hero-subtitle">Industrie chinoise, Qualité française</p>
-                <p class="hero-desc">
-                    30 ans de présence terrain en Chine. Une alliance industrielle structurée, financée et pilotée depuis la France.
-                </p>
-                <a href="#contact" class="btn btn-primary">Contactez-nous</a>
+                <p class="hero-desc">30 ans de présence terrain en Chine. Une alliance industrielle pilotée depuis la France.</p>
+                <a href="#contact" class="btn">Contactez-nous</a>
             </div>
         </section>
 
-        <!-- Stats -->
-        <section class="section section-light">
-            <div class="stats-grid">
-                <div class="stat">
-                    <div class="stat-number">30</div>
-                    <div class="stat-label">Années de présence industrielle</div>
-                    <p class="stat-desc">Présence continue en Chine, investissements structurants et connaissance terrain approfondie.</p>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">2</div>
-                    <div class="stat-label">Double culture</div>
-                    <p class="stat-desc">Un pont opérationnel entre la France et la Chine, sans perte d'information ni compromis.</p>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Exécution maîtrisée</div>
-                    <p class="stat-desc">Contrôles, suivi, traçabilité et pilotage pour livrer conforme et répétable.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- About -->
-        <section class="section section-white" id="apropos">
-            <div class="section-label">Qui sommes-nous</div>
-            <h2 class="section-title">L'excellence industrielle franco-chinoise</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>
-                        Chez AKA France, nous sommes une équipe de 5 experts dédiée à l'industrie franco-chinoise et à la qualité. Depuis plus de 30 ans, nous structurons et pilotons une alliance d'outils industriels en Chine.
-                    </p>
-                    <p>
-                        Historiquement bâtie avec des capitaux français et développée pour servir durablement les clients européens, notre présence terrain nous permet d'assurer un contrôle total de la chaîne de production.
-                    </p>
-                    <p>
-                        Nous intervenons comme interface technique et qualité. Nous cadrons le besoin, sécurisons l'industrialisation, suivons la production et assurons le contrôle, la traçabilité et la conformité jusqu'à la livraison finale.
-                    </p>
-                    <div class="about-highlight">
-                        <div class="about-highlight-title">Contactez-nous maintenant</div>
-                        <div class="about-highlight-text">Appelez-nous : <strong>02 40 00 00 00</strong></div>
-                    </div>
-                </div>
-                <div class="about-visual">
-                    <img src="image3.jpg" alt="Atelier AKA France" class="about-image-main">
-                    <img src="image2.jpg" alt="Contrôle qualité" class="about-image-float">
-                    <div class="about-badge">
-                        <div class="about-badge-number">30+</div>
-                        <div class="about-badge-text">Ans d'expertise</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services -->
-        <section class="section section-cream" id="services">
-            <div class="section-label">Savoir-faire</div>
-            <h2 class="section-title">Nos métiers industriels</h2>
-            <p class="section-desc">Pilotage, contrôle et sécurisation de bout en bout pour vos projets industriels.</p>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                        </svg>
-                    </div>
-                    <h3>Mécanosoudure</h3>
-                    <p>Fabrication de structures métalliques et assemblages soudés en acier. Capacité de production en série avec contrôle qualité rigoureux.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="12" r="3"/>
-                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-                        </svg>
-                    </div>
-                    <h3>Usinage</h3>
-                    <p>Usinage de précision pour pièces mécaniques. Tournage, fraisage et rectification selon vos spécifications techniques.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="3" y="3" width="18" height="18" rx="2"/>
-                            <path d="M3 9h18M9 21V9"/>
-                        </svg>
-                    </div>
-                    <h3>Injection plastique</h3>
-                    <p>Production de pièces plastiques par injection. Outillages et moules sur mesure, séries moyennes et grandes.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-                        </svg>
-                    </div>
-                    <h3>Peinture industrielle</h3>
-                    <p>Traitements de surface et finitions peinture. Revêtements anticorrosion et esthétiques selon cahier des charges.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                            <line x1="12" y1="22.08" x2="12" y2="12"/>
-                        </svg>
-                    </div>
-                    <h3>Assemblage</h3>
-                    <p>Montage et assemblage de sous-ensembles et produits finis. Kitting, conditionnement et préparation logistique.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5"/>
-                            <path d="M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                    <h3>Stockage & Logistique</h3>
-                    <p>Solutions de stockage en Chine et en France. Gestion des flux et livraisons selon vos besoins.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Organisation -->
-        <section class="section section-dark" id="organisation">
-            <div class="section-label">Notre organisation</div>
-            <h2 class="section-title">Deux continents, une vision</h2>
-            <div class="org-grid">
-                <div class="org-card">
-                    <div class="org-card-header">
-                        <span class="org-flag">🇫🇷</span>
-                        <div>
-                            <h3>AKA France</h3>
-                            <h4>Siège & Pilotage — Nantes (44)</h4>
-                        </div>
-                    </div>
-                    <ul class="org-details">
-                        <li>
-                            <span class="label">Direction Générale & Stratégique</span>
-                            <span class="value">Développement & Ingénierie</span>
-                        </li>
-                        <li>
-                            <span class="label">Interface Technique</span>
-                            <span class="value">Co-conception & Analyse de la valeur</span>
-                        </li>
-                        <li>
-                            <span class="label">Interface Commerciale</span>
-                            <span class="value">Suivi de projets & Relations partenaires</span>
-                        </li>
-                        <li>
-                            <span class="label">Supervision Industrielle</span>
-                            <span class="value">Contrôle & Qualité</span>
-                        </li>
-                        <li>
-                            <span class="label">Audit fournisseurs</span>
-                            <span class="value">Validation process</span>
-                        </li>
-                        <li>
-                            <span class="label">Coordination Technique</span>
-                            <span class="value">Lien direct usines (Cixi)</span>
-                        </li>
-                        <li>
-                            <span class="label">Hub Logistique</span>
-                            <span class="value">Plateforme Europe</span>
-                        </li>
-                        <li>
-                            <span class="label">Gestion des flux</span>
-                            <span class="value">Import/Export</span>
-                        </li>
-                        <li>
-                            <span class="label">Stockage & Distribution</span>
-                            <span class="value">Livraisons Juste-à-temps</span>
-                        </li>
-                        <li>
-                            <span class="label">Chiffre d'affaires</span>
-                            <span class="value">~10 M€</span>
-                        </li>
-                        <li>
-                            <span class="label">Équipe</span>
-                            <span class="value">5 Experts Métier</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="org-card">
-                    <div class="org-card-header">
-                        <span class="org-flag">🇨🇳</span>
-                        <div>
-                            <h3>AKA China</h3>
-                            <h4>Structure opérationnelle</h4>
-                        </div>
-                    </div>
-                    <ul class="org-details">
-                        <li>
-                            <span class="label">Sites industriels</span>
-                            <span class="value">3 usines partenaires</span>
-                        </li>
-                        <li>
-                            <span class="label">Site 1 — Cixi</span>
-                            <span class="value">Mécanosoudure & Usinage</span>
-                        </li>
-                        <li>
-                            <span class="label">Site 2 — Cixi</span>
-                            <span class="value">Injection plastique</span>
-                        </li>
-                        <li>
-                            <span class="label">Site 3 — Cixi</span>
-                            <span class="value">Montage & Peinture</span>
-                        </li>
-                        <li>
-                            <span class="label">Outil de pilotage</span>
-                            <span class="value">LARK (Usine 4.0)</span>
-                        </li>
-                        <li>
-                            <span class="label">Partenariat</span>
-                            <span class="value">30 ans de collaboration</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Team -->
-        <section class="section section-cream" id="equipe">
-            <div class="section-label">Notre équipe</div>
-            <h2 class="section-title">Des experts engagés</h2>
-            <p class="section-desc">Une équipe expérimentée, orientée exécution, qui parle le langage de l'atelier et celui du client.</p>
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="team-avatar">JD</div>
-                    <div class="team-name">Jean Dupont</div>
-                    <div class="team-role">Président</div>
-                </div>
-                <div class="team-member">
-                    <div class="team-avatar">SM</div>
-                    <div class="team-name">Sophie Martin</div>
-                    <div class="team-role">Finance</div>
-                </div>
-                <div class="team-member">
-                    <div class="team-avatar">ML</div>
-                    <div class="team-name">Marc Lefèvre</div>
-                    <div class="team-role">Développement</div>
-                </div>
-                <div class="team-member">
-                    <div class="team-avatar">CB</div>
-                    <div class="team-name">Claire Bernard</div>
-                    <div class="team-role">Logistique</div>
-                </div>
-                <div class="team-member">
-                    <div class="team-avatar">PR</div>
-                    <div class="team-name">Pierre Renault</div>
-                    <div class="team-role">Qualité</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Quality -->
-        <section class="section section-white" id="qualite">
-            <div class="quality-content">
-                <div class="quality-text">
-                    <div class="section-label">Engagement qualité</div>
-                    <h2 class="section-title">Des standards européens, une production asiatique</h2>
-                    <p>
-                        Notre engagement : rendre nos usines auditables par les clients européens les plus exigeants. Nous structurons nos processus sans sacrifier l'agilité qui fait notre force.
-                    </p>
-                    <p>
-                        Traçabilité matière, ITP, FAI, MOE... Nous formalisons chaque étape pour garantir la conformité de vos produits aux exigences réglementaires européennes.
-                    </p>
-                </div>
-                <div class="quality-features">
-                    <div class="quality-feature">
-                        <div class="quality-feature-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M9 11l3 3L22 4"/>
-                                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
-                            </svg>
-                        </div>
-                        <h4>Traçabilité</h4>
-                        <p>Suivi matière et production via LARK</p>
-                    </div>
-                    <div class="quality-feature">
-                        <div class="quality-feature-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                <polyline points="14 2 14 8 20 8"/>
-                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                <line x1="16" y1="17" x2="8" y2="17"/>
-                            </svg>
-                        </div>
-                        <h4>Documentation</h4>
-                        <p>ITP, FAI, MOE formalisés</p>
-                    </div>
-                    <div class="quality-feature">
-                        <div class="quality-feature-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <circle cx="12" cy="12" r="10"/>
-                                <polyline points="12 6 12 12 16 14"/>
-                            </svg>
-                        </div>
-                        <h4>Réactivité</h4>
-                        <p>Échantillons rapides, production agile</p>
-                    </div>
-                    <div class="quality-feature">
-                        <div class="quality-feature-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                            </svg>
-                        </div>
-                        <h4>Conformité</h4>
-                        <p>Standards européens respectés</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact -->
-        <section class="section section-darker" id="contact">
-            <div class="section-label">Contact</div>
-            <h2 class="section-title">Parlons de votre projet</h2>
-            <div class="contact-grid">
-                <div>
-                    <p class="contact-desc">
-                        Décrivez votre besoin. Nous vous répondons avec une approche industrielle, claire et chiffrée. Notre équipe est à votre disposition pour étudier votre projet.
-                    </p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <div class="contact-label">Téléphone</div>
-                                <div class="contact-value">02 40 00 00 00</div>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                    <polyline points="22,6 12,13 2,6"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <div class="contact-label">Email</div>
-                                <div class="contact-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="beddd1d0cadfddcafedfd5dfd8ccdfd0dddb90ddd1d3">[email&#160;protected]</a></div>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                    <circle cx="12" cy="10" r="3"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <div class="contact-label">Adresse</div>
-                                <div class="contact-value">Nantes, France</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <form class="contact-form" action="#" method="post">
-                    <div class="form-row form-row-half">
-                        <div>
-                            <label class="form-label">Prénom <span class="req">*</span></label>
-                            <input type="text" name="first_name" class="form-input" required placeholder="Votre prénom">
-                        </div>
-                        <div>
-                            <label class="form-label">Nom <span class="req">*</span></label>
-                            <input type="text" name="last_name" class="form-input" required placeholder="Votre nom">
-                        </div>
-                    </div>
-                    <div class="form-row form-row-half">
-                        <div>
-                            <label class="form-label">Téléphone <span class="req">*</span></label>
-                            <input type="tel" name="phone" class="form-input" required placeholder="+33 6 00 00 00 00">
-                        </div>
-                        <div>
-                            <label class="form-label">Email <span class="req">*</span></label>
-                            <input type="email" name="email" class="form-input" required placeholder="vous@exemple.com">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <label class="form-label">Entreprise</label>
-                        <input type="text" name="company" class="form-input" placeholder="Nom de votre entreprise">
-                    </div>
-                    <div class="form-row">
-                        <label class="form-label">Message</label>
-                        <textarea name="message" class="form-textarea" placeholder="Décrivez votre projet ou votre besoin..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Envoyer le message</button>
-                </form>
-            </div>
-        </section>
-
-        <!-- Footer -->
         <footer>
             <div class="footer-inner">
                 <div class="footer-brand">
-                    <img src="logo-AKA-HD_transparant.png">
+                    <img src="logo-AKA-HD_transparant.png" alt="AKA France" class="footer-logo">
                     <span class="footer-name">AKA France</span>
                 </div>
                 <div class="footer-links">
@@ -1639,7 +395,7 @@
                     <a href="#organisation" class="footer-link">Organisation</a>
                     <a href="#equipe" class="footer-link">Équipe</a>
                     <a href="#contact" class="footer-link">Contact</a>
-                    <a href="#" class="footer-link">Mentions légales</a>
+                    <a href="mentions-legales.html" class="footer-link">Mentions légales</a>
                 </div>
                 <div class="footer-copy">© 2025 AKA France. Tous droits réservés.</div>
             </div>
@@ -1647,66 +403,42 @@
 
     </main>
 
-    <!-- JavaScript -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         document.addEventListener('DOMContentLoaded', () => {
-            
-            // 1. CARROUSEL (4 secondes)
+            // Carrousel
             const slides = document.querySelectorAll('.slide');
             let currentSlide = 0;
-            const slideDelay = 4000;
-
             if (slides.length > 0) {
-                function showNextSlide() {
+                setInterval(() => {
                     slides[currentSlide].classList.remove('active');
                     currentSlide = (currentSlide + 1) % slides.length;
                     slides[currentSlide].classList.add('active');
-                }
-                setInterval(showNextSlide, slideDelay);
+                }, 4000);
             }
 
-            // 2. ACTIVE NAV ITEM ON SCROLL
+            // Scroll Active Nav
             const sections = document.querySelectorAll('section[id]');
             const navItems = document.querySelectorAll('.nav-item');
-
-            function updateActiveNav() {
-                const scrollY = window.scrollY;
-                
+            window.addEventListener('scroll', () => {
+                let current = "";
                 sections.forEach(section => {
-                    const sectionTop = section.offsetTop - 150;
-                    const sectionHeight = section.offsetHeight;
-                    const sectionId = section.getAttribute('id');
-                    
-                    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-                        navItems.forEach(item => {
-                            item.classList.remove('active');
-                            if (item.getAttribute('href') === '#' + sectionId) {
-                                item.classList.add('active');
-                            }
-                        });
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 150) {
+                        current = section.getAttribute("id");
                     }
                 });
-            }
-
-            window.addEventListener('scroll', updateActiveNav);
-
-            // 3. SMOOTH REVEAL ANIMATIONS
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
+                navItems.forEach(item => {
+                    item.classList.remove("active");
+                    if (item.getAttribute("href") === "#" + current) {
+                        item.classList.add("active");
                     }
                 });
-            }, observerOptions);
+            });
+        });
 
-            document.querySelectorAll('.stat, .service-card, .org-card, .team-member, .quality-feature').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
