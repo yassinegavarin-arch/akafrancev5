@@ -130,7 +130,7 @@
         /* ===== MAIN CONTENT ===== */
         .main-content { margin-left: var(--sidebar-width); min-height: 100vh; }
 
-        /* ===== SECTIONS (Standardized) ===== */
+        /* ===== SECTIONS ===== */
         .section { padding: 100px 80px; }
         .section-light { background: var(--color-warm-white); }
         .section-cream { background: var(--color-cream); }
@@ -181,106 +181,78 @@
         .hero-content { position: relative; z-index: 2; padding: 100px 80px; color: #fff; max-width: 900px; }
         .hero-title { font-family: var(--font-display); font-size: clamp(48px, 7vw, 100px); font-weight: 500; line-height: 1; margin-bottom: var(--spacing-sm); }
         .hero-subtitle { font-family: var(--font-body); font-size: clamp(16px, 2vw, 22px); letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.9; margin-bottom: var(--spacing-lg); }
-        .btn { display: inline-flex; align-items: center; padding: 14px 28px; font-family: var(--font-body); font-size: 13px; font-weight: 500; text-transform: uppercase; text-decoration: none; transition: all 0.4s ease; border: none; background: var(--color-brand); color: #fff; }
+        .btn { display: inline-flex; align-items: center; padding: 14px 28px; font-family: var(--font-body); font-size: 13px; font-weight: 500; text-transform: uppercase; text-decoration: none; transition: all 0.4s ease; border: none; background: var(--color-brand); color: #fff; cursor: pointer;}
         .btn:hover { background: var(--color-brand-dark); transform: translateY(-2px); box-shadow: 0 10px 25px rgba(196,30,36,0.3); }
 
         /* ===== STATS ===== */
         .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--color-line); margin-top: var(--spacing-lg); }
         .stat { background: var(--color-warm-white); padding: var(--spacing-lg); text-align: center; }
         .stat-number { font-family: var(--font-display); font-size: clamp(42px, 5vw, 64px); color: var(--color-brand); line-height: 1; }
+        .stat-label { font-family: var(--font-body); font-weight: 500; margin: 10px 0; font-size: 14px;}
+        .stat-desc { font-size: 13px; color: var(--color-text-light); }
+
+        /* ===== ABOUT ===== */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: var(--spacing-lg); }
+        .about-text p { margin-bottom: 1.5rem; font-weight: 300; }
+        .about-visual img { width: 100%; height: auto; border-radius: 2px; }
 
         /* ===== SERVICES ===== */
         .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: var(--spacing-lg); }
         .service-card { background: #fff; padding: 2rem; border-radius: 4px; border-top: 3px solid transparent; transition: all 0.4s ease; }
         .service-card:hover { border-top-color: var(--color-brand); transform: translateY(-5px); box-shadow: 0 15px 40px rgba(74,55,40,0.1); }
         .service-icon { width: 50px; height: 50px; background: var(--color-cream); border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
-        .service-icon svg { width: 24px; stroke: var(--color-brown); }
+        .service-icon svg { width: 24px; stroke: var(--color-brown); fill: none; stroke-width: 1.5; }
+        .service-card h3 { font-family: var(--font-display); font-size: 1.3rem; color: var(--color-brown); margin-bottom: 0.5rem; }
+        .service-card p { font-size: 14px; color: var(--color-text-light); font-weight: 300; }
 
         /* ===== ORG CARD ===== */
         .org-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: var(--spacing-lg); }
         .org-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 2.5rem; }
+        .org-card-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem;}
         .org-details { list-style: none; }
         .org-details li { padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; font-size: 0.9rem; }
-        .org-details .value { color: #fff; font-weight: 400; }
+        .org-details .value { color: #fff; font-weight: 400; text-align: right; margin-left: 10px; }
 
         /* ===== TEAM ===== */
         .team-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--spacing-md); margin-top: var(--spacing-lg); }
         .team-member { background: #fff; padding: var(--spacing-md); text-align: center; }
-        .team-avatar { width: 100%; aspect-ratio: 1; background: var(--color-cream); display: flex; align-items: center; justify-content: center; font-size: 40px; color: var(--color-brand); margin-bottom: 1rem; }
+        .team-avatar { width: 100%; aspect-ratio: 1; background: var(--color-cream); display: flex; align-items: center; justify-content: center; font-size: 40px; color: var(--color-brand); margin-bottom: 1rem; font-family: var(--font-display); }
+        .team-name { font-family: var(--font-display); font-size: 18px; color: var(--color-brown); font-weight: 500; }
+        .team-role { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-brand); }
 
         /* ===== QUALITY ===== */
         .quality-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: var(--spacing-lg); }
         .quality-features { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
-        .quality-feature { background: var(--color-cream); padding: 1.5rem; text-align: center; }
+        .quality-feature { background: var(--color-cream); padding: 1.5rem; text-align: center; border-radius: 4px; }
+        .quality-feature h4 { font-family: var(--font-display); font-size: 1.1rem; margin: 10px 0 5px; color: var(--color-brown); }
+        .quality-feature p { font-size: 13px; font-weight: 300; }
 
         /* ===== CONTACT ===== */
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); margin-top: var(--spacing-lg); }
-        .contact-item { display: flex; gap: 14px; margin-bottom: var(--spacing-md); }
-        .contact-icon { width: 45px; height: 45px; border: 1px solid var(--color-line-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-        .contact-icon svg { width: 18px; stroke: var(--color-brand); }
+        .contact-item { display: flex; gap: 14px; margin-bottom: var(--spacing-md); align-items: center; }
+        .contact-icon { width: 45px; height: 45px; border: 1px solid var(--color-line-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .contact-icon svg { width: 18px; stroke: var(--color-brand); fill: none; }
         .contact-form { background: rgba(255,255,255,0.03); padding: var(--spacing-lg); border: 1px solid var(--color-line-dark); }
-        .form-input, .form-textarea { width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--color-line-dark); color: #fff; margin-bottom: 1rem; }
+        .form-input, .form-textarea { width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--color-line-dark); color: #fff; margin-bottom: 1rem; font-family: var(--font-body); }
 
-        /* ============================================================ */
-        /* NOUVEAU FOOTER (Intégration du style V1 dans le layout V2) */
-        /* ============================================================ */
+        /* ===== FOOTER ===== */
         footer {
             padding: var(--spacing-lg) 80px;
-            background: #0f0e0c; /* Noir profond du premier site */
+            background: #0f0e0c;
             color: rgba(255,255,255,0.5);
         }
-
         .footer-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
-        .footer-brand {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-        .footer-logo {
-            height: 40px;
-            width: auto;
-            filter: brightness(0) invert(1);
-            opacity: 0.8;
-        }
-
-        .footer-name {
-            font-family: var(--font-display);
-            font-size: 22px;
-            font-weight: 500;
-            color: #fff;
-            letter-spacing: 0.02em;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 24px;
-        }
-
-        .footer-link {
-            font-family: var(--font-body);
-            font-size: 14px;
-            font-weight: 400;
-            color: rgba(255,255,255,0.5);
-            text-decoration: none;
-            letter-spacing: 0.03em;
-            transition: color 0.3s ease;
-        }
-
-        .footer-link:hover {
-            color: #fff;
-        }
-
-        .footer-copy {
-            font-family: var(--font-body);
-            font-size: 13px;
-            font-weight: 300;
-        }
+        .footer-brand { display: flex; align-items: center; gap: 14px; }
+        .footer-logo { height: 40px; filter: brightness(0) invert(1); opacity: 0.8; }
+        .footer-name { font-family: var(--font-display); font-size: 22px; color: #fff; }
+        .footer-links { display: flex; gap: 24px; }
+        .footer-link { font-family: var(--font-body); font-size: 14px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s ease; }
+        .footer-link:hover { color: #fff; }
+        .footer-copy { font-size: 13px; font-weight: 300; }
 
         /* ===== MOBILE ELEMENTS ===== */
         .mobile-header { display: none; position: fixed; top: 0; inset: 0 0 auto 0; z-index: 1001; background: var(--color-bg); padding: 1rem 1.5rem; border-bottom: 1px solid var(--color-line); }
@@ -294,7 +266,6 @@
         .mobile-menu li { margin-bottom: 1.25rem; }
         .mobile-menu a { font-family: var(--font-display); font-size: 1.75rem; color: var(--color-brown); text-decoration: none; }
 
-        /* ===== RESPONSIVE ADJUSTMENTS ===== */
         @media (max-width: 1024px) {
             .sidebar { display: none; }
             .mobile-header { display: block; }
@@ -380,6 +351,137 @@
                 <p class="hero-subtitle">Industrie chinoise, Qualité française</p>
                 <p class="hero-desc">30 ans de présence terrain en Chine. Une alliance industrielle pilotée depuis la France.</p>
                 <a href="#contact" class="btn">Contactez-nous</a>
+            </div>
+        </section>
+
+        <section class="section section-light">
+            <div class="stats-grid">
+                <div class="stat">
+                    <div class="stat-number">30</div>
+                    <div class="stat-label">Années d'expertise</div>
+                    <p class="stat-desc">Présence continue en Chine et connaissance terrain approfondie.</p>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Double culture</div>
+                    <p class="stat-desc">Un pont opérationnel entre la France et la Chine, sans compromis.</p>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Maîtrise qualité</div>
+                    <p class="stat-desc">Contrôles, suivi et traçabilité pour livrer conforme et répétable.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-white" id="apropos">
+            <div class="section-label">Qui sommes-nous</div>
+            <h2 class="section-title">L'excellence industrielle franco-chinoise</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Chez AKA France, nous sommes une équipe de 5 experts dédiée à l'industrie et à la qualité. Depuis plus de 30 ans, nous structurons et pilotons une alliance d'outils industriels en Chine.</p>
+                    <p>Historiquement bâtie avec des capitaux français, notre présence terrain nous permet d'assurer un contrôle total de la chaîne de production pour servir durablement les clients européens.</p>
+                    <p>Nous intervenons comme interface technique et qualité : nous cadrons le besoin, sécurisons l'industrialisation et assurons la conformité jusqu'à la livraison finale.</p>
+                </div>
+                <div class="about-visual">
+                    <img src="image3.jpg" alt="Expertise AKA France">
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-cream" id="services">
+            <div class="section-label">Savoir-faire</div>
+            <h2 class="section-title">Nos métiers industriels</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+                    <h3>Mécanosoudure</h3>
+                    <p>Fabrication de structures métalliques et assemblages soudés en série avec contrôle rigoureux.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div>
+                    <h3>Usinage</h3>
+                    <p>Tournage, fraisage et rectification de précision selon vos spécifications techniques.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+                    <h3>Injection plastique</h3>
+                    <p>Production de pièces plastiques, outillages et moules sur mesure pour moyennes et grandes séries.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-dark" id="organisation">
+            <div class="section-label">Notre organisation</div>
+            <h2 class="section-title">Deux continents, une vision</h2>
+            <div class="org-grid">
+                <div class="org-card">
+                    <div class="org-card-header">🇫🇷 AKA France (Nantes)</div>
+                    <ul class="org-details">
+                        <li><span>Direction & Stratégie</span><span class="value">Ingénierie & Développement</span></li>
+                        <li><span>Interface Technique</span><span class="value">Analyse de la valeur</span></li>
+                        <li><span>Logistique</span><span class="value">Gestion des flux Europe</span></li>
+                        <li><span>Chiffre d'affaires</span><span class="value">~10 M€</span></li>
+                    </ul>
+                </div>
+                <div class="org-card">
+                    <div class="org-card-header">🇨🇳 AKA China (Cixi)</div>
+                    <ul class="org-details">
+                        <li><span>Sites industriels</span><span class="value">3 usines partenaires</span></li>
+                        <li><span>Outil de pilotage</span><span class="value">LARK (Usine 4.0)</span></li>
+                        <li><span>Expertise</span><span class="value">Soudure, Plastique, Montage</span></li>
+                        <li><span>Partenariat</span><span class="value">30 ans de collaboration</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-cream" id="equipe">
+            <div class="section-label">Notre équipe</div>
+            <h2 class="section-title">Des experts engagés</h2>
+            <div class="team-grid">
+                <div class="team-member"><div class="team-avatar">JD</div><div class="team-name">Jean Dupont</div><div class="team-role">Président</div></div>
+                <div class="team-member"><div class="team-avatar">SM</div><div class="team-name">Sophie Martin</div><div class="team-role">Finance</div></div>
+                <div class="team-member"><div class="team-avatar">YG</div><div class="team-name">Yassine Gavarin</div><div class="team-role">Développement Stratégique</div></div>
+                <div class="team-member"><div class="team-avatar">CB</div><div class="team-name">Claire Bernard</div><div class="team-role">Logistique</div></div>
+                <div class="team-member"><div class="team-avatar">PR</div><div class="team-name">Pierre Renault</div><div class="team-role">Qualité</div></div>
+            </div>
+        </section>
+
+        <section class="section section-white" id="qualite">
+            <div class="quality-content">
+                <div class="quality-text">
+                    <div class="section-label">Qualité</div>
+                    <h2 class="section-title">Standards européens</h2>
+                    <p>Traçabilité matière, ITP, FAI... Nous formalisons chaque étape pour garantir la conformité aux exigences réglementaires européennes.</p>
+                </div>
+                <div class="quality-features">
+                    <div class="quality-feature"><h4>Traçabilité</h4><p>Suivi via LARK</p></div>
+                    <div class="quality-feature"><h4>Conformité</h4><p>ISO 9001 / 14001</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-darker" id="contact">
+            <div class="section-label">Contact</div>
+            <h2 class="section-title">Un projet ?</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                        <span>02 40 00 00 00</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                        <span>contact@aka-france.fr</span>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" class="form-input" placeholder="Nom">
+                    <input type="email" class="form-input" placeholder="Email">
+                    <textarea class="form-textarea" placeholder="Votre message" rows="4"></textarea>
+                    <button type="submit" class="btn">Envoyer</button>
+                </form>
             </div>
         </section>
 
