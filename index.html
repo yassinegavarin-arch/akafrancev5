@@ -6,9 +6,10 @@
     <title>AKA France — Alliance Industrielle Franco-Chinoise</title>
     <link rel="icon" type="image/png" href="FaviconAKA.png">
     
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -16,8 +17,8 @@
             --color-bg-dark: #1C1917;
             --color-text: #2D2A26;
             --color-text-light: #5C5752;
-            --color-brand: #C41E24;
-            --color-brand-dark: #A8191E;
+            --color-brand: #9B1B1B;
+            --color-brand-dark: #7A1515;
             --color-brown: #4A3728;
             --color-brown-light: #6B5344;
             --color-cream: #F0EBE4;
@@ -29,15 +30,13 @@
             --font-display: 'Cormorant Garamond', Georgia, serif;
             --font-body: 'Outfit', system-ui, sans-serif;
             
+            --sidebar-width: 280px;
             --spacing-xs: 8px;
             --spacing-sm: 16px;
             --spacing-md: 24px;
             --spacing-lg: 48px;
             --spacing-xl: 80px;
             --spacing-2xl: 120px;
-            
-            --max-width: 1400px;
-            --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         * {
@@ -59,180 +58,138 @@
             overflow-x: hidden;
         }
 
-        /* ===== UTILITIES ===== */
-        .container {
-            width: min(var(--max-width), calc(100% - 48px));
-            margin: 0 auto;
-        }
-
-        .section-label {
-            font-family: var(--font-body);
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--color-brand);
-            margin-bottom: var(--spacing-md);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .section-label::before {
-            content: '';
-            width: 40px;
-            height: 2px;
-            background: var(--color-brand);
-        }
-
-        .section-title {
-            font-family: var(--font-display);
-            font-size: clamp(36px, 4.5vw, 56px);
-            font-weight: 500;
-            line-height: 1.1;
-            margin-bottom: var(--spacing-md);
-            color: var(--color-brown);
-        }
-
-        .section-desc {
-            font-family: var(--font-body);
-            font-size: 17px;
-            font-weight: 300;
-            color: var(--color-text-light);
-            max-width: 560px;
-            line-height: 1.7;
-        }
-
-        /* ===== HEADER (Blanc semi-opaque au scroll) ===== */
-        header {
+        /* ===== SIDEBAR ===== */
+        .sidebar {
             position: fixed;
             top: 0;
             left: 0;
-            right: 0;
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: var(--color-bg);
             z-index: 1000;
-            padding: 20px 0;
-            transition: all 0.5s ease;
-        }
-
-        header.scrolled {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            padding: 14px 0;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        }
-
-        .header-inner {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            flex-direction: column;
+            border-right: 1px solid var(--color-line);
         }
 
-        .brand {
+        /* Bande rouge continue - positionnée avec un petit décalage */
+        .red-stripe {
+            position: absolute;
+            left: 23px;
+            top: 0;
+            width: 30px;
+            height: 100%;
+            background: var(--color-brand);
+            z-index: 1;
+        }
+
+        /* Conteneur du contenu de la sidebar */
+        .sidebar-content {
+            flex: 1;
             display: flex;
-            align-items: center;
-            gap: 16px;
-            text-decoration: none;
+            flex-direction: column;
+            overflow: hidden;
             position: relative;
+            z-index: 2;
         }
 
-        .brand-logo {
-            height: 65px;
-            width: auto;
-            transition: all 0.4s ease;
-            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
-            margin-left: 1px;
+        .sidebar-header {
+            padding: 1.5rem;
+            padding-left: 23px;
         }
 
-        header.scrolled .brand-logo {
-            height: 50px;
-            filter: none;
-        }
-
-        nav {
+        .sidebar-logo {
             display: flex;
-            align-items: center;
-            gap: 32px;
+            flex-direction: column;
+            align-items: flex-start;
+            text-decoration: none;
         }
 
-        .nav-link {
+        .sidebar-logo img {
+            height: 55px;
+            width: auto;
+            position: relative;
+            margin-left: -4px;
+        }
+
+        .sidebar-nav {
+            flex: 1;
+            padding: 1.5rem;
+            padding-left: 65px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .nav-item {
             font-family: var(--font-body);
             font-size: 14px;
             font-weight: 500;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.02em;
             text-decoration: none;
-            color: rgba(255,255,255,0.9);
+            color: var(--color-text-light);
+            padding: 0.6rem 0;
             transition: all 0.3s ease;
             position: relative;
+            text-transform: uppercase;
         }
 
-        header.scrolled .nav-link {
-            color: var(--color-text);
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--color-brand);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .nav-link:hover {
-            color: #fff;
-        }
-        
-        header.scrolled .nav-link:hover {
+        .nav-item:hover,
+        .nav-item.active {
             color: var(--color-brand);
         }
 
-        .nav-cta {
-            padding: 12px 24px;
-            background: var(--color-brand);
-            color: #fff !important;
-            font-family: var(--font-body);
-            font-size: 14px;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            text-decoration: none;
-            transition: all 0.3s ease;
+        .nav-item.active {
+            font-weight: 600;
         }
 
-        .nav-cta:hover {
-            background: var(--color-brand-dark);
-            transform: translateY(-2px);
-        }
-
-        .nav-cta::after {
-            display: none;
-        }
-
-        /* Mobile Menu Toggle */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 10px;
-            z-index: 1001;
-        }
-
-        .menu-toggle span {
-            width: 25px;
+        .nav-item.active::before {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
             height: 2px;
-            background: #fff;
-            transition: all 0.3s ease;
+            background: var(--color-brand);
         }
 
-        header.scrolled .menu-toggle span {
-            background: var(--color-text);
+        .nav-section {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--color-line);
+        }
+
+        .nav-section-title {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-brand);
+            margin-bottom: 0.75rem;
+        }
+
+        .sidebar-footer {
+            padding: 1.5rem;
+            padding-left: 65px;
+            border-top: 1px solid var(--color-line);
+        }
+
+        .sidebar-contact {
+            font-size: 13px;
+            color: var(--color-text-light);
+        }
+
+        .sidebar-contact a {
+            color: var(--color-brand);
+            text-decoration: none;
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            min-height: 100vh;
         }
 
         /* ===== HERO ===== */
@@ -283,39 +240,26 @@
         .hero-content {
             position: relative;
             z-index: 2;
-            padding: 160px 0 100px;
+            padding: 100px 80px;
             color: #fff;
-            text-align: center;
-            max-width: 1000px;
-            margin: 0 auto;
+            max-width: 900px;
         }
 
         .hero-kicker {
             font-family: var(--font-body);
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
             letter-spacing: 0.25em;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.7);
             margin-bottom: var(--spacing-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-        }
-
-        .hero-kicker::before,
-        .hero-kicker::after {
-            content: '';
-            width: 50px;
-            height: 1px;
-            background: rgba(255, 255, 255, 0.4);
         }
 
         .hero-title {
-            font-family: var(--font-display);
-            font-size: clamp(56px, 9vw, 120px);
-            font-weight: 500;
+            font-family: 'Cormorant', Georgia, serif;
+            font-size: clamp(48px, 7vw, 100px);
+            font-weight: 400;
+            font-style: italic;
             line-height: 1;
             letter-spacing: 0.02em;
             margin-bottom: var(--spacing-sm);
@@ -323,7 +267,7 @@
 
         .hero-subtitle {
             font-family: var(--font-body);
-            font-size: clamp(18px, 2.5vw, 24px);
+            font-size: clamp(16px, 2vw, 22px);
             font-weight: 400;
             letter-spacing: 0.1em;
             text-transform: uppercase;
@@ -333,28 +277,21 @@
 
         .hero-desc {
             font-family: var(--font-body);
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 300;
-            line-height: 1.7;
+            line-height: 1.8;
             opacity: 0.85;
-            max-width: 650px;
-            margin: 0 auto var(--spacing-lg);
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-            justify-content: center;
+            max-width: 550px;
+            margin-bottom: var(--spacing-lg);
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 16px 32px;
+            padding: 14px 28px;
             font-family: var(--font-body);
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
             letter-spacing: 0.08em;
             text-transform: uppercase;
@@ -371,22 +308,87 @@
 
         .btn-primary:hover {
             background: var(--color-brand-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(196, 30, 36, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(196, 30, 36, 0.3);
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: 100px 80px;
+        }
+
+        .section-light {
+            background: var(--color-warm-white);
+        }
+
+        .section-cream {
+            background: var(--color-cream);
+        }
+
+        .section-dark {
+            background: var(--color-brown);
+            color: #fff;
+        }
+
+        .section-darker {
+            background: var(--color-bg-dark);
+            color: #fff;
+        }
+
+        .section-white {
+            background: #fff;
+        }
+
+        .section-label {
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-brand);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .section-dark .section-label,
+        .section-darker .section-label {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 500;
+            line-height: 1.1;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-brown);
+        }
+
+        .section-dark .section-title,
+        .section-darker .section-title {
+            color: #fff;
+        }
+
+        .section-desc {
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 300;
+            color: var(--color-text-light);
+            max-width: 600px;
+            line-height: 1.7;
+        }
+
+        .section-dark .section-desc,
+        .section-darker .section-desc {
+            color: rgba(255, 255, 255, 0.7);
         }
 
         /* ===== STATS ===== */
-        .stats {
-            padding: var(--spacing-xl) 0;
-            background: var(--color-warm-white);
-            border-bottom: 1px solid var(--color-line);
-        }
-
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2px;
             background: var(--color-line);
+            margin-top: var(--spacing-lg);
         }
 
         .stat {
@@ -402,7 +404,7 @@
 
         .stat-number {
             font-family: var(--font-display);
-            font-size: clamp(48px, 6vw, 72px);
+            font-size: clamp(42px, 5vw, 64px);
             font-weight: 500;
             color: var(--color-brand);
             line-height: 1;
@@ -411,40 +413,32 @@
 
         .stat-label {
             font-family: var(--font-body);
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 500;
-            letter-spacing: 0.03em;
             margin-bottom: var(--spacing-xs);
             color: var(--color-brown);
         }
 
         .stat-desc {
             font-family: var(--font-body);
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 300;
             color: var(--color-text-light);
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         /* ===== ABOUT ===== */
-        .about {
-            padding: var(--spacing-2xl) 0;
-        }
-
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: var(--spacing-xl);
             align-items: center;
+            margin-top: var(--spacing-lg);
         }
 
-        .about-content {
-            padding-right: var(--spacing-lg);
-        }
-
-        .about-text {
+        .about-text p {
             font-family: var(--font-body);
-            font-size: 17px;
+            font-size: 16px;
             font-weight: 300;
             line-height: 1.8;
             color: var(--color-text-light);
@@ -452,7 +446,7 @@
         }
 
         .about-highlight {
-            margin-top: var(--spacing-lg);
+            margin-top: var(--spacing-md);
             padding: var(--spacing-md);
             background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-warm-white) 100%);
             border-left: 4px solid var(--color-brand);
@@ -460,15 +454,15 @@
 
         .about-highlight-title {
             font-family: var(--font-body);
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: var(--color-brown);
         }
 
         .about-highlight-text {
             font-family: var(--font-body);
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 300;
             color: var(--color-text-light);
         }
@@ -485,21 +479,21 @@
 
         .about-image-float {
             position: absolute;
-            bottom: -30px;
-            left: -30px;
-            width: 45%;
+            bottom: -20px;
+            left: -20px;
+            width: 40%;
             aspect-ratio: 1;
             object-fit: cover;
-            border: 8px solid var(--color-bg);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            border: 6px solid var(--color-bg);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
 
         .about-badge {
             position: absolute;
-            top: 30px;
-            right: -20px;
-            width: 130px;
-            height: 130px;
+            top: 20px;
+            right: -15px;
+            width: 110px;
+            height: 110px;
             background: var(--color-brand);
             color: #fff;
             display: flex;
@@ -511,52 +505,31 @@
 
         .about-badge-number {
             font-family: var(--font-display);
-            font-size: 48px;
+            font-size: 42px;
             font-weight: 500;
             line-height: 1;
         }
 
         .about-badge-text {
             font-family: var(--font-body);
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 500;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
             margin-top: 4px;
         }
 
-        /* ===== SERVICES (Savoir-faire V2) ===== */
-        .services {
-            padding: var(--spacing-2xl) 0;
-            background: var(--color-cream);
-        }
-
-        .services-header {
-            text-align: center;
-            margin-bottom: var(--spacing-xl);
-        }
-
-        .services-header .section-label {
-            justify-content: center;
-        }
-
-        .services-header .section-label::before {
-            display: none;
-        }
-
-        .services-header .section-desc {
-            margin: 0 auto;
-        }
-
+        /* ===== SERVICES ===== */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 1.5rem;
+            margin-top: var(--spacing-lg);
         }
 
         .service-card {
             background: #fff;
-            padding: 2.5rem;
+            padding: 2rem;
             border-radius: 4px;
             transition: all 0.4s ease;
             position: relative;
@@ -581,252 +554,83 @@
         }
 
         .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(74, 55, 40, 0.12);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(74, 55, 40, 0.1);
         }
 
         .service-icon {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background: var(--color-cream);
             border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
         }
 
         .service-icon svg {
-            width: 28px;
-            height: 28px;
+            width: 24px;
+            height: 24px;
             stroke: var(--color-brown);
         }
 
         .service-card h3 {
             font-family: var(--font-display);
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 500;
             color: var(--color-brown);
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
 
         .service-card p {
             font-family: var(--font-body);
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 300;
             color: var(--color-text-light);
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
-        /* ===== PROCESS (NOUVEAU - Cartographie) ===== */
-        .process {
-            padding: var(--spacing-2xl) 0;
-            background: var(--color-bg);
-            position: relative;
-        }
-
-        .process-header {
-            text-align: center;
-            margin-bottom: var(--spacing-xl);
-        }
-
-        .process-header .section-label {
-            justify-content: center;
-        }
-
-        .process-header .section-label::before {
-            display: none;
-        }
-
-        .process-header .section-desc {
-            margin: 0 auto;
-        }
-
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 20px;
-            position: relative;
-            margin-top: 40px;
-        }
-
-        .process-steps::before {
-            content: '';
-            position: absolute;
-            top: 25px;
-            left: 50px;
-            right: 50px;
-            height: 2px;
-            background: var(--color-line);
-            z-index: 0;
-        }
-
-        .process-step {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background: var(--color-bg);
-            border: 2px solid var(--color-brand);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--font-display);
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--color-brand);
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 0 8px var(--color-bg);
-        }
-
-        .process-step:hover .step-number {
-            background: var(--color-brand);
-            color: #fff;
-            transform: scale(1.1);
-        }
-
-        .step-content {
-            background: #fff;
-            padding: 24px;
-            border-radius: 4px;
-            border: 1px solid rgba(0,0,0,0.05);
-            width: 100%;
-            height: 100%;
-            transition: all 0.3s ease;
-        }
-
-        .process-step:hover .step-content {
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-            transform: translateY(-5px);
-            border-color: var(--color-brand);
-        }
-
-        .step-icon {
-            margin-bottom: 15px;
-            color: var(--color-brown);
-        }
-        
-        .step-icon svg {
-            width: 32px;
-            height: 32px;
-        }
-
-        .step-title {
-            font-family: var(--font-display);
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--color-text);
-            margin-bottom: 10px;
-            line-height: 1.2;
-        }
-
-        .step-desc {
-            font-family: var(--font-body);
-            font-size: 13px;
-            color: var(--color-text-light);
-            line-height: 1.5;
-        }
-
-        .step-tag {
-            display: inline-block;
-            background: var(--color-cream);
-            color: var(--color-brand);
-            font-size: 10px;
-            font-weight: 600;
-            text-transform: uppercase;
-            padding: 4px 8px;
-            border-radius: 4px;
-            margin-bottom: 10px;
-            letter-spacing: 0.05em;
-        }
-
-        /* ===== ORGANISATION (V2 style - 2 cartes) ===== */
-        .organisation {
-            padding: var(--spacing-2xl) 0;
-            background: var(--color-brown);
-            color: #fff;
-        }
-
-        .organisation .section-label {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .organisation .section-label::before {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        .organisation .section-title {
-            color: #fff;
-        }
-
-        .organisation .section-desc {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .organisation-header {
-            text-align: center;
-            margin-bottom: var(--spacing-xl);
-        }
-
-        .organisation-header .section-label {
-            justify-content: center;
-        }
-
-        .organisation-header .section-label::before {
-            display: none;
-        }
-
-        .organisation-header .section-desc {
-            margin: 0 auto;
-        }
-
+        /* ===== ORGANISATION ===== */
         .org-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 2rem;
+            margin-top: var(--spacing-lg);
         }
 
         .org-card {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 4px;
-            padding: 3rem;
+            padding: 2.5rem;
         }
 
         .org-card-header {
             display: flex;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.25rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .org-flag {
-            font-size: 2rem;
+            font-size: 1.75rem;
         }
 
         .org-card h3 {
             font-family: var(--font-display);
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 500;
             color: #fff;
         }
 
         .org-card h4 {
             font-family: var(--font-body);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 400;
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255, 255, 255, 0.5);
         }
 
         .org-details {
@@ -834,11 +638,12 @@
         }
 
         .org-details li {
-            padding: 0.75rem 0;
+            padding: 0.6rem 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             display: flex;
             justify-content: space-between;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            gap: 1rem;
         }
 
         .org-details li:last-child {
@@ -858,20 +663,12 @@
             text-align: right;
         }
 
-        /* ===== TEAM (V1 style) ===== */
-        .team {
-            padding: var(--spacing-2xl) 0;
-            background: var(--color-cream);
-        }
-
-        .team-header {
-            margin-bottom: var(--spacing-xl);
-        }
-
+        /* ===== TEAM ===== */
         .team-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
         }
 
         .team-member {
@@ -882,27 +679,27 @@
         }
 
         .team-member:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
         }
 
         .team-avatar {
             width: 100%;
             aspect-ratio: 1;
             background: linear-gradient(135deg, var(--color-cream-dark) 0%, var(--color-cream) 100%);
-            margin-bottom: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: var(--font-display);
-            font-size: 48px;
+            font-size: 40px;
             font-weight: 500;
             color: var(--color-brand);
         }
 
         .team-name {
             font-family: var(--font-display);
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 500;
             color: var(--color-brown);
             margin-bottom: 4px;
@@ -910,128 +707,94 @@
 
         .team-role {
             font-family: var(--font-body);
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 400;
             color: var(--color-text-light);
             letter-spacing: 0.05em;
             text-transform: uppercase;
         }
 
-        /* ===== QUALITY (V2 style sans certifications) ===== */
-        .quality {
-            padding: var(--spacing-2xl) 0;
-            background: #fff;
-        }
-
+        /* ===== QUALITY ===== */
         .quality-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 5rem;
+            gap: 4rem;
             align-items: center;
-        }
-
-        .quality-text h2 {
-            font-family: var(--font-display);
-            font-size: clamp(32px, 4vw, 48px);
-            font-weight: 500;
-            color: var(--color-brown);
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
+            margin-top: var(--spacing-lg);
         }
 
         .quality-text p {
             font-family: var(--font-body);
-            font-size: 17px;
+            font-size: 16px;
             font-weight: 300;
             color: var(--color-text-light);
             line-height: 1.8;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
         }
 
         .quality-features {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
+            gap: 1.25rem;
         }
 
         .quality-feature {
             background: var(--color-cream);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 4px;
             text-align: center;
             transition: all 0.4s ease;
         }
 
         .quality-feature:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(74, 55, 40, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(74, 55, 40, 0.08);
         }
 
         .quality-feature-icon {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             background: #fff;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1rem;
+            margin: 0 auto 0.75rem;
         }
 
         .quality-feature-icon svg {
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             stroke: var(--color-brand);
         }
 
         .quality-feature h4 {
             font-family: var(--font-display);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 500;
             color: var(--color-brown);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
 
         .quality-feature p {
             font-family: var(--font-body);
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 300;
             color: var(--color-text-light);
             margin-bottom: 0;
         }
 
-        /* ===== CONTACT (V1 style) ===== */
-        .contact {
-            padding: var(--spacing-2xl) 0;
-            background: var(--color-bg-dark);
-            color: #fff;
-        }
-
-        .contact .section-label {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .contact .section-label::before {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        .contact .section-title {
-            color: #fff;
-        }
-
+        /* ===== CONTACT ===== */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: var(--spacing-xl);
-        }
-
-        .contact-info {
-            padding-top: var(--spacing-md);
+            margin-top: var(--spacing-lg);
         }
 
         .contact-desc {
             font-family: var(--font-body);
-            font-size: 17px;
+            font-size: 16px;
             font-weight: 300;
             line-height: 1.8;
             color: rgba(255,255,255,0.7);
@@ -1045,13 +808,13 @@
         .contact-item {
             display: flex;
             align-items: flex-start;
-            gap: 16px;
+            gap: 14px;
             margin-bottom: var(--spacing-md);
         }
 
         .contact-icon {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             border: 1px solid var(--color-line-dark);
             border-radius: 50%;
             display: flex;
@@ -1061,24 +824,24 @@
         }
 
         .contact-icon svg {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             stroke: var(--color-brand);
         }
 
         .contact-label {
             font-family: var(--font-body);
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 400;
             letter-spacing: 0.1em;
             text-transform: uppercase;
             color: rgba(255,255,255,0.5);
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
 
         .contact-value {
             font-family: var(--font-body);
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 400;
         }
 
@@ -1102,12 +865,12 @@
         .form-label {
             display: block;
             font-family: var(--font-body);
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 500;
             letter-spacing: 0.05em;
             text-transform: uppercase;
             color: rgba(255,255,255,0.7);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .form-label .req {
@@ -1117,13 +880,13 @@
         .form-input,
         .form-textarea {
             width: 100%;
-            padding: 14px 16px;
+            padding: 12px 14px;
             background: rgba(255,255,255,0.05);
             border: 1px solid var(--color-line-dark);
             border-radius: 4px;
             color: #fff;
             font-family: var(--font-body);
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 300;
             transition: all 0.3s ease;
         }
@@ -1141,7 +904,7 @@
         }
 
         .form-textarea {
-            min-height: 140px;
+            min-height: 120px;
             resize: vertical;
         }
 
@@ -1150,9 +913,9 @@
             justify-content: center;
         }
 
-        /* ===== FOOTER (V1 style) ===== */
+        /* ===== FOOTER ===== */
         footer {
-            padding: var(--spacing-lg) 0;
+            padding: var(--spacing-lg) 80px;
             background: #0f0e0c;
             color: rgba(255,255,255,0.5);
         }
@@ -1166,11 +929,11 @@
         .footer-brand {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 12px;
         }
 
         .footer-logo {
-            height: 40px;
+            height: 35px;
             width: auto;
             filter: brightness(0) invert(1);
             opacity: 0.8;
@@ -1178,24 +941,22 @@
 
         .footer-name {
             font-family: var(--font-display);
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 500;
             color: #fff;
-            letter-spacing: 0.02em;
         }
 
         .footer-links {
             display: flex;
-            gap: 24px;
+            gap: 20px;
         }
 
         .footer-link {
             font-family: var(--font-body);
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 400;
             color: rgba(255,255,255,0.5);
             text-decoration: none;
-            letter-spacing: 0.03em;
             transition: color 0.3s ease;
         }
 
@@ -1205,8 +966,78 @@
 
         .footer-copy {
             font-family: var(--font-body);
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 300;
+        }
+
+        /* ===== MOBILE MENU ===== */
+        .mobile-header {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1001;
+            background: var(--color-bg);
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--color-line);
+        }
+
+        .mobile-header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mobile-logo {
+            height: 45px;
+            width: auto;
+        }
+
+        .menu-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--color-brown);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--color-bg);
+            z-index: 1000;
+            padding: 5rem 2rem 2rem;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu li {
+            margin-bottom: 1.25rem;
+        }
+
+        .mobile-menu a {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            color: var(--color-brown);
+            text-decoration: none;
         }
 
         /* ===== RESPONSIVE ===== */
@@ -1217,16 +1048,33 @@
         }
 
         @media (max-width: 1024px) {
+            .sidebar {
+                display: none;
+            }
+
+            .mobile-header {
+                display: block;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding-top: 70px;
+            }
+
+            .section {
+                padding: 60px 30px;
+            }
+
+            footer {
+                padding: 40px 30px;
+            }
+
             .about-grid,
             .contact-grid,
             .quality-content,
             .org-grid {
                 grid-template-columns: 1fr;
                 gap: var(--spacing-lg);
-            }
-
-            .about-content {
-                padding-right: 0;
             }
 
             .services-grid {
@@ -1236,46 +1084,13 @@
             .team-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
-        }
 
-        @media (max-width: 900px) {
-            /* Responsive Processus */
-            .process-steps {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .process-steps::before {
-                top: 0;
-                bottom: 0;
-                left: 25px; /* Ligne verticale à gauche */
-                width: 2px;
-                height: 100%;
-                right: auto;
-            }
-
-            .process-step {
-                flex-direction: row;
-                align-items: flex-start;
-                text-align: left;
-                gap: 20px;
-            }
-
-            .step-number {
-                flex-shrink: 0;
-                margin-bottom: 0;
+            .hero-content {
+                padding: 80px 30px;
             }
         }
 
         @media (max-width: 768px) {
-            nav {
-                display: none;
-            }
-
-            .menu-toggle {
-                display: flex;
-            }
-
             .stats-grid {
                 grid-template-columns: 1fr;
             }
@@ -1313,12 +1128,12 @@
 
             .about-badge {
                 right: 10px;
-                width: 110px;
-                height: 110px;
+                width: 90px;
+                height: 90px;
             }
 
             .about-badge-number {
-                font-size: 38px;
+                font-size: 34px;
             }
         }
 
@@ -1327,55 +1142,53 @@
                 grid-template-columns: 1fr;
             }
         }
-
-        /* Mobile Navigation */
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--color-bg);
-            z-index: 999;
-            padding: 6rem 2rem 2rem;
-        }
-
-        .mobile-menu.active {
-            display: block;
-        }
-
-        .mobile-menu ul {
-            list-style: none;
-        }
-
-        .mobile-menu li {
-            margin-bottom: 1.5rem;
-        }
-
-        .mobile-menu a {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            color: var(--color-brown);
-            text-decoration: none;
-        }
     </style>
 </head>
 <body>
 
-    <header id="header">
-        <div class="container header-inner">
-            <a href="#top" class="brand">
-                <img src="logo-AKA-HD_transparant.png" alt="AKA France" class="brand-logo">
-            </a>
-            <nav>
-                <a href="#apropos" class="nav-link">À propos</a>
-                <a href="#services" class="nav-link">Savoir-faire</a>
-                <a href="#processus" class="nav-link">Méthodologie</a> <a href="#organisation" class="nav-link">Organisation</a>
-                <a href="#equipe" class="nav-link">Équipe</a>
-                <a href="#qualite" class="nav-link">Qualité</a>
-                <a href="#contact" class="nav-cta">Contact</a>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <!-- Bande rouge continue -->
+        <div class="red-stripe"></div>
+        
+        <!-- Contenu de la sidebar -->
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <a href="#top" class="sidebar-logo">
+                    <img src="logo-AKA-HD_transparant.png" alt="AKA France">
+                </a>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#top" class="nav-item active">Accueil</a>
+                <a href="#apropos" class="nav-item">À propos</a>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Savoir-faire</div>
+                    <a href="#services" class="nav-item">Nos métiers</a>
+                </div>
+                
+                <a href="#organisation" class="nav-item">Organisation</a>
+                <a href="#equipe" class="nav-item">Équipe</a>
+                <a href="#qualite" class="nav-item">Qualité</a>
+                <a href="#contact" class="nav-item">Contact</a>
             </nav>
+            
+            <div class="sidebar-footer">
+                <div class="sidebar-contact">
+                    <a href="tel:0240000000">02 40 00 00 00</a><br>
+                    <span style="font-size: 12px; opacity: 0.7;">Nantes, France</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <div class="mobile-header-inner">
+            <a href="#top">
+                <img src="logo-AKA-HD_transparant.png" alt="AKA France" class="mobile-logo">
+            </a>
             <div class="menu-toggle" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
@@ -1384,26 +1197,31 @@
         </div>
     </header>
 
+    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <ul>
+            <li><a href="#top" onclick="toggleMenu()">Accueil</a></li>
             <li><a href="#apropos" onclick="toggleMenu()">À propos</a></li>
             <li><a href="#services" onclick="toggleMenu()">Savoir-faire</a></li>
-            <li><a href="#processus" onclick="toggleMenu()">Méthodologie</a></li> <li><a href="#organisation" onclick="toggleMenu()">Organisation</a></li>
+            <li><a href="#organisation" onclick="toggleMenu()">Organisation</a></li>
             <li><a href="#equipe" onclick="toggleMenu()">Équipe</a></li>
             <li><a href="#qualite" onclick="toggleMenu()">Qualité</a></li>
             <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
         </ul>
     </div>
 
-    <section class="hero" id="top">
-        <div class="slideshow-bg">
-            <img src="image1.jpg" class="slide active" alt="Industrie AKA 1">
-            <img src="image5.jpg" class="slide" alt="Industrie AKA 2">
-            <img src="image6.jpg" class="slide" alt="Industrie AKA 3">
-            <img src="image8.png" class="slide" alt="Industrie AKA 4">
-        </div>
-        <div class="hero-overlay"></div>
-        <div class="container">
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Hero -->
+        <section class="hero" id="top">
+            <div class="slideshow-bg">
+                <img src="image1.jpg" class="slide active" alt="Industrie AKA 1">
+                <img src="image5.jpg" class="slide" alt="Industrie AKA 2">
+                <img src="image6.jpg" class="slide" alt="Industrie AKA 3">
+                <img src="image8.png" class="slide" alt="Industrie AKA 4">
+            </div>
+            <div class="hero-overlay"></div>
             <div class="hero-content">
                 <div class="hero-kicker">Alliance industrielle</div>
                 <h1 class="hero-title">Force & Qualité</h1>
@@ -1411,15 +1229,12 @@
                 <p class="hero-desc">
                     30 ans de présence terrain en Chine. Une alliance industrielle structurée, financée et pilotée depuis la France.
                 </p>
-                <div class="hero-actions">
-                    <a href="#contact" class="btn btn-primary">Contactez-nous</a>
-                </div>
+                <a href="#contact" class="btn btn-primary">Contactez-nous</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="stats">
-        <div class="container">
+        <!-- Stats -->
+        <section class="section section-light">
             <div class="stats-grid">
                 <div class="stat">
                     <div class="stat-number">30</div>
@@ -1437,22 +1252,21 @@
                     <p class="stat-desc">Contrôles, suivi, traçabilité et pilotage pour livrer conforme et répétable.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="about" id="apropos">
-        <div class="container">
+        <!-- About -->
+        <section class="section section-white" id="apropos">
+            <div class="section-label">Qui sommes-nous</div>
+            <h2 class="section-title">L'excellence industrielle franco-chinoise</h2>
             <div class="about-grid">
-                <div class="about-content">
-                    <div class="section-label">Qui sommes-nous</div>
-                    <h2 class="section-title">L'excellence industrielle franco-chinoise</h2>
-                    <p class="about-text">
+                <div class="about-text">
+                    <p>
                         Chez AKA France, nous sommes une équipe de 5 experts dédiée à l'industrie franco-chinoise et à la qualité. Depuis plus de 30 ans, nous structurons et pilotons une alliance d'outils industriels en Chine.
                     </p>
-                    <p class="about-text">
+                    <p>
                         Historiquement bâtie avec des capitaux français et développée pour servir durablement les clients européens, notre présence terrain nous permet d'assurer un contrôle total de la chaîne de production.
                     </p>
-                    <p class="about-text">
+                    <p>
                         Nous intervenons comme interface technique et qualité. Nous cadrons le besoin, sécurisons l'industrialisation, suivons la production et assurons le contrôle, la traçabilité et la conformité jusqu'à la livraison finale.
                     </p>
                     <div class="about-highlight">
@@ -1469,16 +1283,13 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="services" id="services">
-        <div class="container">
-            <div class="services-header">
-                <div class="section-label">Savoir-faire</div>
-                <h2 class="section-title">Nos métiers industriels</h2>
-                <p class="section-desc">Pilotage, contrôle et sécurisation de bout en bout pour vos projets industriels.</p>
-            </div>
+        <!-- Services -->
+        <section class="section section-cream" id="services">
+            <div class="section-label">Savoir-faire</div>
+            <h2 class="section-title">Nos métiers industriels</h2>
+            <p class="section-desc">Pilotage, contrôle et sécurisation de bout en bout pour vos projets industriels.</p>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
@@ -1541,89 +1352,12 @@
                     <p>Solutions de stockage en Chine et en France. Gestion des flux et livraisons selon vos besoins.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="process" id="processus">
-        <div class="container">
-            <div class="process-header">
-                <div class="section-label">Méthodologie</div>
-                <h2 class="section-title">Notre cycle industriel</h2>
-                <p class="section-desc">Un flux maîtrisé de bout en bout, de l'étude à Nantes jusqu'à la livraison dans vos entrepôts.</p>
-            </div>
-
-            <div class="process-steps">
-                
-                <div class="process-step">
-                    <div class="step-number">01</div>
-                    <div class="step-content">
-                        <div class="step-tag">AKA France</div>
-                        <div class="step-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                        </div>
-                        <h3 class="step-title">Étude & Chiffrage</h3>
-                        <p class="step-desc">Analyse technique, co-conception et remise d'offre détaillée (DDP) sous 48h/72h.</p>
-                    </div>
-                </div>
-
-                <div class="process-step">
-                    <div class="step-number">02</div>
-                    <div class="step-content">
-                        <div class="step-tag">Validation</div>
-                        <div class="step-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-                        </div>
-                        <h3 class="step-title">Industrialisation & EI</h3>
-                        <p class="step-desc">Lancement outillages, production des Échantillons Initiaux et validation qualité avant série.</p>
-                    </div>
-                </div>
-
-                <div class="process-step">
-                    <div class="step-number">03</div>
-                    <div class="step-content">
-                        <div class="step-tag">AKA China • Cixi</div>
-                        <div class="step-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M12 8v8"></path><path d="M8 12h8"></path></svg>
-                        </div>
-                        <h3 class="step-title">Production & Qualité</h3>
-                        <p class="step-desc">Fabrication, assemblage et contrôle qualité strict piloté via notre ERP <strong>LARK</strong>.</p>
-                    </div>
-                </div>
-
-                <div class="process-step">
-                    <div class="step-number">04</div>
-                    <div class="step-content">
-                        <div class="step-tag">Logistique</div>
-                        <div class="step-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 22h20"></path><path d="M4 18h16"></path><path d="M3 14h18"></path><path d="M12 2v8"></path><path d="M4 10h16"></path><path d="M12 2L4 10"></path><path d="M12 2l8 8"></path></svg>
-                        </div>
-                        <h3 class="step-title">Logistique Import</h3>
-                        <p class="step-desc">Gestion des flux maritimes, dédouanement et acheminement vers nos plateformes.</p>
-                    </div>
-                </div>
-
-                <div class="process-step">
-                    <div class="step-number">05</div>
-                    <div class="step-content">
-                        <div class="step-tag">France</div>
-                        <div class="step-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
-                        </div>
-                        <h3 class="step-title">Stockage & Livraison</h3>
-                        <p class="step-desc">Stockage de sécurité à Nantes et livraison Juste-à-Temps chez vous. Facturation France.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="organisation" id="organisation">
-        <div class="container">
-            <div class="organisation-header">
-                <div class="section-label">Notre organisation</div>
-                <h2 class="section-title">Deux continents, une vision</h2>
-            </div>
+        <!-- Organisation -->
+        <section class="section section-dark" id="organisation">
+            <div class="section-label">Notre organisation</div>
+            <h2 class="section-title">Deux continents, une vision</h2>
             <div class="org-grid">
                 <div class="org-card">
                     <div class="org-card-header">
@@ -1651,12 +1385,32 @@
                             <span class="value">Contrôle & Qualité</span>
                         </li>
                         <li>
+                            <span class="label">Audit fournisseurs</span>
+                            <span class="value">Validation process</span>
+                        </li>
+                        <li>
+                            <span class="label">Coordination Technique</span>
+                            <span class="value">Lien direct usines (Cixi)</span>
+                        </li>
+                        <li>
                             <span class="label">Hub Logistique</span>
                             <span class="value">Plateforme Europe</span>
                         </li>
                         <li>
+                            <span class="label">Gestion des flux</span>
+                            <span class="value">Import/Export</span>
+                        </li>
+                        <li>
                             <span class="label">Stockage & Distribution</span>
                             <span class="value">Livraisons Juste-à-temps</span>
+                        </li>
+                        <li>
+                            <span class="label">Chiffre d'affaires</span>
+                            <span class="value">~10 M€</span>
+                        </li>
+                        <li>
+                            <span class="label">Équipe</span>
+                            <span class="value">5 Experts Métier</span>
                         </li>
                     </ul>
                 </div>
@@ -1696,16 +1450,13 @@
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="team" id="equipe">
-        <div class="container">
-            <div class="team-header">
-                <div class="section-label">Notre équipe</div>
-                <h2 class="section-title">Des experts engagés</h2>
-                <p class="section-desc">Une équipe expérimentée, orientée exécution, qui parle le langage de l'atelier et celui du client.</p>
-            </div>
+        <!-- Team -->
+        <section class="section section-cream" id="equipe">
+            <div class="section-label">Notre équipe</div>
+            <h2 class="section-title">Des experts engagés</h2>
+            <p class="section-desc">Une équipe expérimentée, orientée exécution, qui parle le langage de l'atelier et celui du client.</p>
             <div class="team-grid">
                 <div class="team-member">
                     <div class="team-avatar">JD</div>
@@ -1733,15 +1484,14 @@
                     <div class="team-role">Qualité</div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="quality" id="qualite">
-        <div class="container">
+        <!-- Quality -->
+        <section class="section section-white" id="qualite">
             <div class="quality-content">
                 <div class="quality-text">
                     <div class="section-label">Engagement qualité</div>
-                    <h2>Des standards européens, une production asiatique</h2>
+                    <h2 class="section-title">Des standards européens, une production asiatique</h2>
                     <p>
                         Notre engagement : rendre nos usines auditables par les clients européens les plus exigeants. Nous structurons nos processus sans sacrifier l'agilité qui fait notre force.
                     </p>
@@ -1793,15 +1543,14 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="contact" id="contact">
-        <div class="container">
+        <!-- Contact -->
+        <section class="section section-darker" id="contact">
+            <div class="section-label">Contact</div>
+            <h2 class="section-title">Parlons de votre projet</h2>
             <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="section-label">Contact</div>
-                    <h2 class="section-title">Parlons de votre projet</h2>
+                <div>
                     <p class="contact-desc">
                         Décrivez votre besoin. Nous vous répondons avec une approche industrielle, claire et chiffrée. Notre équipe est à votre disposition pour étudier votre projet.
                     </p>
@@ -1875,34 +1624,37 @@
                     <button type="submit" class="btn btn-primary">Envoyer le message</button>
                 </form>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <div class="container footer-inner">
-            <div class="footer-brand">
-                <img src="logo-AKA-HD_transparant.png" alt="AKA France" class="footer-logo">
-                <span class="footer-name">AKA France</span>
+        <!-- Footer -->
+        <footer>
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <img src="logo-AKA-HD_transparant.png" alt="AKA France" class="footer-logo">
+                    <span class="footer-name">AKA France</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#apropos" class="footer-link">À propos</a>
+                    <a href="#services" class="footer-link">Savoir-faire</a>
+                    <a href="#organisation" class="footer-link">Organisation</a>
+                    <a href="#equipe" class="footer-link">Équipe</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                    <a href="#" class="footer-link">Mentions légales</a>
+                </div>
+                <div class="footer-copy">© 2025 AKA France. Tous droits réservés.</div>
             </div>
-            <div class="footer-links">
-                <a href="#apropos" class="footer-link">À propos</a>
-                <a href="#services" class="footer-link">Savoir-faire</a>
-                <a href="#processus" class="footer-link">Méthodologie</a> <a href="#organisation" class="footer-link">Organisation</a>
-                <a href="#equipe" class="footer-link">Équipe</a>
-                <a href="#contact" class="footer-link">Contact</a>
-                <a href="#" class="footer-link">Mentions légales</a>
-            </div>
-            <div class="footer-copy">© 2025 AKA France. Tous droits réservés.</div>
-        </div>
-    </footer>
+        </footer>
 
+    </main>
+
+    <!-- JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
             // 1. CARROUSEL (4 secondes)
             const slides = document.querySelectorAll('.slide');
             let currentSlide = 0;
-            const slideDelay = 4000; // 4 secondes
+            const slideDelay = 4000;
 
             if (slides.length > 0) {
                 function showNextSlide() {
@@ -1913,15 +1665,30 @@
                 setInterval(showNextSlide, slideDelay);
             }
 
-            // 2. HEADER SCROLL EFFECT (BLANC)
-            const header = document.getElementById('header');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 80) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
+            // 2. ACTIVE NAV ITEM ON SCROLL
+            const sections = document.querySelectorAll('section[id]');
+            const navItems = document.querySelectorAll('.nav-item');
+
+            function updateActiveNav() {
+                const scrollY = window.scrollY;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 150;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                        navItems.forEach(item => {
+                            item.classList.remove('active');
+                            if (item.getAttribute('href') === '#' + sectionId) {
+                                item.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', updateActiveNav);
 
             // 3. SMOOTH REVEAL ANIMATIONS
             const observerOptions = {
@@ -1938,20 +1705,8 @@
                 });
             }, observerOptions);
 
-            document.querySelectorAll('.stat, .service-card, .org-card, .team-member, .quality-feature, .process-step').forEach(el => {
+            document.querySelectorAll('.stat, .service-card, .org-card, .team-member, .quality-feature').forEach(el => {
                 el.style.opacity = '0';
                 el.style.transform = 'translateY(30px)';
                 el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(el);
-            });
-        });
-
-        // Mobile Menu Toggle
-        function toggleMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('active');
-        }
-    </script>
-
-</body>
-</html>
