@@ -27,8 +27,8 @@
             --color-line: rgba(74, 55, 40, 0.12);
             --color-line-dark: rgba(255,255,255,0.1);
             
-            --font-display: 'Cormorant Garamond', Georgia, serif;
-            --font-body: 'Outfit', system-ui, sans-serif;
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Outfit', sans-serif;
             
             --sidebar-width: 280px;
             --spacing-xs: 8px;
@@ -256,24 +256,23 @@
         }
 
 .hero-title {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(48px, 7vw, 100px);
-    font-weight: 400;
-    font-style: italic;
-    line-height: 1;
-    letter-spacing: 0.02em;
+    font-family: var(--font-display); /* Utilisation de Cormorant */
+    font-size: clamp(50px, 8vw, 110px); /* Légèrement agrandi pour l'impact */
+    font-weight: 500; /* Medium pour garder de la finesse */
+    font-style: italic; /* Indispensable pour la queue du Q */
+    line-height: 0.9;
+    letter-spacing: -0.01em; /* Un peu plus serré pour l'élégance */
     margin-bottom: var(--spacing-sm);
+    color: #fff;
 }
 
-        .hero-subtitle {
-            font-family: var(--font-body);
-            font-size: clamp(16px, 2vw, 22px);
-            font-weight: 400;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            opacity: 0.9;
-            margin-bottom: var(--spacing-lg);
-        }
+.hero-subtitle {
+    font-family: var(--font-body);
+    font-size: clamp(14px, 1.5vw, 18px);
+    letter-spacing: 0.3em; /* Plus aéré pour contraster avec le titre */
+    text-transform: uppercase;
+    opacity: 0.8;
+}
 
         .hero-desc {
             font-family: var(--font-body);
