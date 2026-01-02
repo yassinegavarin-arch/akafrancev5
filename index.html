@@ -120,11 +120,6 @@
             width: auto;
             position: relative;
             margin-left: -4px;
-            transition: transform 0.4s var(--ease-out-expo);
-        }
-
-        .sidebar-logo:hover img {
-            transform: scale(1.02);
         }
 
         .sidebar-nav {
@@ -239,17 +234,10 @@
             opacity: 0;
             transition: opacity 1.5s ease-in-out;
             object-fit: cover;
-            transform: scale(1.05);
         }
 
         .slide.active {
             opacity: 1;
-            animation: slideZoom 8s ease-out forwards;
-        }
-
-        @keyframes slideZoom {
-            from { transform: scale(1.05); }
-            to { transform: scale(1); }
         }
 
         .hero-overlay {
@@ -729,7 +717,7 @@
         }
 
         .about-visual:hover .about-badge {
-            transform: rotate(5deg) scale(1.05);
+            transform: scale(1.05);
         }
 
         .about-badge-number {
@@ -756,52 +744,98 @@
             margin-top: var(--spacing-lg);
         }
 
+        .service-card-wrapper {
+            perspective: 1000px;
+            height: 280px;
+        }
+
         .service-card {
-            background: #fff;
-            padding: 2.5rem 2rem;
-            border-radius: 4px;
-            transition: all 0.5s var(--ease-out-expo);
             position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.7s var(--ease-out-expo);
+        }
+
+        .service-card-wrapper:hover .service-card {
+            transform: rotateY(180deg);
+        }
+
+        .service-card-front,
+        .service-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 4px;
             overflow: hidden;
         }
 
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--color-brand), var(--color-brown));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.5s var(--ease-out-expo);
+        .service-card-front {
+            background: #fff;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
         }
 
-        .service-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+        .service-card-back {
+            background: var(--color-brown);
+            transform: rotateY(180deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        .service-card-back-content {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .service-card-back h4 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card-back p {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 300;
+            opacity: 0.8;
+        }
+
+        /* Placeholder pour les futures images */
+        .service-card-back-image {
             width: 100%;
             height: 100%;
-            background: linear-gradient(180deg, var(--color-brand-glow) 0%, transparent 50%);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            pointer-events: none;
+            background: linear-gradient(135deg, var(--color-brown) 0%, var(--color-brown-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .service-card:hover::before {
-            transform: scaleX(1);
+        .service-card-back-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        .service-card:hover::after {
-            opacity: 1;
+        .service-card-back-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(74, 55, 40, 0.9) 0%, rgba(74, 55, 40, 0.3) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
         }
 
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 60px rgba(74, 55, 40, 0.12);
+        .service-card-back-overlay h4 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #fff;
         }
 
         .service-icon {
@@ -812,34 +846,25 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
-            transition: all 0.5s var(--ease-out-expo);
-        }
-
-        .service-card:hover .service-icon {
-            background: var(--color-brand);
+            margin-bottom: 1.25rem;
+            flex-shrink: 0;
         }
 
         .service-icon svg {
             width: 26px;
             height: 26px;
             stroke: var(--color-brown);
-            transition: stroke 0.5s ease;
         }
 
-        .service-card:hover .service-icon svg {
-            stroke: #fff;
-        }
-
-        .service-card h3 {
+        .service-card-front h3 {
             font-family: var(--font-display);
             font-size: 1.4rem;
             font-weight: 500;
             color: var(--color-brown);
-            margin-bottom: 0.85rem;
+            margin-bottom: 0.75rem;
         }
 
-        .service-card p {
+        .service-card-front p {
             font-family: var(--font-body);
             font-size: 14px;
             font-weight: 300;
@@ -1654,6 +1679,10 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .service-card-wrapper {
+                height: 260px;
+            }
+
             .team-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
@@ -1704,6 +1733,10 @@
 
             .services-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .service-card-wrapper {
+                height: 240px;
             }
 
             .team-grid {
@@ -1792,7 +1825,7 @@
             
             <div class="sidebar-footer">
                 <div class="sidebar-contact">
-                    <a href="tel:0240000000">02 40 00 00 00</a><br>
+                    <a href="tel:0251849292">02 51 84 92 92</a><br>
                     <span style="font-size: 12px; opacity: 0.7;">Nantes, France</span>
                 </div>
             </div>
@@ -1899,7 +1932,7 @@
                     </p>
                     <div class="about-highlight">
                         <div class="about-highlight-title">Contactez-nous maintenant</div>
-                        <div class="about-highlight-text">Appelez-nous : <strong>02 40 00 00 00</strong></div>
+                        <div class="about-highlight-text">Appelez-nous : <strong>02 51 84 92 92</strong></div>
                     </div>
                 </div>
                 <div class="about-visual reveal reveal-delay-3">
@@ -1919,65 +1952,138 @@
             <h2 class="section-title reveal reveal-delay-1">Nos métiers industriels</h2>
             <p class="section-desc reveal reveal-delay-2">Pilotage, contrôle et sécurisation de bout en bout pour vos projets industriels.</p>
             <div class="services-grid">
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                        </svg>
+                <div class="service-card-wrapper reveal">
+                    <div class="service-card">
+                        <div class="service-card-front">
+                            <div class="service-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                                </svg>
+                            </div>
+                            <h3>Mécanosoudure</h3>
+                            <p>Fabrication de structures métalliques et assemblages soudés en acier. Capacité de production en série avec contrôle qualité rigoureux.</p>
+                        </div>
+                        <div class="service-card-back">
+                            <div class="service-card-back-image">
+                                <!-- Image à venir : data-image="mecanosoudure.jpg" -->
+                                <div class="service-card-back-content">
+                                    <h4>Mécanosoudure</h4>
+                                    <p>Photo à venir</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Mécanosoudure</h3>
-                    <p>Fabrication de structures métalliques et assemblages soudés en acier. Capacité de production en série avec contrôle qualité rigoureux.</p>
                 </div>
-                <div class="service-card reveal reveal-delay-1">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="12" r="3"/>
-                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-                        </svg>
+                <div class="service-card-wrapper reveal reveal-delay-1">
+                    <div class="service-card">
+                        <div class="service-card-front">
+                            <div class="service-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <circle cx="12" cy="12" r="3"/>
+                                    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                                </svg>
+                            </div>
+                            <h3>Usinage</h3>
+                            <p>Usinage de précision pour pièces mécaniques. Tournage, fraisage et rectification selon vos spécifications techniques.</p>
+                        </div>
+                        <div class="service-card-back">
+                            <div class="service-card-back-image">
+                                <div class="service-card-back-content">
+                                    <h4>Usinage</h4>
+                                    <p>Photo à venir</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Usinage</h3>
-                    <p>Usinage de précision pour pièces mécaniques. Tournage, fraisage et rectification selon vos spécifications techniques.</p>
                 </div>
-                <div class="service-card reveal reveal-delay-2">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="3" y="3" width="18" height="18" rx="2"/>
-                            <path d="M3 9h18M9 21V9"/>
-                        </svg>
+                <div class="service-card-wrapper reveal reveal-delay-2">
+                    <div class="service-card">
+                        <div class="service-card-front">
+                            <div class="service-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                    <path d="M3 9h18M9 21V9"/>
+                                </svg>
+                            </div>
+                            <h3>Injection plastique</h3>
+                            <p>Production de pièces plastiques par injection. Outillages et moules sur mesure, séries moyennes et grandes.</p>
+                        </div>
+                        <div class="service-card-back">
+                            <div class="service-card-back-image">
+                                <div class="service-card-back-content">
+                                    <h4>Injection plastique</h4>
+                                    <p>Photo à venir</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Injection plastique</h3>
-                    <p>Production de pièces plastiques par injection. Outillages et moules sur mesure, séries moyennes et grandes.</p>
                 </div>
-                <div class="service-card reveal reveal-delay-3">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-                        </svg>
+                <div class="service-card-wrapper reveal reveal-delay-3">
+                    <div class="service-card">
+                        <div class="service-card-front">
+                            <div class="service-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                                </svg>
+                            </div>
+                            <h3>Peinture industrielle</h3>
+                            <p>Traitements de surface et finitions peinture. Revêtements anticorrosion et esthétiques selon cahier des charges.</p>
+                        </div>
+                        <div class="service-card-back">
+                            <div class="service-card-back-image">
+                                <div class="service-card-back-content">
+                                    <h4>Peinture industrielle</h4>
+                                    <p>Photo à venir</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Peinture industrielle</h3>
-                    <p>Traitements de surface et finitions peinture. Revêtements anticorrosion et esthétiques selon cahier des charges.</p>
                 </div>
-                <div class="service-card reveal reveal-delay-4">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                            <line x1="12" y1="22.08" x2="12" y2="12"/>
-                        </svg>
+                <div class="service-card-wrapper reveal reveal-delay-4">
+                    <div class="service-card">
+                        <div class="service-card-front">
+                            <div class="service-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                                    <line x1="12" y1="22.08" x2="12" y2="12"/>
+                                </svg>
+                            </div>
+                            <h3>Assemblage</h3>
+                            <p>Montage et assemblage de sous-ensembles et produits finis. Kitting, conditionnement et préparation logistique.</p>
+                        </div>
+                        <div class="service-card-back">
+                            <div class="service-card-back-image">
+                                <div class="service-card-back-content">
+                                    <h4>Assemblage</h4>
+                                    <p>Photo à venir</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Assemblage</h3>
-                    <p>Montage et assemblage de sous-ensembles et produits finis. Kitting, conditionnement et préparation logistique.</p>
                 </div>
-                <div class="service-card reveal reveal-delay-5">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5"/>
-                            <path d="M2 12l10 5 10-5"/>
-                        </svg>
+                <div class="service-card-wrapper reveal reveal-delay-5">
+                    <div class="service-card">
+                        <div class="service-card-front">
+                            <div class="service-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                    <path d="M2 17l10 5 10-5"/>
+                                    <path d="M2 12l10 5 10-5"/>
+                                </svg>
+                            </div>
+                            <h3>Stockage & Logistique</h3>
+                            <p>Solutions de stockage en Chine et en France. Gestion des flux et livraisons selon vos besoins.</p>
+                        </div>
+                        <div class="service-card-back">
+                            <div class="service-card-back-image">
+                                <div class="service-card-back-content">
+                                    <h4>Stockage & Logistique</h4>
+                                    <p>Photo à venir</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Stockage & Logistique</h3>
-                    <p>Solutions de stockage en Chine et en France. Gestion des flux et livraisons selon vos besoins.</p>
                 </div>
             </div>
         </section>
@@ -2242,7 +2348,7 @@
                             </div>
                             <div>
                                 <div class="contact-label">Téléphone</div>
-                                <div class="contact-value">02 40 00 00 00</div>
+                                <div class="contact-value">02 51 84 92 92</div>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -2266,7 +2372,7 @@
                             </div>
                             <div>
                                 <div class="contact-label">Adresse</div>
-                                <div class="contact-value">Nantes, France</div>
+                                <div class="contact-value">4 Rue Columelle, 44000 Nantes</div>
                             </div>
                         </div>
                     </div>
@@ -2323,7 +2429,7 @@
                     <a href="#organisation" class="footer-link">Organisation</a>
                     <a href="#equipe" class="footer-link">Équipe</a>
                     <a href="#contact" class="footer-link">Contact</a>
-                    <a href="#" class="footer-link">Mentions légales</a>
+                    <a href="mentions-legales.html" class="footer-link">Mentions légales</a>
                 </div>
                 <div class="footer-copy">© 2025 AKA France. Tous droits réservés.</div>
             </div>
