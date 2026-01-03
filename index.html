@@ -6,7 +6,6 @@
     <title>AKA France — Alliance Industrielle Franco-Chinoise</title>
     <link rel="icon" type="image/png" href="faviconV5.png">
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Outfit:wght@300;400;500;600&family=Lancelot&display=swap" rel="stylesheet">
@@ -82,7 +81,6 @@
             border-right: 1px solid var(--color-line);
         }
 
-        /* Bande rouge continue - positionnée avec un petit décalage */
         .red-stripe {
             position: absolute;
             left: 23px;
@@ -93,7 +91,6 @@
             z-index: 1;
         }
 
-        /* Conteneur du contenu de la sidebar */
         .sidebar-content {
             flex: 1;
             display: flex;
@@ -128,20 +125,21 @@
             padding-left: 65px;
             display: flex;
             flex-direction: column;
-            gap: 0.25rem;
+            gap: 0px; /* Gap géré par le padding des items */
         }
 
         .nav-item {
             font-family: var(--font-body);
-            font-size: 14px;
+            font-size: 13px; /* Harmonisé */
             font-weight: 500;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.05em;
             text-decoration: none;
             color: var(--color-text-light);
-            padding: 0.6rem 0;
+            padding: 8px 0; /* Espacement harmonisé */
             transition: all 0.4s var(--ease-out-expo);
             position: relative;
             text-transform: uppercase;
+            display: block;
         }
 
         .nav-item:hover,
@@ -165,19 +163,19 @@
         }
 
         .nav-section {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
+            margin-top: 16px; /* Espacement de section harmonisé */
+            padding-top: 16px;
             border-top: 1px solid var(--color-line);
         }
 
         .nav-section-title {
             font-family: var(--font-body);
-            font-size: 11px;
+            font-size: 13px; /* Taille uniformisée avec nav-item */
             font-weight: 600;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.05em;
             text-transform: uppercase;
             color: var(--color-brand);
-            margin-bottom: 0.75rem;
+            margin-bottom: 8px; /* Espacement harmonisé */
         }
 
         .sidebar-footer {
@@ -252,7 +250,6 @@
             );
         }
 
-        /* Texture subtile sur le hero */
         .hero-overlay::after {
             content: '';
             position: absolute;
@@ -339,7 +336,6 @@
             }
         }
 
-        /* Indicateur de scroll */
         .scroll-indicator {
             position: absolute;
             bottom: 40px;
@@ -454,7 +450,6 @@
             position: relative;
         }
 
-        /* Texture subtile sur les sections sombres */
         .section-darker::before {
             content: '';
             position: absolute;
@@ -806,7 +801,6 @@
             opacity: 0.8;
         }
 
-        /* Placeholder pour les futures images */
         .service-card-back-image {
             width: 100%;
             height: 100%;
@@ -1794,12 +1788,8 @@
 </head>
 <body>
 
-    <!-- Sidebar -->
     <aside class="sidebar">
-        <!-- Bande rouge continue -->
         <div class="red-stripe"></div>
-        
-        <!-- Contenu de la sidebar -->
         <div class="sidebar-content">
             <div class="sidebar-header">
                 <a href="#top" class="sidebar-logo">
@@ -1832,7 +1822,6 @@
         </div>
     </aside>
 
-    <!-- Mobile Header -->
     <header class="mobile-header">
         <div class="mobile-header-inner">
             <a href="#top">
@@ -1846,7 +1835,6 @@
         </div>
     </header>
 
-    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <ul>
             <li><a href="#top" onclick="toggleMenu()">Accueil</a></li>
@@ -1860,10 +1848,8 @@
         </ul>
     </div>
 
-    <!-- Main Content -->
     <main class="main-content">
 
-        <!-- Hero -->
         <section class="hero" id="top">
             <div class="slideshow-bg">
                 <img src="image1.jpg" class="slide active" alt="Industrie AKA 1">
@@ -1894,7 +1880,6 @@
             </div>
         </section>
 
-        <!-- Stats -->
         <section class="section section-light">
             <div class="stats-grid">
                 <div class="stat reveal">
@@ -1915,7 +1900,6 @@
             </div>
         </section>
 
-        <!-- About -->
         <section class="section section-white" id="apropos">
             <div class="section-label reveal">Qui sommes-nous</div>
             <h2 class="section-title reveal reveal-delay-1">L'excellence industrielle franco-chinoise</h2>
@@ -1946,7 +1930,6 @@
             </div>
         </section>
 
-        <!-- Services -->
         <section class="section section-cream" id="services">
             <div class="section-label reveal">Savoir-faire</div>
             <h2 class="section-title reveal reveal-delay-1">Nos métiers industriels</h2>
@@ -1965,7 +1948,6 @@
                         </div>
                         <div class="service-card-back">
                             <div class="service-card-back-image">
-                                <!-- Image à venir : data-image="mecanosoudure.jpg" -->
                                 <div class="service-card-back-content">
                                     <h4>Mécanosoudure</h4>
                                     <p>Photo à venir</p>
@@ -2088,7 +2070,6 @@
             </div>
         </section>
 
-        <!-- Processus / Cycle industriel -->
         <section class="section section-light" id="processus">
             <div class="process-header">
                 <div class="section-label reveal">Méthodologie</div>
@@ -2159,7 +2140,6 @@
             </div>
         </section>
 
-        <!-- Organisation -->
         <section class="section section-dark" id="organisation">
             <div class="section-label reveal">Notre organisation</div>
             <h2 class="section-title reveal reveal-delay-1">Deux continents, une vision</h2>
@@ -2237,7 +2217,6 @@
             </div>
         </section>
 
-        <!-- Team -->
         <section class="section section-cream" id="equipe">
             <div class="section-label reveal">Notre équipe</div>
             <h2 class="section-title reveal reveal-delay-1">Des experts engagés</h2>
@@ -2271,7 +2250,6 @@
             </div>
         </section>
 
-        <!-- Quality -->
         <section class="section section-white" id="qualite">
             <div class="quality-content">
                 <div class="quality-text">
@@ -2330,7 +2308,6 @@
             </div>
         </section>
 
-        <!-- Contact -->
         <section class="section section-darker" id="contact">
             <div class="section-label reveal">Contact</div>
             <h2 class="section-title reveal reveal-delay-1">Parlons de votre projet</h2>
@@ -2416,7 +2393,6 @@
             </div>
         </section>
 
-        <!-- Footer -->
         <footer>
             <div class="footer-inner">
                 <a href="#top" class="footer-brand">
@@ -2437,11 +2413,8 @@
 
     </main>
 
-    <!-- JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            
-            // 1. CARROUSEL (4 secondes avec effet de zoom)
             const slides = document.querySelectorAll('.slide');
             let currentSlide = 0;
             const slideDelay = 4000;
@@ -2455,18 +2428,15 @@
                 setInterval(showNextSlide, slideDelay);
             }
 
-            // 2. ACTIVE NAV ITEM ON SCROLL
             const sections = document.querySelectorAll('section[id]');
             const navItems = document.querySelectorAll('.nav-item');
 
             function updateActiveNav() {
                 const scrollY = window.scrollY;
-                
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop - 150;
                     const sectionHeight = section.offsetHeight;
                     const sectionId = section.getAttribute('id');
-                    
                     if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
                         navItems.forEach(item => {
                             item.classList.remove('active');
@@ -2477,12 +2447,9 @@
                     }
                 });
             }
-
             window.addEventListener('scroll', updateActiveNav);
 
-            // 3. REVEAL ANIMATIONS ON SCROLL
             const revealElements = document.querySelectorAll('.reveal');
-            
             const revealObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -2493,11 +2460,9 @@
                 threshold: 0.1,
                 rootMargin: '0px 0px -60px 0px'
             });
-
             revealElements.forEach(el => revealObserver.observe(el));
         });
 
-        // MOBILE MENU TOGGLE
         function toggleMenu() {
             const menu = document.getElementById('mobileMenu');
             const toggle = document.getElementById('menuToggle');
@@ -2506,6 +2471,5 @@
             document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
         }
     </script>
-
 </body>
 </html>
