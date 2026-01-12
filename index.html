@@ -23,16 +23,90 @@
         body{font-family:var(--font-body);font-weight:400;color:var(--color-text);background:var(--color-bg);line-height:1.6;overflow-x:hidden}
         ::selection{background:var(--color-brand);color:#fff}
 
-        .header-initial{position:fixed;top:0;left:0;right:0;z-index:1001;padding:1.5rem 3rem;display:flex;justify-content:space-between;align-items:center;transition:all .6s var(--ease-out-expo);background:linear-gradient(to bottom, rgba(250,248,245,0.92) 0%, rgba(250,248,245,0.75) 60%, rgba(250,248,245,0) 100%);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-        .header-initial.scrolled{opacity:0;pointer-events:none;transform:translateY(-20px)}
-        .header-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-        .header-logo img{height:50px;width:auto;transition:all .6s var(--ease-out-expo)}
-        .header-nav{display:flex;gap:2rem}
-        .header-nav a{font-family:var(--font-body);font-size:13px;font-weight:500;letter-spacing:.03em;text-decoration:none;color:var(--color-brown);transition:all .3s ease;position:relative}
-        .header-nav a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--color-brand);transition:width .4s var(--ease-out-expo)}
-        .header-nav a:hover{color:var(--color-brand)}
-        .header-nav a:hover::after{width:100%}
+        /* --- NOUVEAU HEADER FLOTTANT & ORIGINAL --- */
+        .header-initial {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%;
+            max-width: 1200px;
+            z-index: 1001;
+            padding: 0.7rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all .6s var(--ease-out-expo);
+            background: rgba(28, 25, 23, 0.85); /* Fond sombre pour la force */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 2px solid var(--color-brand);
+            border-radius: 4px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        .header-initial.scrolled {
+            opacity: 0;
+            pointer-events: none;
+            transform: translate(-50%, -20px);
+        }
+        .header-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .header-logo img {
+            height: 40px;
+            width: auto;
+            filter: brightness(0) invert(1); /* Logo blanc pour le contraste */
+            transition: all .6s var(--ease-out-expo);
+        }
+        .header-nav {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        .header-nav a {
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: rgba(255,255,255,0.7);
+            transition: all .3s ease;
+            position: relative;
+        }
+        .header-nav a:hover {
+            color: #fff;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 1px;
+            background: var(--color-brand);
+            transition: all .4s var(--ease-out-expo);
+            transform: translateX(-50%);
+        }
+        .header-nav a:hover::after {
+            width: 100%;
+        }
+        .header-cta-mini {
+            background: var(--color-brand);
+            color: #fff !important;
+            padding: 8px 16px;
+            border-radius: 2px;
+            font-size: 11px !important;
+        }
+        .header-cta-mini:hover {
+            background: #fff !important;
+            color: var(--color-brand) !important;
+        }
 
+        /* --- SIDEBAR & LOGO TRANSFORM (Gardés pour le scroll) --- */
         .sidebar{position:fixed;top:0;left:0;width:var(--sidebar-width);height:100vh;background:var(--color-bg);z-index:1000;display:flex;flex-direction:column;border-right:1px solid var(--color-line);transform:translateX(-100%);opacity:0;transition:all .7s var(--ease-out-expo)}
         .sidebar.visible{transform:translateX(0);opacity:1}
         .red-stripe{position:absolute;left:23px;top:0;width:30px;height:0;background:var(--color-brand);z-index:1;transition:height .8s var(--ease-out-expo) .2s}
@@ -64,6 +138,7 @@
         .main-content{min-height:100vh;transition:margin-left .7s var(--ease-out-expo)}
         .main-content.shifted{margin-left:var(--sidebar-width)}
 
+        /* --- HERO & SECTIONS --- */
         .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
         .slideshow-bg{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0}
         .slide{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;transition:opacity 1.5s ease-in-out;object-fit:cover}
@@ -303,13 +378,15 @@
 </head>
 <body>
     <header class="header-initial" id="headerInitial">
-        <a href="#top" class="header-logo"><img src="logo-AKA-HD_transparant.png" alt="AKA France"></a>
+        <a href="#top" class="header-logo">
+            <img src="logo-AKA-HD_transparant.png" alt="AKA France">
+        </a>
         <nav class="header-nav">
             <a href="#apropos">À propos</a>
             <a href="#services">Savoir-faire</a>
             <a href="#organisation">Organisation</a>
             <a href="#equipe">Équipe</a>
-            <a href="#contact">Contact</a>
+            <a href="#contact" class="header-cta-mini">Parlons de votre projet</a>
         </nav>
     </header>
 
