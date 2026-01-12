@@ -23,14 +23,14 @@
         body{font-family:var(--font-body);font-weight:400;color:var(--color-text);background:var(--color-bg);line-height:1.6;overflow-x:hidden}
         ::selection{background:var(--color-brand);color:#fff}
 
-        .header-initial{position:fixed;top:0;left:0;right:0;z-index:1001;padding:1.5rem 3rem;display:flex;justify-content:space-between;align-items:center;transition:all .6s var(--ease-out-expo)}
+        .header-initial{position:fixed;top:0;left:0;right:0;z-index:1001;padding:1.5rem 3rem;display:flex;justify-content:space-between;align-items:center;transition:all .6s var(--ease-out-expo);background:linear-gradient(to bottom, rgba(250,248,245,0.92) 0%, rgba(250,248,245,0.75) 60%, rgba(250,248,245,0) 100%);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
         .header-initial.scrolled{opacity:0;pointer-events:none;transform:translateY(-20px)}
         .header-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
         .header-logo img{height:50px;width:auto;transition:all .6s var(--ease-out-expo)}
         .header-nav{display:flex;gap:2rem}
-        .header-nav a{font-family:var(--font-body);font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:rgba(255,255,255,.85);transition:all .3s ease;position:relative}
+        .header-nav a{font-family:var(--font-body);font-size:13px;font-weight:500;letter-spacing:.03em;text-decoration:none;color:var(--color-brown);transition:all .3s ease;position:relative}
         .header-nav a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--color-brand);transition:width .4s var(--ease-out-expo)}
-        .header-nav a:hover{color:#fff}
+        .header-nav a:hover{color:var(--color-brand)}
         .header-nav a:hover::after{width:100%}
 
         .sidebar{position:fixed;top:0;left:0;width:var(--sidebar-width);height:100vh;background:var(--color-bg);z-index:1000;display:flex;flex-direction:column;border-right:1px solid var(--color-line);transform:translateX(-100%);opacity:0;transition:all .7s var(--ease-out-expo)}
@@ -50,12 +50,12 @@
         .sidebar-logo{display:flex;flex-direction:column;align-items:flex-start;text-decoration:none}
         .sidebar-logo img{height:55px;width:auto;position:relative;margin-left:-4px}
         .sidebar-nav{flex:1;padding:1.5rem;padding-left:65px;display:flex;flex-direction:column}
-        .nav-item{font-family:var(--font-body);font-size:13px;font-weight:500;letter-spacing:.05em;text-decoration:none;color:var(--color-text-light);padding:8px 0;transition:all .4s var(--ease-out-expo);position:relative;text-transform:uppercase;display:block}
+        .nav-item{font-family:var(--font-body);font-size:13px;font-weight:500;letter-spacing:.02em;text-decoration:none;color:var(--color-text-light);padding:8px 0;transition:all .4s var(--ease-out-expo);position:relative;display:block}
         .nav-item:hover,.nav-item.active{color:var(--color-brand)}
         .nav-item.active{font-weight:600}
         .nav-item.active::before{content:'';position:absolute;left:-15px;top:50%;transform:translateY(-50%);width:8px;height:2px;background:var(--color-brand)}
         .nav-section{margin-top:16px;padding-top:16px;border-top:1px solid var(--color-line)}
-        .nav-section-title{font-family:var(--font-body);font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--color-brand);margin-bottom:8px}
+        .nav-section-title{font-family:var(--font-body);font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--color-brand);margin-bottom:8px}
         .sidebar-footer{padding:1.5rem;padding-left:65px;border-top:1px solid var(--color-line)}
         .sidebar-contact{font-size:13px;color:var(--color-text-light)}
         .sidebar-contact a{color:var(--color-brand);text-decoration:none;transition:opacity .3s ease}
@@ -163,24 +163,6 @@
         .step-icon svg{width:32px;height:32px}
         .step-title{font-family:var(--font-display);font-size:18px;font-weight:600;color:var(--color-text);margin-bottom:10px;line-height:1.2}
         .step-desc{font-family:var(--font-body);font-size:13px;color:var(--color-text-light);line-height:1.6}
-
-        .cycle-illustration{margin-top:var(--spacing-xl);padding:var(--spacing-lg) 0;display:flex;justify-content:center;align-items:center;gap:0;position:relative}
-        .cycle-item{display:flex;flex-direction:column;align-items:center;gap:16px;position:relative;z-index:1}
-        .cycle-icon-wrapper{width:100px;height:100px;background:linear-gradient(145deg,var(--color-cream) 0%,#fff 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.08);transition:all .5s var(--ease-out-expo);position:relative;overflow:hidden}
-        .cycle-item:hover .cycle-icon-wrapper{transform:scale(1.1);box-shadow:0 15px 40px rgba(155,27,27,.2)}
-        .cycle-icon-wrapper::before{content:'';position:absolute;inset:0;background:var(--color-brand);border-radius:50%;transform:scale(0);transition:transform .5s var(--ease-out-expo)}
-        .cycle-item:hover .cycle-icon-wrapper::before{transform:scale(1)}
-        .cycle-icon-wrapper svg{width:45px;height:45px;stroke:var(--color-brand);fill:none;stroke-width:1.5;transition:all .4s ease;position:relative;z-index:1}
-        .cycle-item:hover .cycle-icon-wrapper svg{stroke:#fff}
-        .cycle-label{font-family:var(--font-body);font-size:14px;font-weight:500;color:var(--color-brown);text-align:center}
-        .cycle-arrow{display:flex;align-items:center;padding:0 20px;position:relative}
-        .cycle-arrow svg{width:60px;height:24px;stroke:var(--color-brand);fill:none;stroke-width:2}
-        .cycle-arrow .arrow-line{stroke-dasharray:100;stroke-dashoffset:100;animation:drawArrow 1.5s ease forwards}
-        @keyframes drawArrow{to{stroke-dashoffset:0}}
-        .cycle-arrow:nth-child(2) .arrow-line{animation-delay:.3s}
-        .cycle-arrow:nth-child(4) .arrow-line{animation-delay:.6s}
-        .cycle-illustration.animated .cycle-arrow svg{animation:pulseArrow 2s ease-in-out infinite}
-        @keyframes pulseArrow{0%,100%{opacity:.5;transform:translateX(0)}50%{opacity:1;transform:translateX(5px)}}
 
         .org-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:var(--spacing-lg)}
         .org-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:2.5rem;transition:all .5s var(--ease-out-expo);position:relative;overflow:hidden}
@@ -303,8 +285,6 @@
             .process-step{flex-direction:row;align-items:flex-start;text-align:left;gap:20px}
             .step-number{flex-shrink:0;margin-bottom:0}
             .step-content{text-align:left}
-            .cycle-illustration{flex-direction:column;gap:20px}
-            .cycle-arrow{transform:rotate(90deg);padding:10px 0}
         }
         @media(max-width:768px){
             .stats-grid,.services-grid{grid-template-columns:1fr}
@@ -449,22 +429,6 @@
                 <div class="process-step reveal reveal-delay-2"><div class="step-number">03</div><div class="step-content"><div class="step-tag">AKA China • Cixi</div><div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v8"/><path d="M8 12h8"/></svg></div><h3 class="step-title">Production & Qualité</h3><p class="step-desc">Fabrication, assemblage et contrôle qualité strict piloté via notre ERP <strong>LARK</strong>.</p></div></div>
                 <div class="process-step reveal reveal-delay-3"><div class="step-number">04</div><div class="step-content"><div class="step-tag">Logistique</div><div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 22h20"/><path d="M4 18h16"/><path d="M3 14h18"/><path d="M12 2v8"/><path d="M4 10h16"/><path d="M12 2L4 10"/><path d="M12 2l8 8"/></svg></div><h3 class="step-title">Logistique Import</h3><p class="step-desc">Gestion des flux maritimes, dédouanement et acheminement vers nos plateformes.</p></div></div>
                 <div class="process-step reveal reveal-delay-4"><div class="step-number">05</div><div class="step-content"><div class="step-tag">France</div><div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><h3 class="step-title">Stockage & Livraison</h3><p class="step-desc">Stockage de sécurité à Nantes et livraison Juste-à-Temps chez vous. Facturation France.</p></div></div>
-            </div>
-            <div class="cycle-illustration reveal animated">
-                <div class="cycle-item">
-                    <div class="cycle-icon-wrapper"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg></div>
-                    <span class="cycle-label">Cahier des charges</span>
-                </div>
-                <div class="cycle-arrow"><svg viewBox="0 0 60 24"><path class="arrow-line" d="M0 12h50M45 6l10 6-10 6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                <div class="cycle-item">
-                    <div class="cycle-icon-wrapper"><svg viewBox="0 0 24 24"><path d="M2 20l2-2h16l2 2"/><path d="M4 18V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10"/><rect x="8" y="10" width="8" height="4"/><path d="M10 6V4h4v2"/></svg></div>
-                    <span class="cycle-label">Transport maritime</span>
-                </div>
-                <div class="cycle-arrow"><svg viewBox="0 0 60 24"><path class="arrow-line" d="M0 12h50M45 6l10 6-10 6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                <div class="cycle-item">
-                    <div class="cycle-icon-wrapper"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
-                    <span class="cycle-label">Produit livré</span>
-                </div>
             </div>
         </section>
 
