@@ -46,17 +46,17 @@
             width: 92%; max-width: 1100px; z-index: 1001; padding: 0.75rem 1.75rem;
             display: flex; justify-content: space-between; align-items: center;
             transition: all .5s var(--ease-out-expo);
-            background: rgba(28, 25, 23, 0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08); border-top: 2px solid var(--color-brand);
-            border-radius: 4px; box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+            background: rgba(240, 235, 228, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(74, 55, 40, 0.1); border-top: 2px solid var(--color-brand);
+            border-radius: 4px; box-shadow: 0 15px 40px rgba(0,0,0,0.1);
         }
         .header-initial.scrolled { opacity: 0; pointer-events: none; transform: translate(-50%, -30px); }
         .header-logo { display: flex; align-items: center; text-decoration: none; }
         .header-logo img { height: 36px; width: auto; transition: all .4s var(--ease-out-expo); }
         .header-logo:hover img { opacity: 0.8; }
         .header-nav { display: flex; gap: 2rem; align-items: center; }
-        .header-nav a { font-family: var(--font-body); font-size: 12px; font-weight: 500; letter-spacing: .04em; text-decoration: none; color: rgba(255,255,255,0.7); transition: all .3s ease; position: relative; }
-        .header-nav a:not(.header-cta-mini):hover { color: #fff; }
+        .header-nav a { font-family: var(--font-body); font-size: 12px; font-weight: 500; letter-spacing: .04em; text-decoration: none; color: var(--color-brown); transition: all .3s ease; position: relative; }
+        .header-nav a:not(.header-cta-mini):hover { color: var(--color-brand); }
         .header-nav a:not(.header-cta-mini)::after { content: ''; position: absolute; bottom: -4px; left: 50%; width: 0; height: 1px; background: var(--color-brand); transition: all .4s var(--ease-out-expo); transform: translateX(-50%); }
         .header-nav a:not(.header-cta-mini):hover::after { width: 100%; }
         .header-cta-mini { background: var(--color-brand); color: #fff !important; padding: 10px 18px; border-radius: 3px; font-size: 11px !important; letter-spacing: 0.05em; transition: all .3s ease; }
@@ -456,7 +456,7 @@
             <p class="section-desc reveal reveal-delay-2">Une structure intégrée entre la France et la Chine, couvrant l'ensemble des métiers de l'industrie : métal, plastique, assemblage et plomberie.</p>
             <div class="org-grid">
                 <div class="org-card reveal reveal-delay-2">
-                    <div class="org-card-header"><span class="org-flag">&#127467;&#127479;</span><div><h3>AKA France</h3><h4>Siège & Pilotage — Nantes (44)</h4></div></div>
+                    <div class="org-card-header"><span class="org-flag" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;">&#x1F1EB;&#x1F1F7;</span><div><h3>AKA France</h3><h4>Siège & Pilotage — Nantes (44)</h4></div></div>
                     <ul class="org-details">
                         <li><span class="label">Direction Générale</span><span class="value">Développement & Ingénierie</span></li>
                         <li><span class="label">Interface Technique</span><span class="value">Co-conception & Analyse de la valeur</span></li>
@@ -467,7 +467,7 @@
                     </ul>
                 </div>
                 <div class="org-card reveal reveal-delay-3">
-                    <div class="org-card-header"><span class="org-flag">&#127464;&#127475;</span><div><h3>AKA China</h3><h4>Structure opérationnelle — Zhejiang</h4></div></div>
+                    <div class="org-card-header"><span class="org-flag" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;">&#x1F1E8;&#x1F1F3;</span><div><h3>AKA China</h3><h4>Structure opérationnelle — Zhejiang</h4></div></div>
                     <ul class="org-details">
                         <li><span class="label">Sites industriels</span><span class="value">4 usines partenaires</span></li>
                         <li><span class="label">Mécanosoudure & Usinage</span><span class="value">Structures acier & pièces mécaniques</span></li>
@@ -518,7 +518,7 @@
                     <p class="contact-desc reveal reveal-delay-2">Décrivez votre besoin. Nous vous répondons avec une approche industrielle, claire et chiffrée. Notre équipe est à votre disposition pour étudier votre projet.</p>
                     <div class="contact-details reveal reveal-delay-3">
                         <div class="contact-item"><div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><div class="contact-label">Téléphone</div><div class="contact-value">02 51 84 92 92</div></div></div>
-                        <div class="contact-item"><div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="contact-label">Email</div><div class="contact-value">contact@akafrance.com</div></div></div>
+                        <div class="contact-item"><div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="contact-label">Email</div><div class="contact-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5e3d31302a3f3d2a1e3f353f382c3f303d3b703d3133">[email&#160;protected]</a></div></div></div>
                         <div class="contact-item"><div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="contact-label">Adresse</div><div class="contact-value">4 Rue Columelle, 44000 Nantes</div></div></div>
                     </div>
                 </div>
@@ -548,7 +548,7 @@
         </footer>
     </main>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         document.addEventListener('DOMContentLoaded', function() {
             var slides = document.querySelectorAll('.slide');
             var currentSlide = 0;
@@ -624,12 +624,3 @@
             var mobileLinks = mobileMenu.querySelectorAll('a');
             mobileLinks.forEach(function(link) {
                 link.addEventListener('click', function() {
-                    mobileMenu.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                    document.body.style.overflow = '';
-                });
-            });
-        });
-    </script>
-</body>
-</html>
