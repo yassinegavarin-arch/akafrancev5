@@ -41,7 +41,7 @@
         body { font-family: var(--font-body); font-weight: 400; color: var(--color-text); background: var(--color-bg); line-height: 1.6; overflow-x: hidden; }
         ::selection { background: var(--color-brand); color: #fff; }
 
-        /* HEADER FLOTTANT */
+        /* HEADER FLOTTANT MODIFIÉ (VERSION CLAIRE) */
         .header-initial {
             position: fixed;
             top: 20px;
@@ -55,13 +55,17 @@
             justify-content: space-between;
             align-items: center;
             transition: all .5s var(--ease-out-expo);
-            background: rgba(28, 25, 23, 0.9);
+            
+            /* Ton beige clair avec Glassmorphism */
+            background: rgba(240, 235, 228, 0.92); 
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            
+            /* Bordure plus subtile pour le beige */
+            border: 1px solid rgba(74, 55, 40, 0.15);
             border-top: 2px solid var(--color-brand);
             border-radius: 4px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+            box-shadow: 0 15px 40px rgba(74, 55, 40, 0.12);
         }
         .header-initial.scrolled {
             opacity: 0;
@@ -74,11 +78,12 @@
             text-decoration: none;
         }
         .header-logo img {
-            height: 36px;
+            height: 38px;
             width: auto;
             transition: all .4s var(--ease-out-expo);
         }
-        .header-logo:hover img { opacity: 0.8; }
+        .header-logo:hover img { transform: scale(1.02); }
+        
         .header-nav {
             display: flex;
             gap: 2rem;
@@ -87,14 +92,15 @@
         .header-nav a {
             font-family: var(--font-body);
             font-size: 12px;
-            font-weight: 500;
+            font-weight: 600;
             letter-spacing: .04em;
             text-decoration: none;
-            color: rgba(255,255,255,0.7);
+            /* Passage au gris foncé/brun pour lisibilité sur beige */
+            color: var(--color-brown);
             transition: all .3s ease;
             position: relative;
         }
-        .header-nav a:not(.header-cta-mini):hover { color: #fff; }
+        .header-nav a:not(.header-cta-mini):hover { color: var(--color-brand); }
         .header-nav a:not(.header-cta-mini)::after {
             content: '';
             position: absolute;
@@ -107,6 +113,7 @@
             transform: translateX(-50%);
         }
         .header-nav a:not(.header-cta-mini):hover::after { width: 100%; }
+        
         .header-cta-mini {
             background: var(--color-brand);
             color: #fff !important;
@@ -114,12 +121,14 @@
             border-radius: 3px;
             font-size: 11px !important;
             letter-spacing: 0.05em;
+            text-transform: uppercase;
             transition: all .3s ease;
         }
         .header-cta-mini:hover {
-            background: #fff !important;
-            color: var(--color-brand) !important;
+            background: var(--color-brown) !important;
+            color: #fff !important;
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(74, 55, 40, 0.2);
         }
 
         /* SIDEBAR */
@@ -216,6 +225,7 @@
         @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
         .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 8px; opacity: 0; animation: fadeIn 1s ease 1.5s forwards; }
         .scroll-indicator span { font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+        .scroll-indicator img { width: 20px; filter: invert(1); opacity: 0.5; }
         .scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, rgba(255,255,255,.5), transparent); animation: scrollPulse 2s ease-in-out infinite; }
         @keyframes scrollPulse { 0%, 100% { opacity: .5; transform: scaleY(1); } 50% { opacity: 1; transform: scaleY(1.2); } }
         @keyframes fadeIn { to { opacity: 1; } }
@@ -452,7 +462,9 @@
 </head>
 <body>
     <header class="header-initial" id="headerInitial">
-        <a href="#top" class="header-logo"><img src="logo-AKA-HD_transparant.png" alt="AKA France"></a>
+        <a href="#top" class="header-logo">
+            <img src="logo-AKA-HD_transparant.png" alt="AKA France">
+        </a>
         <nav class="header-nav">
             <a href="#apropos">À propos</a>
             <a href="#services">Savoir-faire</a>
