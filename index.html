@@ -41,7 +41,6 @@
         body { font-family: var(--font-body); font-weight: 400; color: var(--color-text); background: var(--color-bg); line-height: 1.6; overflow-x: hidden; }
         ::selection { background: var(--color-brand); color: #fff; }
 
-        /* HEADER INITIAL */
         .header-initial {
             position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
             width: 92%; max-width: 1100px; z-index: 1001; padding: 0.75rem 1.75rem;
@@ -63,7 +62,6 @@
         .header-cta-mini { background: var(--color-brand); color: #fff !important; padding: 10px 18px; border-radius: 3px; font-size: 11px !important; letter-spacing: 0.05em; transition: all .3s ease; }
         .header-cta-mini:hover { background: var(--color-brown) !important; color: #fff !important; transform: translateY(-2px); }
 
-        /* SIDEBAR */
         .sidebar { position: fixed; top: 0; left: 0; width: var(--sidebar-width); height: 100vh; background: var(--color-bg); z-index: 1000; display: flex; flex-direction: column; border-right: 1px solid var(--color-line); transform: translateX(-100%); opacity: 0; transition: all .7s var(--ease-out-expo); }
         .sidebar.visible { transform: translateX(0); opacity: 1; }
         .red-stripe { position: absolute; left: 23px; top: 0; width: 30px; height: 0; background: var(--color-brand); z-index: 1; transition: height .8s var(--ease-out-expo) .2s; }
@@ -85,11 +83,9 @@
         .sidebar-contact a { color: var(--color-brand); text-decoration: none; transition: opacity .3s ease; }
         .sidebar-contact a:hover { opacity: .8; }
 
-        /* MAIN CONTENT STRUCTURE */
         .main-content { min-height: 100vh; transition: margin-left .7s var(--ease-out-expo); }
         .main-content.shifted { margin-left: var(--sidebar-width); }
 
-        /* HERO */
         .hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; }
         .slideshow-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
         .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1.5s ease-in-out; object-fit: cover; }
@@ -110,14 +106,12 @@
         @keyframes scrollPulse { 0%, 100% { opacity: .5; transform: scaleY(1); } 50% { opacity: 1; transform: scaleY(1.2); } }
         @keyframes fadeIn { to { opacity: 1; } }
 
-        /* BUTTONS */
         .btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; transition: all .5s var(--ease-out-expo); cursor: pointer; border: none; position: relative; overflow: hidden; }
         .btn-primary { background: var(--color-brand); color: #fff; }
         .btn-primary:hover { background: var(--color-brand-dark); transform: translateY(-3px); box-shadow: 0 15px 40px rgba(155,27,27,.35); }
         .btn-arrow { transition: transform .4s var(--ease-out-expo); }
         .btn:hover .btn-arrow { transform: translateX(4px); }
 
-        /* SECTIONS */
         .section { padding: 120px 80px; position: relative; }
         .section-light { background: var(--color-warm-white); }
         .section-cream { background: var(--color-cream); }
@@ -133,7 +127,6 @@
         .section-desc { font-family: var(--font-body); font-size: 17px; font-weight: 300; color: var(--color-text-light); max-width: 600px; line-height: 1.75; }
         .section-dark .section-desc, .section-darker .section-desc { color: rgba(255,255,255,.7); }
 
-        /* STATS */
         .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--color-line); margin-top: var(--spacing-lg); }
         .stat { background: var(--color-warm-white); padding: var(--spacing-xl) var(--spacing-lg); text-align: center; transition: all .5s var(--ease-out-expo); position: relative; }
         .stat::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%) scaleX(0); width: 60px; height: 3px; background: var(--color-brand); transition: transform .5s var(--ease-out-expo); }
@@ -144,7 +137,6 @@
         .stat-label { font-family: var(--font-body); font-size: 15px; font-weight: 500; margin-bottom: var(--spacing-xs); color: var(--color-brown); }
         .stat-desc { font-family: var(--font-body); font-size: 14px; font-weight: 300; color: var(--color-text-light); line-height: 1.6; max-width: 280px; margin: 0 auto; }
 
-        /* ABOUT */
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); align-items: center; margin-top: var(--spacing-lg); }
         .about-text p { font-family: var(--font-body); font-size: 17px; font-weight: 300; line-height: 1.85; color: var(--color-text-light); margin-bottom: var(--spacing-md); }
         .about-text p:first-of-type::first-letter { font-family: var(--font-display); font-size: 3.5em; float: left; line-height: .8; margin-right: 12px; margin-top: 6px; color: var(--color-brand); font-weight: 500; }
@@ -164,7 +156,6 @@
         .about-badge-number { font-family: var(--font-display); font-size: 48px; font-weight: 500; line-height: 1; }
         .about-badge-text { font-family: var(--font-body); font-size: 10px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; margin-top: 4px; }
 
-        /* SERVICES */
         .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: var(--spacing-lg); }
         .service-card-wrapper { perspective: 1000px; height: 280px; }
         .service-card { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .7s var(--ease-out-expo); }
@@ -180,7 +171,6 @@
         .service-card-front h3 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 500; color: var(--color-brown); margin-bottom: .75rem; }
         .service-card-front p { font-family: var(--font-body); font-size: 14px; font-weight: 300; color: var(--color-text-light); line-height: 1.7; }
 
-        /* PROCESS */
         .process-header { text-align: center; margin-bottom: var(--spacing-xl); }
         .process-header .section-label { justify-content: center; }
         .process-header .section-label::before { display: none; }
@@ -198,7 +188,6 @@
         .step-title { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--color-text); margin-bottom: 10px; line-height: 1.2; }
         .step-desc { font-family: var(--font-body); font-size: 13px; color: var(--color-text-light); line-height: 1.6; }
 
-        /* ORGANISATION */
         .section-org { background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-warm-white) 100%); color: var(--color-text); }
         .section-org .section-label { color: var(--color-brand); }
         .section-org .section-label::before { background: var(--color-brand); }
@@ -208,7 +197,7 @@
         .org-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--color-brand); }
         .org-card:hover { border-color: rgba(155,27,27,.2); transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,.08); }
         .org-card-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.75rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--color-line); }
-        .org-flag { font-size: 2.2rem; font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif; }
+        .org-flag { font-size: 2rem; }
         .org-card h3 { font-family: var(--font-display); font-size: 1.75rem; font-weight: 500; color: var(--color-brown); }
         .org-card h4 { font-family: var(--font-body); font-size: .85rem; font-weight: 400; color: var(--color-text-light); }
         .org-details { list-style: none; }
@@ -218,7 +207,6 @@
         .org-details .label { font-family: var(--font-body); font-weight: 300; color: var(--color-text-light); }
         .org-details .value { font-family: var(--font-body); font-weight: 500; color: var(--color-brown); text-align: right; }
 
-        /* TEAM */
         .team-intro { font-family: var(--font-body); font-size: 16px; font-weight: 300; color: var(--color-text-light); max-width: 700px; line-height: 1.75; margin-top: var(--spacing-sm); padding: var(--spacing-md); background: linear-gradient(135deg, rgba(155,27,27,.05) 0%, transparent 100%); border-left: 3px solid var(--color-brand); border-radius: 0 8px 8px 0; }
         .team-intro strong { color: var(--color-brand); font-weight: 500; }
         .team-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--spacing-md); margin-top: var(--spacing-lg); }
@@ -242,7 +230,6 @@
         .team-flip-hint { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); font-size: 10px; color: var(--color-text-light); opacity: .5; display: flex; align-items: center; gap: 4px; }
         .team-flip-hint svg { width: 12px; height: 12px; }
 
-        /* QUALITY */
         .quality-content { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-top: var(--spacing-lg); }
         .quality-text p { font-family: var(--font-body); font-size: 17px; font-weight: 300; color: var(--color-text-light); line-height: 1.85; margin-bottom: 1.5rem; }
         .quality-features { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
@@ -255,7 +242,6 @@
         .quality-feature h4 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 500; color: var(--color-brown); margin-bottom: .5rem; position: relative; z-index: 1; }
         .quality-feature p { font-family: var(--font-body); font-size: 13px; font-weight: 300; color: var(--color-text-light); margin-bottom: 0; position: relative; z-index: 1; }
 
-        /* CONTACT */
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); margin-top: var(--spacing-lg); }
         .contact-desc { font-family: var(--font-body); font-size: 17px; font-weight: 300; line-height: 1.85; color: rgba(255,255,255,.7); margin-bottom: var(--spacing-lg); }
         .contact-details { margin-bottom: var(--spacing-lg); }
@@ -280,7 +266,6 @@
         .form-textarea { min-height: 130px; resize: vertical; }
         .contact-form .btn-primary { width: 100%; justify-content: center; padding: 18px 32px; }
 
-        /* FOOTER */
         footer { padding: var(--spacing-xl) 80px var(--spacing-lg); background: linear-gradient(180deg, #0f0e0c 0%, #1a1815 100%); color: rgba(255,255,255,.5); position: relative; }
         footer::before { content: ''; position: absolute; top: 0; left: 80px; right: 80px; height: 1px; background: linear-gradient(90deg, transparent, var(--color-brand), transparent); }
         .footer-top { display: grid; grid-template-columns: 1fr 2fr 1fr; gap: var(--spacing-lg); padding-bottom: var(--spacing-lg); border-bottom: 1px solid rgba(255,255,255,.08); margin-bottom: var(--spacing-md); }
@@ -307,7 +292,6 @@
         .footer-legal a { font-family: var(--font-body); font-size: 12px; font-weight: 300; color: rgba(255,255,255,.4); text-decoration: none; transition: color .3s ease; }
         .footer-legal a:hover { color: var(--color-brand); }
 
-        /* MOBILE STYLES */
         .mobile-header { display: none; position: fixed; top: 0; left: 0; right: 0; z-index: 1001; background: var(--color-bg); padding: 1rem 1.5rem; border-bottom: 1px solid var(--color-line); }
         .mobile-header-inner { display: flex; justify-content: space-between; align-items: center; }
         .mobile-logo { height: 45px; width: auto; }
@@ -332,7 +316,6 @@
         .mobile-menu a { font-family: var(--font-display); font-size: 2rem; color: var(--color-brown); text-decoration: none; transition: color .3s ease; }
         .mobile-menu a:hover { color: var(--color-brand); }
 
-        /* REVEAL ANIMATION */
         .reveal { opacity: 0; transform: translateY(40px); transition: all .8s var(--ease-out-expo); }
         .reveal.visible { opacity: 1; transform: translateY(0); }
         .reveal-delay-1 { transition-delay: .1s; }
@@ -341,7 +324,6 @@
         .reveal-delay-4 { transition-delay: .4s; }
         .reveal-delay-5 { transition-delay: .5s; }
 
-        /* MEDIA QUERIES */
         @media (max-width: 1200px) { 
             .team-grid { grid-template-columns: repeat(3, 1fr); } 
             .footer-top { grid-template-columns: 1fr 1fr; }
@@ -529,7 +511,7 @@
             <h2 class="section-title reveal reveal-delay-1">Deux continents, une vision</h2>
             <div class="org-grid">
                 <div class="org-card reveal reveal-delay-2">
-                    <div class="org-card-header"><span class="org-flag">&#x1F1EB;&#x1F1F7;</span><div><h3>AKA France</h3><h4>Siège & Pilotage — Nantes (44)</h4></div></div>
+                    <div class="org-card-header"><span class="org-flag">&#127467;&#127479;</span><div><h3>AKA France</h3><h4>Siège & Pilotage — Nantes (44)</h4></div></div>
                     <ul class="org-details">
                         <li><span class="label">Direction Générale & Stratégique</span><span class="value">Développement & Ingénierie</span></li>
                         <li><span class="label">Interface Technique</span><span class="value">Co-conception & Analyse de la valeur</span></li>
@@ -540,7 +522,7 @@
                     </ul>
                 </div>
                 <div class="org-card reveal reveal-delay-3">
-                    <div class="org-card-header"><span class="org-flag">&#x1F1E8;&#x1F1F3;</span><div><h3>AKA China</h3><h4>Structure opérationnelle</h4></div></div>
+                    <div class="org-card-header"><span class="org-flag">&#127464;&#127475;</span><div><h3>AKA China</h3><h4>Structure opérationnelle</h4></div></div>
                     <ul class="org-details">
                         <li><span class="label">Sites industriels</span><span class="value">3 usines partenaires</span></li>
                         <li><span class="label">Site 1 — Cixi</span><span class="value">Mécanosoudure & Usinage</span></li>
@@ -599,6 +581,50 @@
                         </div>
                     </div>
                 </div>
+                <div class="team-member-wrapper reveal reveal-delay-2">
+                    <div class="team-member">
+                        <div class="team-front">
+                            <div class="team-avatar"><span class="team-avatar-placeholder">Photo à venir</span></div>
+                            <div class="team-name">Arnaud Naël</div>
+                            <div class="team-role">Chef de projet</div>
+                            <div class="team-flip-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M21 12l-4-4M21 12l-4 4"/></svg> Survolez</div>
+                        </div>
+                        <div class="team-back">
+                            <div class="team-back-name">Arnaud Naël</div>
+                            <div class="team-back-role">Chef de projet</div>
+                            <div class="team-contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                <a href="tel:+33251849294">+33 (0)2 51 84 92 94</a>
+                            </div>
+                            <div class="team-contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                <a href="mailto:a.nael@akafrance.com">a.nael@akafrance.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member-wrapper reveal reveal-delay-3">
+                    <div class="team-member">
+                        <div class="team-front">
+                            <div class="team-avatar"><span class="team-avatar-placeholder">Photo à venir</span></div>
+                            <div class="team-name">Mélanie Gérony</div>
+                            <div class="team-role">ADV / Logistique</div>
+                            <div class="team-flip-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M21 12l-4-4M21 12l-4 4"/></svg> Survolez</div>
+                        </div>
+                        <div class="team-back">
+                            <div class="team-back-name">Mélanie Gérony</div>
+                            <div class="team-back-role">ADV / Logistique</div>
+                            <div class="team-contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                <a href="tel:+33251849292">+33 (0)2 51 84 92 92</a>
+                            </div>
+                            <div class="team-contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                <a href="mailto:m.gerony@akafrance.com">m.gerony@akafrance.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="team-member-wrapper reveal reveal-delay-4">
                     <div class="team-member">
                         <div class="team-front">
@@ -610,6 +636,10 @@
                         <div class="team-back">
                             <div class="team-back-name">Yassine Gavarin</div>
                             <div class="team-back-role">Qualité & Développement</div>
+                            <div class="team-contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                <a href="tel:+33761618445">+33 (0)7 61 61 84 45</a>
+                            </div>
                             <div class="team-contact-item">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                                 <a href="mailto:y.gavarin@akafrance.com">y.gavarin@akafrance.com</a>
@@ -642,17 +672,19 @@
             <h2 class="section-title reveal reveal-delay-1">Parlons de votre projet</h2>
             <div class="contact-grid">
                 <div>
-                    <p class="contact-desc reveal reveal-delay-2">Décrivez votre besoin. Nous vous répondons avec une approche industrielle, claire et chiffrée.</p>
+                    <p class="contact-desc reveal reveal-delay-2">Décrivez votre besoin. Nous vous répondons avec une approche industrielle, claire et chiffrée. Notre équipe est à votre disposition pour étudier votre projet.</p>
                     <div class="contact-details reveal reveal-delay-3">
                         <div class="contact-item"><div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><div class="contact-label">Téléphone</div><div class="contact-value"><a href="tel:+33251849292">02 51 84 92 92</a></div></div></div>
                         <div class="contact-item"><div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="contact-label">Email</div><div class="contact-value"><a href="mailto:contact@akafrance.com">contact@akafrance.com</a></div></div></div>
+                        <div class="contact-item"><div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="contact-label">Adresse</div><div class="contact-value">4 Rue Columelle, 44000 Nantes</div></div></div>
                     </div>
                 </div>
-                <form class="contact-form reveal reveal-delay-4">
-                    <div class="form-row form-row-half"><div><label class="form-label">Prénom *</label><input type="text" class="form-input" required></div><div><label class="form-label">Nom *</label><input type="text" class="form-input" required></div></div>
-                    <div class="form-row"><label class="form-label">Email *</label><input type="email" class="form-input" required></div>
-                    <div class="form-row"><label class="form-label">Message</label><textarea class="form-textarea"></textarea></div>
-                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                <form class="contact-form reveal reveal-delay-4" action="#" method="post">
+                    <div class="form-row form-row-half"><div><label class="form-label">Prénom <span class="req">*</span></label><input type="text" name="first_name" class="form-input" required placeholder="Votre prénom"></div><div><label class="form-label">Nom <span class="req">*</span></label><input type="text" name="last_name" class="form-input" required placeholder="Votre nom"></div></div>
+                    <div class="form-row form-row-half"><div><label class="form-label">Téléphone <span class="req">*</span></label><input type="tel" name="phone" class="form-input" required placeholder="+33 6 00 00 00 00"></div><div><label class="form-label">Email <span class="req">*</span></label><input type="email" name="email" class="form-input" required placeholder="vous@exemple.com"></div></div>
+                    <div class="form-row"><label class="form-label">Entreprise</label><input type="text" name="company" class="form-input" placeholder="Nom de votre entreprise"></div>
+                    <div class="form-row"><label class="form-label">Message</label><textarea name="message" class="form-textarea" placeholder="Décrivez votre projet ou votre besoin..."></textarea></div>
+                    <button type="submit" class="btn btn-primary">Envoyer le message<svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
                 </form>
             </div>
         </section>
@@ -665,30 +697,52 @@
                 </div>
                 <div class="footer-nav">
                     <div class="footer-nav-col">
-                        <h5>Menu</h5>
+                        <h5>Navigation</h5>
                         <ul>
                             <li><a href="#apropos">À propos</a></li>
                             <li><a href="#services">Savoir-faire</a></li>
+                            <li><a href="#processus">Méthodologie</a></li>
                             <li><a href="#organisation">Organisation</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-nav-col">
+                        <h5>Ressources</h5>
+                        <ul>
+                            <li><a href="#equipe">Notre équipe</a></li>
+                            <li><a href="#qualite">Qualité</a></li>
+                            <li><a href="#contact">Contact</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="footer-contact-col">
-                    <h5>Contact</h5>
-                    <div class="footer-contact-item">02 51 84 92 92</div>
-                    <div class="footer-contact-item">Nantes, France</div>
+                    <h5>Contact direct</h5>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <a href="tel:+33251849292">02 51 84 92 92</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <a href="mailto:contact@akafrance.com">contact@akafrance.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>4 Rue Columelle, 44000 Nantes</span>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
                 <div class="footer-copy">© 2025 AKA France SAS. Tous droits réservés.</div>
-                <div class="footer-legal"><a href="#">Mentions légales</a></div>
+                <div class="footer-legal">
+                    <a href="mentions-legales.html">Mentions légales</a>
+                    <a href="mentions-legales.html#cgv">CGV</a>
+                    <a href="mentions-legales.html#confidentialite">Politique de confidentialité</a>
+                </div>
             </div>
         </footer>
     </main>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // SLIDESHOW
             var slides = document.querySelectorAll('.slide');
             var currentSlide = 0;
             if (slides.length > 0) {
@@ -699,7 +753,6 @@
                 }, 4000);
             }
 
-            // SCROLL EFFECTS
             var headerInitial = document.getElementById('headerInitial');
             var sidebar = document.getElementById('sidebar');
             var mainContent = document.getElementById('mainContent');
@@ -722,7 +775,26 @@
             }
             window.addEventListener('scroll', handleScroll);
 
-            // REVEAL ON SCROLL
+            var sections = document.querySelectorAll('section[id]');
+            var navItems = document.querySelectorAll('.nav-item');
+            function updateActiveNav() {
+                var scrollY = window.scrollY;
+                sections.forEach(function(section) {
+                    var sectionTop = section.offsetTop - 150;
+                    var sectionHeight = section.offsetHeight;
+                    var sectionId = section.getAttribute('id');
+                    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                        navItems.forEach(function(item) {
+                            item.classList.remove('active');
+                            if (item.getAttribute('href') === '#' + sectionId) {
+                                item.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }
+            window.addEventListener('scroll', updateActiveNav);
+
             var revealElements = document.querySelectorAll('.reveal');
             var revealObserver = new IntersectionObserver(function(entries) {
                 entries.forEach(function(entry) {
@@ -730,8 +802,10 @@
                         entry.target.classList.add('visible');
                     }
                 });
-            }, { threshold: 0.1 });
-            revealElements.forEach(function(el) { revealObserver.observe(el); });
+            }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+            revealElements.forEach(function(el) {
+                revealObserver.observe(el);
+            });
         });
 
         function toggleMenu() {
@@ -739,6 +813,7 @@
             var toggle = document.getElementById('menuToggle');
             menu.classList.toggle('active');
             toggle.classList.toggle('active');
+            document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
         }
     </script>
 </body>
