@@ -64,7 +64,7 @@
 
         .sidebar { position: fixed; top: 0; left: 0; width: var(--sidebar-width); height: 100vh; background: var(--color-bg); z-index: 1000; display: flex; flex-direction: column; border-right: 1px solid var(--color-line); transform: translateX(-100%); opacity: 0; transition: all .7s var(--ease-out-expo); }
         .sidebar.visible { transform: translateX(0); opacity: 1; }
-        .red-stripe { position: absolute; left: 23px; top: 0; width: 30px; height: 0; background: var(--color-brand); z-index: 1; transition: height 2s var(--ease-out-expo) .3s; }
+        .red-stripe { position: absolute; left: 23px; top: 0; width: 30px; height: 0; background: var(--color-brand); z-index: 1; transition: height 3s var(--ease-out-expo) .3s; }
         .sidebar.visible .red-stripe { height: 100%; }
         .sidebar-content { flex: 1; display: flex; flex-direction: column; overflow: hidden; position: relative; z-index: 2; opacity: 0; transition: opacity .5s ease .4s; }
         .sidebar.visible .sidebar-content { opacity: 1; }
