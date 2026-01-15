@@ -159,7 +159,7 @@
         .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: var(--spacing-lg); }
         .service-card-wrapper { perspective: 1000px; height: 280px; }
         .service-card { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 1s var(--ease-out-expo); }
-        .service-card-wrapper:hover .service-card { transform: rotateY(180deg); }
+        .service-card.flipped { transform: rotateY(180deg); }
         .service-card-front, .service-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 4px; overflow: hidden; }
         .service-card-front { background: #fff; padding: 2rem; display: flex; flex-direction: column; }
         .service-card-back { background: var(--color-brown); transform: rotateY(180deg); display: flex; align-items: center; justify-content: center; color: #fff; background-size: cover; background-position: center; }
@@ -849,6 +849,12 @@
             toggle.classList.toggle('active');
             document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
         }
+        document.querySelectorAll('.service-card-wrapper').forEach(function(wrapper) {
+    wrapper.addEventListener('mouseenter', function() {
+        var card = wrapper.querySelector('.service-card');
+        card.classList.toggle('flipped');
+    });
+});
     </script>
 </body>
 </html>
