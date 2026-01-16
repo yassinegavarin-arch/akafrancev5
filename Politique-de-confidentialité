@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de Confidentialité | AKA France</title>
+    <meta name="description" content="Politique de confidentialité et de protection des données personnelles d'AKA France, alliance industrielle Franco-Chinoise.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --aka-red: #B71C1C;
+            --aka-red-dark: #8B1515;
+            --aka-red-light: #D32F2F;
+            --aka-black: #1A1A1A;
+            --aka-gray-dark: #333333;
+            --aka-gray: #666666;
+            --aka-gray-light: #999999;
+            --aka-cream: #FAFAF8;
+            --aka-white: #FFFFFF;
+            --aka-gold: #C9A962;
+            
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2.5rem;
+            --space-xl: 4rem;
+            --space-xxl: 6rem;
+        }
+        
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--aka-gray-dark);
+            background: var(--aka-cream);
+        }
+        
+        /* Header */
+        header {
+            background: var(--aka-white);
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-md) var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            text-decoration: none;
+            color: var(--aka-black);
+        }
+        
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--aka-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.1;
+            text-align: center;
+        }
+        
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        
+        .logo-tagline {
+            font-family: var(--font-body);
+            font-size: 0.65rem;
+            color: var(--aka-gray);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-top: -2px;
+        }
+        
+        .header-contact {
+            font-size: 0.85rem;
+            color: var(--aka-gray);
+        }
+        
+        .header-contact a {
+            color: var(--aka-red);
+            text-decoration: none;
+        }
+        
+        .header-contact a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--aka-black) 0%, #2D2D2D 100%);
+            color: var(--aka-white);
+            padding: var(--space-xxl) var(--space-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: var(--aka-red);
+            clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+            opacity: 0.15;
+        }
+        
+        .hero::after {
+            content: '隐私';
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 12rem;
+            font-family: var(--font-display);
+            color: var(--aka-white);
+            opacity: 0.03;
+            letter-spacing: 0.1em;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 500;
+            margin-bottom: var(--space-sm);
+            letter-spacing: 0.02em;
+        }
+        
+        .hero h1 span {
+            color: var(--aka-gold);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .hero-meta {
+            display: flex;
+            gap: var(--space-lg);
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+        
+        .hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            color: rgba(255,255,255,0.6);
+        }
+        
+        .hero-meta-item strong {
+            color: var(--aka-white);
+            font-weight: 500;
+        }
+        
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--space-xl) var(--space-lg);
+        }
+        
+        /* Table of Contents */
+        .toc {
+            background: var(--aka-white);
+            border-radius: 8px;
+            padding: var(--space-lg);
+            margin-bottom: var(--space-xl);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            border-left: 4px solid var(--aka-red);
+        }
+        
+        .toc h2 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--aka-black);
+            margin-bottom: var(--space-md);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+        
+        .toc h2::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--aka-red);
+            border-radius: 50%;
+        }
+        
+        .toc-list {
+            list-style: none;
+            columns: 2;
+            column-gap: var(--space-lg);
+        }
+        
+        @media (max-width: 600px) {
+            .toc-list {
+                columns: 1;
+            }
+        }
+        
+        .toc-list li {
+            break-inside: avoid;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .toc-list a {
+            color: var(--aka-gray-dark);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: baseline;
+            gap: var(--space-xs);
+            padding: var(--space-xs) 0;
+            transition: color 0.2s ease;
+        }
+        
+        .toc-list a:hover {
+            color: var(--aka-red);
+        }
+        
+        .toc-list a .num {
+            color: var(--aka-red);
+            font-weight: 600;
+            min-width: 2rem;
+        }
+        
+        /* Legal Content */
+        .legal-intro {
+            background: var(--aka-white);
+            padding: var(--space-lg);
+            border-radius: 8px;
+            margin-bottom: var(--space-xl);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+        }
+        
+        .legal-intro p {
+            color: var(--aka-gray);
+            font-size: 0.95rem;
+        }
+        
+        .legal-intro p:first-child {
+            font-size: 1rem;
+            color: var(--aka-gray-dark);
+            margin-bottom: var(--space-sm);
+        }
+        
+        /* Article Sections */
+        .article {
+            background: var(--aka-white);
+            border-radius: 8px;
+            padding: var(--space-lg);
+            margin-bottom: var(--space-md);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            scroll-margin-top: 100px;
+        }
+        
+        .article-header {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-md);
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+        
+        .article-number {
+            background: var(--aka-red);
+            color: var(--aka-white);
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 600;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+        
+        .article-title {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--aka-black);
+        }
+        
+        .article-content p {
+            margin-bottom: var(--space-sm);
+            text-align: justify;
+            hyphens: auto;
+        }
+        
+        .article-content p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Sub-articles */
+        .sub-article {
+            margin-top: var(--space-md);
+            padding-left: var(--space-md);
+            border-left: 2px solid rgba(183, 28, 28, 0.2);
+        }
+        
+        .sub-article-title {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--aka-gray-dark);
+            margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+        
+        .sub-article-title .num {
+            color: var(--aka-red);
+        }
+        
+        /* Important highlights */
+        .highlight {
+            background: linear-gradient(to right, rgba(183, 28, 28, 0.08), transparent);
+            padding: var(--space-sm) var(--space-md);
+            border-left: 3px solid var(--aka-red);
+            margin: var(--space-md) 0;
+            font-size: 0.95rem;
+        }
+        
+        /* Data table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--space-md) 0;
+            font-size: 0.9rem;
+        }
+        
+        .data-table th,
+        .data-table td {
+            padding: var(--space-sm);
+            text-align: left;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+        
+        .data-table th {
+            background: rgba(183, 28, 28, 0.05);
+            font-weight: 600;
+            color: var(--aka-black);
+        }
+        
+        .data-table tr:hover {
+            background: rgba(0,0,0,0.02);
+        }
+        
+        /* Lists */
+        .article-content ul {
+            margin: var(--space-sm) 0;
+            padding-left: var(--space-md);
+        }
+        
+        .article-content ul li {
+            margin-bottom: var(--space-xs);
+            position: relative;
+        }
+        
+        .article-content ul li::marker {
+            color: var(--aka-red);
+        }
+        
+        /* Contact box */
+        .contact-box {
+            background: linear-gradient(135deg, var(--aka-black) 0%, #2D2D2D 100%);
+            color: var(--aka-white);
+            padding: var(--space-lg);
+            border-radius: 8px;
+            margin: var(--space-md) 0;
+        }
+        
+        .contact-box h4 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            margin-bottom: var(--space-sm);
+            color: var(--aka-gold);
+        }
+        
+        .contact-box p {
+            margin-bottom: var(--space-xs);
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .contact-box a {
+            color: var(--aka-gold);
+            text-decoration: none;
+        }
+        
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Rights icons */
+        .rights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-md);
+            margin: var(--space-md) 0;
+        }
+        
+        .right-item {
+            background: rgba(183, 28, 28, 0.03);
+            padding: var(--space-md);
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(183, 28, 28, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .right-item:hover {
+            border-color: var(--aka-red);
+            transform: translateY(-2px);
+        }
+        
+        .right-item .icon {
+            font-size: 2rem;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .right-item h5 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--aka-black);
+            margin-bottom: var(--space-xs);
+        }
+        
+        .right-item p {
+            font-size: 0.85rem;
+            color: var(--aka-gray);
+            margin: 0;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--aka-black);
+            color: var(--aka-white);
+            padding: var(--space-xl) var(--space-lg);
+            margin-top: var(--space-xxl);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-xl);
+        }
+        
+        .footer-section h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: var(--space-md);
+            color: var(--aka-gold);
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        
+        .footer-section a {
+            text-decoration: none;
+            display: block;
+        }
+        
+        .footer-section a:hover {
+            color: var(--aka-white);
+        }
+        
+        .footer-bottom {
+            max-width: 1200px;
+            margin: var(--space-xl) auto 0;
+            padding-top: var(--space-lg);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+        
+        /* Print Styles */
+        @media print {
+            header, .toc, footer {
+                display: none;
+            }
+            
+            .hero {
+                background: white;
+                color: black;
+                padding: var(--space-lg);
+            }
+            
+            .hero::before, .hero::after {
+                display: none;
+            }
+            
+            .hero h1, .hero h1 span {
+                color: black;
+            }
+            
+            .hero-subtitle, .hero-meta-item {
+                color: var(--aka-gray);
+            }
+            
+            .article {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            main {
+                max-width: 100%;
+            }
+            
+            .contact-box {
+                background: #f5f5f5;
+                color: black;
+            }
+            
+            .contact-box h4, .contact-box a {
+                color: var(--aka-red);
+            }
+            
+            .contact-box p {
+                color: var(--aka-gray-dark);
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .article {
+            animation: fadeInUp 0.5s ease-out;
+        }
+        
+        /* Back to top */
+        .back-to-top {
+            position: fixed;
+            bottom: var(--space-lg);
+            right: var(--space-lg);
+            width: 50px;
+            height: 50px;
+            background: var(--aka-red);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(183, 28, 28, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--aka-red-dark);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: var(--space-sm);
+                text-align: center;
+            }
+            
+            .hero-meta {
+                flex-direction: column;
+                gap: var(--space-sm);
+            }
+            
+            .data-table {
+                font-size: 0.8rem;
+            }
+            
+            .data-table th,
+            .data-table td {
+                padding: var(--space-xs);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="https://www.akafrance.com" class="logo">
+                <div class="logo-icon">精<br>知</div>
+                <div>
+                    <div class="logo-text">AKA</div>
+                    <div class="logo-tagline">Alliance of Knowledge & Accuracy</div>
+                </div>
+            </a>
+            <div class="header-contact">
+                <a href="mailto:contact@akafrance.com">contact@akafrance.com</a> · +33 (0)2 XX XX XX XX
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Politique de <span>Confidentialité</span></h1>
+            <p class="hero-subtitle">AKA France s'engage à protéger vos données personnelles conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés.</p>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <span>📅</span>
+                    <span>Dernière mise à jour : <strong>1er janvier 2026</strong></span>
+                </div>
+                <div class="hero-meta-item">
+                    <span>🇪🇺</span>
+                    <span>Conforme au <strong>RGPD (UE) 2016/679</strong></span>
+                </div>
+                <div class="hero-meta-item">
+                    <span>🇫🇷</span>
+                    <span>Loi <strong>Informatique et Libertés</strong></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <main>
+        <!-- Table of Contents -->
+        <nav class="toc">
+            <h2>Sommaire</h2>
+            <ol class="toc-list">
+                <li><a href="#art1"><span class="num">1</span> Responsable du traitement</a></li>
+                <li><a href="#art2"><span class="num">2</span> Données collectées</a></li>
+                <li><a href="#art3"><span class="num">3</span> Finalités du traitement</a></li>
+                <li><a href="#art4"><span class="num">4</span> Base légale</a></li>
+                <li><a href="#art5"><span class="num">5</span> Destinataires des données</a></li>
+                <li><a href="#art6"><span class="num">6</span> Transferts internationaux</a></li>
+                <li><a href="#art7"><span class="num">7</span> Durée de conservation</a></li>
+                <li><a href="#art8"><span class="num">8</span> Vos droits</a></li>
+                <li><a href="#art9"><span class="num">9</span> Cookies</a></li>
+                <li><a href="#art10"><span class="num">10</span> Sécurité des données</a></li>
+                <li><a href="#art11"><span class="num">11</span> Modifications</a></li>
+                <li><a href="#art12"><span class="num">12</span> Contact et réclamations</a></li>
+            </ol>
+        </nav>
+        
+        <!-- Introduction -->
+        <div class="legal-intro">
+            <p>La société <strong>AKA France</strong> accorde une importance primordiale à la protection de vos données personnelles et au respect de votre vie privée.</p>
+            <p>La présente politique de confidentialité a pour objet de vous informer sur la manière dont nous collectons, traitons et protégeons vos données personnelles lorsque vous utilisez notre site internet, nos services ou lorsque vous entrez en relation commerciale avec nous.</p>
+        </div>
+        
+        <!-- Article 1 -->
+        <article class="article" id="art1">
+            <div class="article-header">
+                <div class="article-number">1</div>
+                <h2 class="article-title">Responsable du traitement</h2>
+            </div>
+            <div class="article-content">
+                <p>Le responsable du traitement de vos données personnelles est :</p>
+                <div class="contact-box">
+                    <h4>AKA France</h4>
+                    <p><strong>Forme juridique :</strong> SARL au capital de 50 000 €</p>
+                    <p><strong>Siège social :</strong> 6, rue Mazagran – 44100 Nantes, France</p>
+                    <p><strong>RCS :</strong> Nantes</p>
+                    <p><strong>Email :</strong> <a href="mailto:rgpd@akafrance.com">rgpd@akafrance.com</a></p>
+                    <p><strong>Téléphone :</strong> +33 (0)2 XX XX XX XX</p>
+                </div>
+                <p>AKA France détermine les finalités et les moyens du traitement de vos données personnelles dans le cadre de ses activités de fabrication industrielle sur mesure et de services associés.</p>
+            </div>
+        </article>
+        
+        <!-- Article 2 -->
+        <article class="article" id="art2">
+            <div class="article-header">
+                <div class="article-number">2</div>
+                <h2 class="article-title">Données collectées</h2>
+            </div>
+            <div class="article-content">
+                <p>Dans le cadre de nos activités, nous pouvons être amenés à collecter les catégories de données personnelles suivantes :</p>
+                
+                <div class="sub-article">
+                    <h3 class="sub-article-title"><span class="num">2.1</span> Données d'identification</h3>
+                    <ul>
+                        <li>Nom, prénom</li>
+                        <li>Fonction / Poste occupé</li>
+                        <li>Coordonnées professionnelles (adresse, téléphone, email)</li>
+                        <li>Raison sociale de l'entreprise</li>
+                    </ul>
+                </div>
+                
+                <div class="sub-article">
+                    <h3 class="sub-article-title"><span class="num">2.2</span> Données commerciales</h3>
+                    <ul>
+                        <li>Historique des commandes et des devis</li>
+                        <li>Correspondances commerciales</li>
+                        <li>Cahiers des charges et spécifications techniques</li>
+                        <li>Informations de facturation et de paiement</li>
+                    </ul>
+                </div>
+                
+                <div class="sub-article">
+                    <h3 class="sub-article-title"><span class="num">2.3</span> Données de navigation</h3>
+                    <ul>
+                        <li>Adresse IP</li>
+                        <li>Données de connexion et de navigation sur le site</li>
+                        <li>Cookies et traceurs (voir article 9)</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight">
+                    <p><strong>Note :</strong> AKA France ne collecte aucune donnée sensible au sens du RGPD (origine ethnique, opinions politiques, convictions religieuses, données de santé, etc.).</p>
+                </div>
+            </div>
+        </article>
+        
+        <!-- Article 3 -->
+        <article class="article" id="art3">
+            <div class="article-header">
+                <div class="article-number">3</div>
+                <h2 class="article-title">Finalités du traitement</h2>
+            </div>
+            <div class="article-content">
+                <p>Vos données personnelles sont collectées et traitées pour les finalités suivantes :</p>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Finalité</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Gestion de la relation commerciale</strong></td>
+                            <td>Traitement des demandes de devis, suivi des commandes, gestion des contrats et de la facturation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Exécution des prestations</strong></td>
+                            <td>Fabrication des produits, coordination avec nos partenaires de production, suivi qualité</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Communication</strong></td>
+                            <td>Réponse à vos demandes d'information, envoi de newsletters (avec consentement)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Prospection commerciale</strong></td>
+                            <td>Information sur nos nouveaux produits et services (B2B uniquement)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Obligations légales</strong></td>
+                            <td>Respect des obligations comptables, fiscales et réglementaires</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Amélioration des services</strong></td>
+                            <td>Analyse de la navigation sur le site, statistiques d'utilisation</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+        
+        <!-- Article 4 -->
+        <article class="article" id="art4">
+            <div class="article-header">
+                <div class="article-number">4</div>
+                <h2 class="article-title">Base légale du traitement</h2>
+            </div>
+            <div class="article-content">
+                <p>Conformément au RGPD, chaque traitement de données personnelles repose sur une base légale appropriée :</p>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Base légale</th>
+                            <th>Traitements concernés</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Exécution du contrat</strong><br><em>(Art. 6.1.b RGPD)</em></td>
+                            <td>Gestion des commandes, fabrication, livraison, facturation, service après-vente</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Intérêt légitime</strong><br><em>(Art. 6.1.f RGPD)</em></td>
+                            <td>Prospection B2B, amélioration des services, sécurité du site, prévention de la fraude</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Obligation légale</strong><br><em>(Art. 6.1.c RGPD)</em></td>
+                            <td>Conservation des factures, déclarations fiscales, réponse aux réquisitions judiciaires</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Consentement</strong><br><em>(Art. 6.1.a RGPD)</em></td>
+                            <td>Newsletters, cookies non essentiels, témoignages clients</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+        
+        <!-- Article 5 -->
+        <article class="article" id="art5">
+            <div class="article-header">
+                <div class="article-number">5</div>
+                <h2 class="article-title">Destinataires des données</h2>
+            </div>
+            <div class="article-content">
+                <p>Vos données personnelles peuvent être communiquées aux catégories de destinataires suivantes :</p>
+                
+                <div class="sub-article">
+                    <h3 class="sub-article-title"><span class="num">5.1</span> Destinataires internes</h3>
+                    <ul>
+                        <li>Personnel habilité d'AKA France (direction, service commercial, logistique, comptabilité)</li>
+                    </ul>
+                </div>
+                
+                <div class="sub-article">
+                    <h3 class="sub-article-title"><span class="num">5.2</span> Sous-traitants et partenaires</h3>
+                    <ul>
+                        <li>Partenaires de production (usines partenaires en Chine)</li>
+                        <li>Prestataires logistiques et transporteurs</li>
+                        <li>Hébergeur du site internet</li>
+                        <li>Prestataires de services informatiques</li>
+                        <li>Expert-comptable et commissaire aux comptes</li>
+                    </ul>
+                </div>
+                
+                <div class="sub-article">
+                    <h3 class="sub-article-title"><span class="num">5.3</span> Autorités</h3>
+                    <ul>
+                        <li>Administrations fiscales et douanières</li>
+                        <li>Autorités judiciaires sur réquisition</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight">
+                    <p>AKA France <strong>ne vend jamais</strong> vos données personnelles à des tiers. Nos sous-traitants sont contractuellement tenus de respecter la confidentialité et la sécurité de vos données.</p>
+                </div>
+            </div>
+        </article>
+        
+        <!-- Article 6 -->
+        <article class="article" id="art6">
+            <div class="article-header">
+                <div class="article-number">6</div>
+                <h2 class="article-title">Transferts internationaux de données</h2>
+            </div>
+            <div class="article-content">
+                <p>Dans le cadre de nos activités de fabrication, certaines données peuvent être transférées vers nos partenaires de production situés en <strong>République Populaire de Chine</strong>.</p>
+                
+                <div class="highlight">
+                    <p><strong>Garanties mises en place :</strong></p>
+                </div>
+                
+                <ul>
+                    <li><strong>Clauses Contractuelles Types (CCT)</strong> de la Commission européenne intégrées dans nos contrats avec les partenaires chinois</li>
+                    <li><strong>Minimisation des données</strong> : seules les données strictement nécessaires à l'exécution des commandes sont transférées (spécifications techniques, références commandes)</li>
+                    <li><strong>Mesures de sécurité renforcées</strong> : chiffrement des échanges, accès restreints</li>
+                    <li><strong>Engagements de confidentialité</strong> signés par tous nos partenaires</li>
+                </ul>
+                
+                <p>Vous pouvez obtenir une copie des garanties appropriées en nous contactant à l'adresse <a href="mailto:rgpd@akafrance.com" style="color: var(--aka-red);">rgpd@akafrance.com</a>.</p>
+            </div>
+        </article>
+        
+        <!-- Article 7 -->
+        <article class="article" id="art7">
+            <div class="article-header">
+                <div class="article-number">7</div>
+                <h2 class="article-title">Durée de conservation</h2>
+            </div>
+            <div class="article-content">
+                <p>Vos données personnelles sont conservées pendant une durée limitée, déterminée en fonction de la finalité du traitement :</p>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Type de données</th>
+                            <th>Durée de conservation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Données clients actifs</td>
+                            <td>Durée de la relation commerciale + 5 ans</td>
+                        </tr>
+                        <tr>
+                            <td>Données prospects</td>
+                            <td>3 ans à compter du dernier contact</td>
+                        </tr>
+                        <tr>
+                            <td>Documents comptables (factures)</td>
+                            <td>10 ans (obligation légale)</td>
+                        </tr>
+                        <tr>
+                            <td>Contrats et documents contractuels</td>
+                            <td>10 ans après la fin du contrat</td>
+                        </tr>
+                        <tr>
+                            <td>Données de navigation / Cookies</td>
+                            <td>13 mois maximum</td>
+                        </tr>
+                        <tr>
+                            <td>Consentements (preuve)</td>
+                            <td>Durée du consentement + 5 ans</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p>À l'expiration de ces délais, vos données sont supprimées ou anonymisées de manière irréversible.</p>
+            </div>
+        </article>
+        
+        <!-- Article 8 -->
+        <article class="article" id="art8">
+            <div class="article-header">
+                <div class="article-number">8</div>
+                <h2 class="article-title">Vos droits</h2>
+            </div>
+            <div class="article-content">
+                <p>Conformément au RGPD et à la loi Informatique et Libertés, vous disposez des droits suivants sur vos données personnelles :</p>
+                
+                <div class="rights-grid">
+                    <div class="right-item">
+                        <div class="icon">👁️</div>
+                        <h5>Droit d'accès</h5>
+                        <p>Obtenir confirmation du traitement et accéder à vos données</p>
+                    </div>
+                    <div class="right-item">
+                        <div class="icon">✏️</div>
+                        <h5>Droit de rectification</h5>
+                        <p>Corriger des données inexactes ou incomplètes</p>
+                    </div>
+                    <div class="right-item">
+                        <div class="icon">🗑️</div>
+                        <h5>Droit à l'effacement</h5>
+                        <p>Demander la suppression de vos données</p>
+                    </div>
+                    <div class="right-item">
+                        <div class="icon">⏸️</div>
+                        <h5>Droit à la limitation</h5>
+                        <p>Limiter temporairement le traitement</p>
+                    </div>
+                    <div class="right-item">
+                        <div class="icon">📦</div>
+                        <h5>Droit à la portabilité</h5>
+                        <p>Recevoir vos données dans un format structuré</p>
+                    </div>
+                    <div class="right-item">
+                        <div class="icon">🚫</div>
+                        <h5>Droit d'opposition</h5>
+                        <p>Vous opposer au traitement (prospection notamment)</p>
+                    </div>
+                </div>
+                
+                <div class="sub-article">
+                    <h3 class="sub-article-title">Comment exercer vos droits ?</h3>
+                    <p>Vous pouvez exercer vos droits à tout moment en nous contactant :</p>
+                    <ul>
+                        <li><strong>Par email :</strong> <a href="mailto:rgpd@akafrance.com" style="color: var(--aka-red);">rgpd@akafrance.com</a></li>
+                        <li><strong>Par courrier :</strong> AKA France – Service RGPD – 6, rue Mazagran – 44100 Nantes</li>
+                    </ul>
+                    <p>Nous nous engageons à répondre à votre demande dans un délai d'<strong>un mois</strong>. Une pièce d'identité pourra vous être demandée pour vérifier votre identité.</p>
+                </div>
+                
+                <div class="sub-article">
+                    <h3 class="sub-article-title">Directives post-mortem</h3>
+                    <p>Conformément à la loi Informatique et Libertés, vous pouvez définir des directives relatives à la conservation, l'effacement et la communication de vos données personnelles après votre décès.</p>
+                </div>
+            </div>
+        </article>
+        
+        <!-- Article 9 -->
+        <article class="article" id="art9">
+            <div class="article-header">
+                <div class="article-number">9</div>
+                <h2 class="article-title">Cookies et traceurs</h2>
+            </div>
+            <div class="article-content">
+                <p>Notre site internet utilise des cookies pour améliorer votre expérience de navigation et analyser l'utilisation du site.</p>
+                
+                <div class="sub-article">
+                    <h3 class="sub-article-title"><span class="num">9.1</span> Types de cookies utilisés</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Finalité</th>
+                                <th>Consentement requis</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Cookies essentiels</strong></td>
+                                <td>Fonctionnement du site, sécurité, mémorisation des préférences</td>
+                                <td>Non</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cookies analytiques</strong></td>
+                                <td>Statistiques de fréquentation, amélioration du site</td>
+                                <td>Oui</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cookies marketing</strong></td>
+                                <td>Suivi publicitaire, personnalisation</td>
+                                <td>Oui</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="sub-article">
+                    <h3 class="sub-article-title"><span class="num">9.2</span> Gestion de vos préférences</h3>
+                    <p>Lors de votre première visite, un bandeau vous permet d'accepter ou de refuser les cookies non essentiels. Vous pouvez modifier vos choix à tout moment via le lien « Gérer les cookies » en bas de page ou dans les paramètres de votre navigateur.</p>
+                </div>
+                
+                <div class="sub-article">
+                    <h3 class="sub-article-title"><span class="num">9.3</span> Durée de conservation</h3>
+                    <p>Les cookies sont conservés pour une durée maximale de <strong>13 mois</strong> conformément aux recommandations de la CNIL.</p>
+                </div>
+            </div>
+        </article>
+        
+        <!-- Article 10 -->
+        <article class="article" id="art10">
+            <div class="article-header">
+                <div class="article-number">10</div>
+                <h2 class="article-title">Sécurité des données</h2>
+            </div>
+            <div class="article-content">
+                <p>AKA France met en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données personnelles contre tout accès non autorisé, perte, destruction ou altération :</p>
+                
+                <ul>
+                    <li><strong>Chiffrement</strong> des données sensibles et des communications (HTTPS/TLS)</li>
+                    <li><strong>Contrôle d'accès</strong> strict basé sur le principe du besoin d'en connaître</li>
+                    <li><strong>Authentification renforcée</strong> pour l'accès aux systèmes d'information</li>
+                    <li><strong>Sauvegardes régulières</strong> et plan de reprise d'activité</li>
+                    <li><strong>Sensibilisation</strong> de notre personnel aux enjeux de la protection des données</li>
+                    <li><strong>Audit régulier</strong> de nos pratiques et de nos sous-traitants</li>
+                </ul>
+                
+                <div class="highlight">
+                    <p>En cas de violation de données susceptible d'engendrer un risque élevé pour vos droits et libertés, AKA France s'engage à vous en informer dans les meilleurs délais, conformément à l'article 34 du RGPD.</p>
+                </div>
+            </div>
+        </article>
+        
+        <!-- Article 11 -->
+        <article class="article" id="art11">
+            <div class="article-header">
+                <div class="article-number">11</div>
+                <h2 class="article-title">Modifications de la politique</h2>
+            </div>
+            <div class="article-content">
+                <p>La présente politique de confidentialité peut être modifiée à tout moment pour tenir compte des évolutions légales, réglementaires ou de nos pratiques.</p>
+                <p>En cas de modification substantielle, nous vous en informerons par tout moyen approprié (mention sur le site, email si vous êtes client). La date de dernière mise à jour est indiquée en haut de cette page.</p>
+                <p>Nous vous invitons à consulter régulièrement cette politique pour prendre connaissance des éventuelles modifications.</p>
+            </div>
+        </article>
+        
+        <!-- Article 12 -->
+        <article class="article" id="art12">
+            <div class="article-header">
+                <div class="article-number">12</div>
+                <h2 class="article-title">Contact et réclamations</h2>
+            </div>
+            <div class="article-content">
+                <p>Pour toute question relative à cette politique de confidentialité ou à l'exercice de vos droits, vous pouvez nous contacter :</p>
+                
+                <div class="contact-box">
+                    <h4>Délégué à la protection des données (DPO)</h4>
+                    <p><strong>AKA France – Service RGPD</strong></p>
+                    <p>6, rue Mazagran – 44100 Nantes</p>
+                    <p>Email : <a href="mailto:rgpd@akafrance.com">rgpd@akafrance.com</a></p>
+                </div>
+                
+                <div class="sub-article">
+                    <h3 class="sub-article-title">Réclamation auprès de la CNIL</h3>
+                    <p>Si vous estimez, après nous avoir contactés, que vos droits ne sont pas respectés, vous avez la possibilité d'introduire une réclamation auprès de l'autorité de contrôle française :</p>
+                    <ul>
+                        <li><strong>CNIL</strong> – Commission Nationale de l'Informatique et des Libertés</li>
+                        <li>3 Place de Fontenoy – TSA 80715 – 75334 Paris Cedex 07</li>
+                        <li>Site internet : <a href="https://www.cnil.fr" target="_blank" rel="noopener" style="color: var(--aka-red);">www.cnil.fr</a></li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>AKA France</h3>
+                <p>Alliance industrielle Franco-Chinoise<br>
+                Fabrication sur mesure depuis Nantes</p>
+                <p style="margin-top: 1rem;">
+                    6, rue Mazagran<br>
+                    44100 Nantes, France
+                </p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <a href="mailto:contact@akafrance.com">contact@akafrance.com</a>
+                <a href="mailto:rgpd@akafrance.com">rgpd@akafrance.com</a>
+                <a href="tel:+33XXXXXXXXX">+33 (0)2 XX XX XX XX</a>
+                <a href="https://www.akafrance.com">www.akafrance.com</a>
+            </div>
+            <div class="footer-section">
+                <h3>Informations légales</h3>
+                <a href="/mentions-legales">Mentions légales</a>
+                <a href="/cgvs">CGVS</a>
+                <a href="#">Gérer les cookies</a>
+                <p style="margin-top: 1rem;">Dernière mise à jour : 1er janvier 2026</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 AKA France — Alliance of Knowledge & Accuracy — Tous droits réservés
+        </div>
+    </footer>
+    
+    <button class="back-to-top" id="backToTop" aria-label="Retour en haut">↑</button>
+    
+    <script>
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Smooth scroll for TOC links
+        document.querySelectorAll('.toc-list a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+</html>
