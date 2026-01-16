@@ -1,82 +1,753 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mentions légales — AKA France</title>
-  <link rel="icon" type="image/png" href="faviconV5.png">
-  <meta name="robots" content="noindex,follow" />
-  <style>
-    body{font-family:Arial,Helvetica,sans-serif;max-width:900px;margin:40px auto;padding:0 16px;line-height:1.6;color:#111}
-    h1{margin:0 0 16px}
-    h2{margin:28px 0 8px;font-size:18px}
-    .muted{color:#555}
-    a{color:inherit}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentions Légales | AKA France</title>
+    <meta name="description" content="Mentions légales du site AKA France, alliance industrielle Franco-Chinoise.">
+    <meta name="robots" content="noindex,follow">
+    <link rel="icon" type="image/png" href="faviconV5.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --aka-red: #B71C1C;
+            --aka-red-dark: #8B1515;
+            --aka-red-light: #D32F2F;
+            --aka-black: #1A1A1A;
+            --aka-gray-dark: #333333;
+            --aka-gray: #666666;
+            --aka-gray-light: #999999;
+            --aka-cream: #FAFAF8;
+            --aka-white: #FFFFFF;
+            --aka-gold: #C9A962;
+            
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2.5rem;
+            --space-xl: 4rem;
+            --space-xxl: 6rem;
+        }
+        
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--aka-gray-dark);
+            background: var(--aka-cream);
+        }
+        
+        /* Header */
+        header {
+            background: var(--aka-white);
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-md) var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            text-decoration: none;
+            color: var(--aka-black);
+        }
+        
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--aka-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.1;
+            text-align: center;
+        }
+        
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        
+        .logo-tagline {
+            font-family: var(--font-body);
+            font-size: 0.65rem;
+            color: var(--aka-gray);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-top: -2px;
+        }
+        
+        .header-contact {
+            font-size: 0.85rem;
+            color: var(--aka-gray);
+        }
+        
+        .header-contact a {
+            color: var(--aka-red);
+            text-decoration: none;
+        }
+        
+        .header-contact a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--aka-black) 0%, #2D2D2D 100%);
+            color: var(--aka-white);
+            padding: var(--space-xxl) var(--space-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: var(--aka-red);
+            clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+            opacity: 0.15;
+        }
+        
+        .hero::after {
+            content: '法律';
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 12rem;
+            font-family: var(--font-display);
+            color: var(--aka-white);
+            opacity: 0.03;
+            letter-spacing: 0.1em;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 500;
+            margin-bottom: var(--space-sm);
+            letter-spacing: 0.02em;
+        }
+        
+        .hero h1 span {
+            color: var(--aka-gold);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .hero-meta {
+            display: flex;
+            gap: var(--space-lg);
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+        
+        .hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            color: rgba(255,255,255,0.6);
+        }
+        
+        .hero-meta-item strong {
+            color: var(--aka-white);
+            font-weight: 500;
+        }
+        
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--space-xl) var(--space-lg);
+        }
+        
+        /* Back link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            color: var(--aka-gray);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: var(--space-lg);
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: var(--aka-red);
+        }
+        
+        .back-link svg {
+            width: 16px;
+            height: 16px;
+        }
+        
+        /* Article Sections */
+        .article {
+            background: var(--aka-white);
+            border-radius: 8px;
+            padding: var(--space-lg);
+            margin-bottom: var(--space-md);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            scroll-margin-top: 100px;
+        }
+        
+        .article-header {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-md);
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+        
+        .article-icon {
+            background: var(--aka-red);
+            color: var(--aka-white);
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+        
+        .article-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .article-title {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--aka-black);
+        }
+        
+        .article-content p {
+            margin-bottom: var(--space-sm);
+            text-align: justify;
+            hyphens: auto;
+        }
+        
+        .article-content p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Info box */
+        .info-box {
+            background: linear-gradient(135deg, var(--aka-black) 0%, #2D2D2D 100%);
+            color: var(--aka-white);
+            padding: var(--space-lg);
+            border-radius: 8px;
+            margin: var(--space-md) 0;
+        }
+        
+        .info-box h4 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            margin-bottom: var(--space-sm);
+            color: var(--aka-gold);
+        }
+        
+        .info-box p {
+            margin-bottom: var(--space-xs);
+            color: rgba(255,255,255,0.85);
+            line-height: 1.8;
+        }
+        
+        .info-box a {
+            color: var(--aka-gold);
+            text-decoration: none;
+        }
+        
+        .info-box a:hover {
+            text-decoration: underline;
+        }
+        
+        .info-box strong {
+            color: var(--aka-white);
+        }
+        
+        /* Highlight */
+        .highlight {
+            background: linear-gradient(to right, rgba(183, 28, 28, 0.08), transparent);
+            padding: var(--space-sm) var(--space-md);
+            border-left: 3px solid var(--aka-red);
+            margin: var(--space-md) 0;
+            font-size: 0.95rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--aka-black);
+            color: var(--aka-white);
+            padding: var(--space-xl) var(--space-lg);
+            margin-top: var(--space-xxl);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-xl);
+        }
+        
+        .footer-section h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: var(--space-md);
+            color: var(--aka-gold);
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        
+        .footer-section a {
+            text-decoration: none;
+            display: block;
+        }
+        
+        .footer-section a:hover {
+            color: var(--aka-white);
+        }
+        
+        .footer-bottom {
+            max-width: 1200px;
+            margin: var(--space-xl) auto 0;
+            padding-top: var(--space-lg);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+        
+        /* Print Styles */
+        @media print {
+            header, footer {
+                display: none;
+            }
+            
+            .hero {
+                background: white;
+                color: black;
+                padding: var(--space-lg);
+            }
+            
+            .hero::before, .hero::after {
+                display: none;
+            }
+            
+            .hero h1, .hero h1 span {
+                color: black;
+            }
+            
+            .hero-subtitle, .hero-meta-item {
+                color: var(--aka-gray);
+            }
+            
+            .article {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            main {
+                max-width: 100%;
+            }
+            
+            .info-box {
+                background: #f5f5f5;
+                color: black;
+            }
+            
+            .info-box h4, .info-box a {
+                color: var(--aka-red);
+            }
+            
+            .info-box p {
+                color: var(--aka-gray-dark);
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .article {
+            animation: fadeInUp 0.5s ease-out;
+        }
+        
+        /* Back to top */
+        .back-to-top {
+            position: fixed;
+            bottom: var(--space-lg);
+            right: var(--space-lg);
+            width: 50px;
+            height: 50px;
+            background: var(--aka-red);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(183, 28, 28, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--aka-red-dark);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: var(--space-sm);
+                text-align: center;
+            }
+            
+            .hero-meta {
+                flex-direction: column;
+                gap: var(--space-sm);
+            }
+            
+            .article-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
 </head>
 <body>
-  <p class="muted"><a href="./">Retour au site</a></p>
-  <h1>Mentions légales</h1>
-
-  <h2>Éditeur</h2>
-  <p>
-    <strong>AKA France</strong><br/>
-    Société par actions simplifiée (SAS)<br/>
-    Capital social : 50 000 €<br/>
-    Siège social : 4 Rue Columelle, 44000 Nantes, France<br/>
-    RCS Nantes : 410 212 062 00047<br/>
-    SIREN : 410 212 062<br/>
-    TVA intracommunautaire : FR11410212062<br/>
-    Téléphone : +33 (0)2 51 84 92 92<br/>
-    Email : contact@akafrance.com
-  </p>
-
-  <h2>Direction de la publication</h2>
-  <p>La direction de la publication est assurée par le Président de la société AKA France.</p>
-
-  <h2>Hébergement</h2>
-  <p>
-    <strong>Infomaniak Network SA</strong><br/>
-    Rue Eugène-Marziano 25, 1227 Les Acacias, Genève, Suisse<br/>
-    Téléphone : +41 (0)22 820 35 44
-  </p>
-
-  <h2>Objet du site</h2>
-  <p>
-    Le présent site a pour objet la présentation des activités, savoir-faire et services industriels proposés par AKA France.
-    Les informations diffusées sur ce site sont fournies à titre indicatif et général. Elles ne constituent ni une offre commerciale,
-    ni un engagement contractuel.
-  </p>
-
-  <h2>Propriété intellectuelle</h2>
-  <p>
-    L’ensemble du site, ainsi que chacun de ses éléments pris isolément (textes, images, photographies, illustrations, logos, marques,
-    chartes graphiques, documents), est protégé par le droit de la propriété intellectuelle et demeure la propriété exclusive de AKA France
-    ou de ses partenaires. Toute reproduction, représentation, diffusion ou exploitation, totale ou partielle, sans autorisation écrite préalable,
-    est strictement interdite.
-  </p>
-
-  <h2>Responsabilité</h2>
-  <p>
-    AKA France met en œuvre tous les moyens raisonnables pour assurer l’exactitude et la mise à jour des informations diffusées sur le site.
-    Toutefois, la société ne saurait être tenue responsable des erreurs, omissions, ou d’une indisponibilité temporaire du site, ni des dommages
-    directs ou indirects résultant de l’accès ou de l’utilisation du site.
-  </p>
-
-  <h2>Données personnelles</h2>
-  <p>
-    Les données personnelles collectées via les formulaires du site sont traitées par AKA France uniquement dans le cadre de la gestion des demandes
-    et des relations professionnelles. Conformément à la réglementation applicable, notamment le RGPD, toute personne dispose d’un droit d’accès,
-    de rectification, d’opposition et de suppression des données la concernant. Ces droits peuvent être exercés en adressant une demande à :
-    contact@akafrance.com
-  </p>
-
-  <h2>Cookies</h2>
-  <p>
-    Le site est susceptible d’utiliser des cookies techniques et de mesure d’audience. L’utilisateur peut paramétrer son navigateur afin de refuser
-    tout ou partie des cookies.
-  </p>
-
-  <p class="muted">Dernière mise à jour : 03/01/2026</p>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">精<br>知</div>
+                <div>
+                    <div class="logo-text">AKA</div>
+                    <div class="logo-tagline">Alliance of Knowledge & Accuracy</div>
+                </div>
+            </a>
+            <div class="header-contact">
+                <a href="mailto:contact@akafrance.com">contact@akafrance.com</a> · +33 (0)2 51 84 92 92
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Mentions <span>Légales</span></h1>
+            <p class="hero-subtitle">Informations légales relatives au site internet AKA France et à la société éditrice.</p>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <span>📅</span>
+                    <span>Dernière mise à jour : <strong>3 janvier 2026</strong></span>
+                </div>
+                <div class="hero-meta-item">
+                    <span>🏢</span>
+                    <span>Éditeur : <strong>AKA France SAS</strong></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <main>
+        <a href="index.html" class="back-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Retour au site
+        </a>
+        
+        <!-- Éditeur -->
+        <article class="article">
+            <div class="article-header">
+                <div class="article-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 21h18M3 7v1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7H3l2-4h14l2 4M5 21V10.85M19 21V10.85"/>
+                    </svg>
+                </div>
+                <h2 class="article-title">Éditeur du site</h2>
+            </div>
+            <div class="article-content">
+                <div class="info-box">
+                    <h4>AKA France</h4>
+                    <p><strong>Forme juridique :</strong> Société par Actions Simplifiée (SAS)</p>
+                    <p><strong>Capital social :</strong> 50 000 €</p>
+                    <p><strong>Siège social :</strong> 4 Rue Columelle, 44000 Nantes, France</p>
+                    <p><strong>RCS Nantes :</strong> 410 212 062 00047</p>
+                    <p><strong>SIREN :</strong> 410 212 062</p>
+                    <p><strong>TVA intracommunautaire :</strong> FR11410212062</p>
+                    <p><strong>Téléphone :</strong> <a href="tel:+33251849292">+33 (0)2 51 84 92 92</a></p>
+                    <p><strong>Email :</strong> <a href="mailto:contact@akafrance.com">contact@akafrance.com</a></p>
+                </div>
+            </div>
+        </article>
+        
+        <!-- Direction de publication -->
+        <article class="article">
+            <div class="article-header">
+                <div class="article-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                </div>
+                <h2 class="article-title">Direction de la publication</h2>
+            </div>
+            <div class="article-content">
+                <p>La direction de la publication est assurée par le Président de la société AKA France.</p>
+            </div>
+        </article>
+        
+        <!-- Hébergement -->
+        <article class="article">
+            <div class="article-header">
+                <div class="article-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                </div>
+                <h2 class="article-title">Hébergement</h2>
+            </div>
+            <div class="article-content">
+                <div class="info-box">
+                    <h4>Infomaniak Network SA</h4>
+                    <p><strong>Adresse :</strong> Rue Eugène-Marziano 25, 1227 Les Acacias, Genève, Suisse</p>
+                    <p><strong>Téléphone :</strong> +41 (0)22 820 35 44</p>
+                </div>
+            </div>
+        </article>
+        
+        <!-- Objet du site -->
+        <article class="article">
+            <div class="article-header">
+                <div class="article-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="16" x2="12" y2="12"/>
+                        <line x1="12" y1="8" x2="12.01" y2="8"/>
+                    </svg>
+                </div>
+                <h2 class="article-title">Objet du site</h2>
+            </div>
+            <div class="article-content">
+                <p>Le présent site a pour objet la présentation des activités, savoir-faire et services industriels proposés par AKA France.</p>
+                <div class="highlight">
+                    <p>Les informations diffusées sur ce site sont fournies à titre indicatif et général. Elles ne constituent ni une offre commerciale, ni un engagement contractuel.</p>
+                </div>
+            </div>
+        </article>
+        
+        <!-- Propriété intellectuelle -->
+        <article class="article">
+            <div class="article-header">
+                <div class="article-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                </div>
+                <h2 class="article-title">Propriété intellectuelle</h2>
+            </div>
+            <div class="article-content">
+                <p>L'ensemble du site, ainsi que chacun de ses éléments pris isolément (textes, images, photographies, illustrations, logos, marques, chartes graphiques, documents), est protégé par le droit de la propriété intellectuelle et demeure la propriété exclusive de AKA France ou de ses partenaires.</p>
+                <div class="highlight">
+                    <p><strong>Toute reproduction, représentation, diffusion ou exploitation, totale ou partielle, sans autorisation écrite préalable, est strictement interdite.</strong></p>
+                </div>
+            </div>
+        </article>
+        
+        <!-- Responsabilité -->
+        <article class="article">
+            <div class="article-header">
+                <div class="article-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                </div>
+                <h2 class="article-title">Responsabilité</h2>
+            </div>
+            <div class="article-content">
+                <p>AKA France met en œuvre tous les moyens raisonnables pour assurer l'exactitude et la mise à jour des informations diffusées sur le site.</p>
+                <p>Toutefois, la société ne saurait être tenue responsable des erreurs, omissions, ou d'une indisponibilité temporaire du site, ni des dommages directs ou indirects résultant de l'accès ou de l'utilisation du site.</p>
+            </div>
+        </article>
+        
+        <!-- Données personnelles -->
+        <article class="article">
+            <div class="article-header">
+                <div class="article-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                <h2 class="article-title">Données personnelles</h2>
+            </div>
+            <div class="article-content">
+                <p>Les données personnelles collectées via les formulaires du site sont traitées par AKA France uniquement dans le cadre de la gestion des demandes et des relations professionnelles.</p>
+                <p>Conformément à la réglementation applicable, notamment le RGPD, toute personne dispose d'un droit d'accès, de rectification, d'opposition et de suppression des données la concernant.</p>
+                <div class="highlight">
+                    <p>Ces droits peuvent être exercés en adressant une demande à : <a href="mailto:contact@akafrance.com" style="color: var(--aka-red);">contact@akafrance.com</a></p>
+                </div>
+                <p>Pour plus d'informations, consultez notre <a href="Politique-de-confidentialite.html" style="color: var(--aka-red);">Politique de confidentialité</a>.</p>
+            </div>
+        </article>
+        
+        <!-- Cookies -->
+        <article class="article">
+            <div class="article-header">
+                <div class="article-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <circle cx="12" cy="12" r="4"/>
+                        <line x1="4.93" y1="4.93" x2="9.17" y2="9.17"/>
+                        <line x1="14.83" y1="14.83" x2="19.07" y2="19.07"/>
+                        <line x1="14.83" y1="9.17" x2="19.07" y2="4.93"/>
+                        <line x1="4.93" y1="19.07" x2="9.17" y2="14.83"/>
+                    </svg>
+                </div>
+                <h2 class="article-title">Cookies</h2>
+            </div>
+            <div class="article-content">
+                <p>Le site est susceptible d'utiliser des cookies techniques et de mesure d'audience.</p>
+                <p>L'utilisateur peut paramétrer son navigateur afin de refuser tout ou partie des cookies.</p>
+            </div>
+        </article>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>AKA France</h3>
+                <p>Alliance industrielle Franco-Chinoise<br>
+                Fabrication sur mesure depuis Nantes</p>
+                <p style="margin-top: 1rem;">
+                    4 Rue Columelle<br>
+                    44000 Nantes, France
+                </p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <a href="mailto:contact@akafrance.com">contact@akafrance.com</a>
+                <a href="tel:+33251849292">+33 (0)2 51 84 92 92</a>
+                <a href="index.html">www.akafrance.com</a>
+            </div>
+            <div class="footer-section">
+                <h3>Informations légales</h3>
+                <a href="mentions-legales.html">Mentions légales</a>
+                <a href="CGVS.html">CGVS</a>
+                <a href="Politique-de-confidentialite.html">Politique de confidentialité</a>
+                <p style="margin-top: 1rem;">Dernière mise à jour : 3 janvier 2026</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 AKA France — Alliance of Knowledge & Accuracy — Tous droits réservés
+        </div>
+    </footer>
+    
+    <button class="back-to-top" id="backToTop" aria-label="Retour en haut">↑</button>
+    
+    <script>
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
