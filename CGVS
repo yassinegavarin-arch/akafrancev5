@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGVS – Conditions Générales de Vente et de Services | AKA France</title>
+    <meta name="description" content="Conditions Générales de Vente et de Services d'AKA France, alliance industrielle Franco-Chinoise spécialisée dans la fabrication sur mesure.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --aka-red: #B71C1C;
+            --aka-red-dark: #8B1515;
+            --aka-red-light: #D32F2F;
+            --aka-black: #1A1A1A;
+            --aka-gray-dark: #333333;
+            --aka-gray: #666666;
+            --aka-gray-light: #999999;
+            --aka-cream: #FAFAF8;
+            --aka-white: #FFFFFF;
+            --aka-gold: #C9A962;
+            
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2.5rem;
+            --space-xl: 4rem;
+            --space-xxl: 6rem;
+        }
+        
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--aka-gray-dark);
+            background: var(--aka-cream);
+        }
+        
+        /* Header */
+        header {
+            background: var(--aka-white);
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-md) var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            text-decoration: none;
+            color: var(--aka-black);
+        }
+        
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--aka-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.1;
+            text-align: center;
+        }
+        
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        
+        .logo-tagline {
+            font-family: var(--font-body);
+            font-size: 0.65rem;
+            color: var(--aka-gray);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-top: -2px;
+        }
+        
+        .header-contact {
+            font-size: 0.85rem;
+            color: var(--aka-gray);
+        }
+        
+        .header-contact a {
+            color: var(--aka-red);
+            text-decoration: none;
+        }
+        
+        .header-contact a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--aka-black) 0%, #2D2D2D 100%);
+            color: var(--aka-white);
+            padding: var(--space-xxl) var(--space-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: var(--aka-red);
+            clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+            opacity: 0.15;
+        }
+        
+        .hero::after {
+            content: '精知';
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 12rem;
+            font-family: var(--font-display);
+            color: var(--aka-white);
+            opacity: 0.03;
+            letter-spacing: 0.1em;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 500;
+            margin-bottom: var(--space-sm);
+            letter-spacing: 0.02em;
+        }
+        
+        .hero h1 span {
+            color: var(--aka-gold);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .hero-meta {
+            display: flex;
+            gap: var(--space-lg);
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+        
+        .hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            color: rgba(255,255,255,0.6);
+        }
+        
+        .hero-meta-item strong {
+            color: var(--aka-white);
+            font-weight: 500;
+        }
+        
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--space-xl) var(--space-lg);
+        }
+        
+        /* Table of Contents */
+        .toc {
+            background: var(--aka-white);
+            border-radius: 8px;
+            padding: var(--space-lg);
+            margin-bottom: var(--space-xl);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            border-left: 4px solid var(--aka-red);
+        }
+        
+        .toc h2 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--aka-black);
+            margin-bottom: var(--space-md);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+        
+        .toc h2::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--aka-red);
+            border-radius: 50%;
+        }
+        
+        .toc-list {
+            list-style: none;
+            columns: 2;
+            column-gap: var(--space-lg);
+        }
+        
+        @media (max-width: 600px) {
+            .toc-list {
+                columns: 1;
+            }
+        }
+        
+        .toc-list li {
+            break-inside: avoid;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .toc-list a {
+            color: var(--aka-gray-dark);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: baseline;
+            gap: var(--space-xs);
+            padding: var(--space-xs) 0;
+            transition: color 0.2s ease;
+        }
+        
+        .toc-list a:hover {
+            color: var(--aka-red);
+        }
+        
+        .toc-list a .num {
+            color: var(--aka-red);
+            font-weight: 600;
+            min-width: 2rem;
+        }
+        
+        /* Legal Content */
+        .legal-intro {
+            background: var(--aka-white);
+            padding: var(--space-lg);
+            border-radius: 8px;
+            margin-bottom: var(--space-xl);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+        }
+        
+        .legal-intro p {
+            color: var(--aka-gray);
+            font-size: 0.95rem;
+        }
+        
+        .legal-intro p:first-child {
+            font-size: 1rem;
+            color: var(--aka-gray-dark);
+            margin-bottom: var(--space-sm);
+        }
+        
+        /* Article Sections */
+        .article {
+            background: var(--aka-white);
+            border-radius: 8px;
+            padding: var(--space-lg);
+            margin-bottom: var(--space-md);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            scroll-margin-top: 100px;
+        }
+        
+        .article-header {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-md);
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+        
+        .article-number {
+            background: var(--aka-red);
+            color: var(--aka-white);
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 600;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+        
+        .article-title {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--aka-black);
+        }
+        
+        .article-content p {
+            margin-bottom: var(--space-sm);
+            text-align: justify;
+            hyphens: auto;
+        }
+        
+        .article-content p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Sub-articles */
+        .sub-article {
+            margin-top: var(--space-md);
+            padding-left: var(--space-md);
+            border-left: 2px solid rgba(183, 28, 28, 0.2);
+        }
+        
+        .sub-article-title {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--aka-gray-dark);
+            margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+        
+        .sub-article-title .num {
+            color: var(--aka-red);
+        }
+        
+        /* Important highlights */
+        .highlight {
+            background: linear-gradient(to right, rgba(183, 28, 28, 0.08), transparent);
+            padding: var(--space-sm) var(--space-md);
+            border-left: 3px solid var(--aka-red);
+            margin: var(--space-md) 0;
+            font-size: 0.95rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--aka-black);
+            color: var(--aka-white);
+            padding: var(--space-xl) var(--space-lg);
+            margin-top: var(--space-xxl);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-xl);
+        }
+        
+        .footer-section h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: var(--space-md);
+            color: var(--aka-gold);
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        
+        .footer-section a {
+            text-decoration: none;
+            display: block;
+        }
+        
+        .footer-section a:hover {
+            color: var(--aka-white);
+        }
+        
+        .footer-bottom {
+            max-width: 1200px;
+            margin: var(--space-xl) auto 0;
+            padding-top: var(--space-lg);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+        
+        /* Print Styles */
+        @media print {
+            header, .toc, footer {
+                display: none;
+            }
+            
+            .hero {
+                background: white;
+                color: black;
+                padding: var(--space-lg);
+            }
+            
+            .hero::before, .hero::after {
+                display: none;
+            }
+            
+            .hero h1, .hero h1 span {
+                color: black;
+            }
+            
+            .hero-subtitle, .hero-meta-item {
+                color: var(--aka-gray);
+            }
+            
+            .article {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            main {
+                max-width: 100%;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .article {
+            animation: fadeInUp 0.5s ease-out;
+        }
+        
+        /* Back to top */
+        .back-to-top {
+            position: fixed;
+            bottom: var(--space-lg);
+            right: var(--space-lg);
+            width: 50px;
+            height: 50px;
+            background: var(--aka-red);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(183, 28, 28, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--aka-red-dark);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="https://www.akafrance.com" class="logo">
+                <div class="logo-icon">精<br>知</div>
+                <div>
+                    <div class="logo-text">AKA</div>
+                    <div class="logo-tagline">Alliance of Knowledge & Accuracy</div>
+                </div>
+            </a>
+            <div class="header-contact">
+                <a href="mailto:contact@akafrance.com">contact@akafrance.com</a> · +33 (0)2 51 84 92 92
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Conditions Générales de <span>Vente et de Services</span></h1>
+            <p class="hero-subtitle">Les présentes CGVS régissent l'ensemble des relations commerciales entre AKA France et ses clients dans le cadre de prestations de fabrication industrielle sur mesure.</p>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <span>📅</span>
+                    <span>Applicables au <strong>1er janvier 2026</strong></span>
+                </div>
+                <div class="hero-meta-item">
+                    <span>📍</span>
+                    <span>Juridiction : <strong>Tribunal de commerce de Nantes</strong></span>
+                </div>
+                <div class="hero-meta-item">
+                    <span>⚖️</span>
+                    <span>Droit applicable : <strong>Droit français</strong></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <main>
+        <!-- Table of Contents -->
+        <nav class="toc">
+            <h2>Sommaire</h2>
+            <ol class="toc-list">
+                <li><a href="#art1"><span class="num">1</span> Généralités</a></li>
+                <li><a href="#art2"><span class="num">2</span> Prestations</a></li>
+                <li><a href="#art3"><span class="num">3</span> Exécution des prestations</a></li>
+                <li><a href="#art4"><span class="num">4</span> Audits et Confidentialité</a></li>
+                <li><a href="#art5"><span class="num">5</span> Conditions financières</a></li>
+                <li><a href="#art6"><span class="num">6</span> Réserve de propriété</a></li>
+                <li><a href="#art7"><span class="num">7</span> Contrôles des produits</a></li>
+                <li><a href="#art8"><span class="num">8</span> Garantie</a></li>
+                <li><a href="#art9"><span class="num">9</span> Responsabilité</a></li>
+                <li><a href="#art10"><span class="num">10</span> Propriété industrielle et confidentialité</a></li>
+                <li><a href="#art11"><span class="num">11</span> Indépendance des parties</a></li>
+                <li><a href="#art12"><span class="num">12</span> Résiliation</a></li>
+                <li><a href="#art13"><span class="num">13</span> Force majeure</a></li>
+                <li><a href="#art14"><span class="num">14</span> Loi applicable et juridiction</a></li>
+            </ol>
+        </nav>
+        
+        <!-- Introduction -->
+        <div class="legal-intro">
+            <p>La société <strong>AKA France</strong> (SAS au capital de 50 000,00 €) sise 6, rue Mazagran, 44100 Nantes, RCS Nantes, a pour activité la vente de produits propres et l'exécution de services liés à la fabrication et la production de produits spécifiques et de fournitures pour l'industrie.</p>
+            <p>Les présentes CGVS définissent les termes et conditions dans lesquels AKA France fournit ses services au client, ci-après dénommé le « Donneur d'ordre ». Elles s'appliquent notamment aux prestations réalisées par AKA France dans le cadre de développement de produits pour le compte du Donneur d'ordre. AKA France s'engage à réaliser les prestations identifiées sur sa Pro Forma et le cas échéant sur le cahier des charges du client, selon les termes et conditions ci-après définis.</p>
+        </div>
+        
+        <!-- Article 1 -->
+        <article class="article" id="art1">
+            <div class="article-header">
+                <div class="article-number">1</div>
+                <h2 class="article-title">Généralités</h2>
+            </div>
+            <div class="article-content">
+                <div class="sub-article">
+                    <h3 class="sub-article-title"><span class="num">1.1</span> Acceptation sans réserve</h3>
+                    <p>Le Donneur d'ordre reconnaît avoir pris connaissance des présentes CGVS, figurant au verso de la Pro forma établie par AKA France ou tout autre document remis au Donneur d'ordre, et déclare les avoir acceptées sans réserves. En conséquence, la passation d'une commande par le Donneur d'ordre emporte l'adhésion sans réserve de ce dernier aux présentes Conditions générales de vente et services. Le fait que AKA France ne se prévale pas, à un moment donné, de l'une quelconque des présentes conditions, ne peut en aucun cas valoir renonciation.</p>
+                </div>
+                
+                <div class="sub-article">
+                    <h3 class="sub-article-title"><span class="num">1.2</span> Formation du contrat</h3>
+                    <div class="highlight">
+                        <p>AKA France se réserve le droit de conditionner tout établissement de devis et toute fabrication d'Échantillons Initiaux (EI) à la garantie par le Donneur d'ordre d'un nombre minimal de commandes (MOQ). Toute commande suite à un devis doit être régularisée par écrit et n'est définitive qu'après envoi de la Pro forma par AKA France.</p>
+                    </div>
+                    <p>Dans le cas où la commande du Donneur d'ordre contiendrait des dispositions contraires aux présentes CGVS, celui-ci disposerait d'un délai de 48 heures, à compter de la réception de la Pro forma pour contester les présentes. A défaut, les présentes CGVS seront réputées acceptées dans leur intégralité par le client.</p>
+                </div>
+                
+                <div class="sub-article">
+                    <h3 class="sub-article-title"><span class="num">1.3</span> Documents contractuels</h3>
+                    <p>Les documents contractuels, ci-après désignés collectivement « le contrat », sont dans l'ordre de priorité décroissante : 1- Les présentes Conditions générales de vente et de services, 2- Les avenants aux présentes CGVS, 3- La Pro forma, 4- La commande, 5- Le Cahier des charges et ses annexes. En cas de contradiction entre un ou plusieurs des documents susvisés, le document ayant un niveau supérieur prévaudra pour l'interprétation et la compréhension de l'obligation considérée, à l'exception des avenants régularisés, qui prévaudraient les stipulations contraires des présentes CGVS.</p>
+                    <p>Les stipulations particulières mentionnées au devis, reprises dans la commande régularisée par le Donneur d'ordre et acceptées par AKA France, constituent les conditions particulières du contrat. Le Donneur d'ordre ne pourra opposer à AKA France aucune autre condition que celles mentionnées dans les documents listés ci-dessus, notamment ses conditions générales d'achat, et ce quelque soit le moment où cette condition aura pu être portée à sa connaissance.</p>
+                </div>
+            </div>
+        </article>
+        
+        <!-- Article 2 -->
+        <article class="article" id="art2">
+            <div class="article-header">
+                <div class="article-number">2</div>
+                <h2 class="article-title">Prestations</h2>
+            </div>
+            <div class="article-content">
+                <p>Les prestations, objets des présentes, sont identifiées dans la Pro forma. Elles peuvent, le cas échéant, faire l'objet d'un descriptif plus détaillé aux termes du Cahier des charges joint à sa commande par le Donneur d'ordre et approuvé par AKA France. Les présentes CGVS s'appliquent automatiquement à toute autre prestation que le Donneur d'ordre déciderait de confier à AKA France et que celle-ci accepterait d'assurer.</p>
+            </div>
+        </article>
+        
+        <!-- Article 3 -->
+        <article class="article" id="art3">
+            <div class="article-header">
+                <div class="article-number">3</div>
+                <h2 class="article-title">Exécution des prestations</h2>
+            </div>
+            <div class="article-content">
+                <div class="sub-article">
+                    <h3 class="sub-article-title"><span class="num">3.1</span> Généralités</h3>
+                    <p>AKA France ne souscrit à aucune obligation de résultat pour l'exécution des prestations spécifiques. Dans le cadre de la fabrication de produits spécifiques et de développement de produits, le Donneur d'ordre devra joindre à sa commande la liste de ses commandes prévisionnelles. En outre, AKA France pourra demander au Donneur d'ordre de couvrir les engagements pris auprès de ses fournisseurs afin d'assurer la fabrication des produits indiqués dans les commandes prévisionnelles.</p>
+                    <p>Chaque partie s'engage à faire bénéficier l'autre de tout conseil, information ou modification susceptible d'améliorer la réalisation des prestations.</p>
+                    <p>Les fournitures comprennent exactement et uniquement les produits spécifiés par AKA France dans la Pro forma adressée au Donneur d'ordre et validant sa commande. Toutefois, AKA France se réserve le droit de modifier ou d'annuler des lignes de commandes en fonction de conditions liées à la production des produits et notamment, sans être limitatifs, les quantités minimums et les délais de livraison. Par ailleurs, AKA France est autorisée par les présentes à suspendre sans préavis, toute livraison de commandes en cours ou à venir pour un Donneur d'ordre dont les paiements ne sont pas honorés à l'échéance et ce sans préjudice de tous autres droits et actions.</p>
+                </div>
+                
+                <div class="sub-article">
+                    <h3 class="sub-article-title"><span class="num">3.2</span> Processus EI (Échantillons Initiaux)</h3>
+                    <div class="highlight">
+                        <p><strong>L'envoi d'Échantillons Initiaux (EI) n'intervient qu'après réception d'une commande ferme basée sur les MOQ définis au devis.</strong></p>
+                    </div>
+                    <p>Le Donneur d'ordre dispose d'un délai de <strong>10 jours ouvrés</strong> à compter de la livraison de l'EI pour notifier son acceptation ou son refus par écrit. Passé ce délai, l'EI est réputé accepté et la production de série est lancée.</p>
+                    <p>En cas de non-conformité technique justifiée, AKA France s'engage à fournir un second échantillon. Un refus de l'EI ne peut en aucun cas entraîner l'annulation de la commande globale.</p>
+                    <p>Si après deux (2) essais, le Donneur d'ordre ne valide pas l'EI pour des raisons non imputables à une défaillance technique majeure de AKA France, AKA France se réserve le droit de facturer l'intégralité des frais de développement engagés, sans préjudice de la poursuite du contrat.</p>
+                </div>
+                
+                <div class="sub-article">
+                    <h3 class="sub-article-title"><span class="num">3.3</span> Délais</h3>
+                    <p>Les délais précisés dans le devis ou tout autre document présentent un caractère indicatif, leur dépassement ne pourra entraîner ni annulation de la commande ni indemnité. Les parties peuvent convenir d'une exécution successive des prestations. Les délais d'exécutions ne courent qu'à réception complète par AKA France des documents liés à la commande.</p>
+                    <p>AKA France fera tout son possible pour respecter les délais prévus. Dans l'éventualité où une difficulté serait susceptible d'entraîner des retards ou une suspension des prestations, AKA France s'engage à informer immédiatement le Donneur d'ordre de façon à lui permettre de prendre toute mesure appropriée. Tous les frais relatifs à la suspension ou au report d'une commande de la part du Donneur d'ordre, notamment les coûts liés à l'achat des matières premières ou des éléments du produit, seront à la charge de celui-ci.</p>
+                    <p>Les délais d'exécution seront automatiquement prorogés dans l'hypothèse de survenance d'un cas de force majeure.</p>
+                </div>
+                
+                <div class="sub-article">
+                    <h3 class="sub-article-title"><span class="num">3.4</span> Livraison</h3>
+                    <p>Les dates de livraison indiquées par AKA France, dans tous les documents adressés au Donneur d'ordre, sont données à titre indicatif seulement. En conséquence leur dépassement ne peut entraîner ni annulation de la commande ni indemnité de retard. Pour des raisons pratiques, la livraison des produits peut être échelonnée, après information au Client.</p>
+                    <p>Sauf convention contraire écrite et acceptée par AKA France, la livraison est effectuée par remise directe des produits au client.</p>
+                    <p>A l'arrivée des expéditions, il appartient au destinataire de les vérifier et de faire toutes réserves et réclamations qui apparaîtraient justifiées. Les dites réserves et réclamations doivent être adressées au transporteur, par lettre recommandée avec accusé de réception, dans les 3 jours ouvrables suivant la réception des produits, une copie sera transmise sans délai à AKA France.</p>
+                    <p>Les risques de perte et de détérioration des produits pour cas fortuit ou force majeure et tout risque de responsabilité lié à l'existence ou l'utilisation des produits passent au Donneur d'ordre en fonction de l'Incoterm spécifié sur la Pro forma.</p>
+                    <p>Si les produits livrés ne sont pas conformes aux spécifications indiquées dans la facture ou sont affectés de vices apparents, le Donneur d'ordre doit porter par écrit ses réclamations à la connaissance de AKA France dans les 7 jours suivant la livraison des produits, sans préjudice des dispositions à prendre auprès du transporteur. Passé ce délai, les produits sont réputés avoir été acceptés par le Donneur d'ordre.</p>
+                </div>
+                
+                <div class="sub-article">
+                    <h3 class="sub-article-title"><span class="num">3.5</span> Responsabilité Environnementale et Sociale (RSE)</h3>
+                    <p>AKA France s'engage à respecter la législation environnementale et sociale en vigueur. Le Donneur d'ordre s'engage à une co-responsabilité active en adhérant à la « Charte Fournisseur et Environnementale » de AKA France annexée aux présentes. Toute violation grave de cette charte par le Donneur d'ordre sera considérée comme un manquement contractuel.</p>
+                </div>
+                
+                <div class="sub-article">
+                    <h3 class="sub-article-title"><span class="num">3.6</span> Sous-traitance</h3>
+                    <p>Sauf accord contraire exprès des parties, AKA France se réserve le droit de sous-traiter tout ou partie des prestations à un tiers de son choix.</p>
+                </div>
+                
+                <div class="sub-article">
+                    <h3 class="sub-article-title"><span class="num">3.7</span> Cession</h3>
+                    <p>Sauf convention contraire, dûment régularisée par écrit, AKA France sera libre de céder le contrat et s'engage à en informer le Donneur d'ordre dans le mois suivant la cession.</p>
+                </div>
+            </div>
+        </article>
+        
+        <!-- Article 4 -->
+        <article class="article" id="art4">
+            <div class="article-header">
+                <div class="article-number">4</div>
+                <h2 class="article-title">Audits et Confidentialité</h2>
+            </div>
+            <div class="article-content">
+                <p>AKA France accepte les audits sur les lieux de production avec un préavis de <strong>30 jours</strong>.</p>
+                <div class="highlight">
+                    <p><strong>Restriction d'accès :</strong> Par dérogation et pour garantir la confidentialité absolue des processus industriels et du savoir-faire, l'accès aux sites de production (notamment en Chine) est strictement interdit à tout tiers ou organisme d'audit externe mandaté par le Donneur d'ordre sans une autorisation écrite, préalable et expresse de AKA France.</p>
+                </div>
+                <p>AKA France se réserve le droit de refuser tout auditeur tiers identifié comme un concurrent direct ou indirect ou ne présentant pas de garanties suffisantes de confidentialité.</p>
+            </div>
+        </article>
+        
+        <!-- Article 5 -->
+        <article class="article" id="art5">
+            <div class="article-header">
+                <div class="article-number">5</div>
+                <h2 class="article-title">Conditions financières</h2>
+            </div>
+            <div class="article-content">
+                <div class="sub-article">
+                    <h3 class="sub-article-title"><span class="num">5.1</span> Révisibilité des prix</h3>
+                    <p>Les prix sont fixés dans la Pro forma. AKA France se réserve expressément la faculté de réviser ses prix jusqu'à la livraison pour refléter la conjoncture économique réelle. Cela inclut, sans être limitatif, les fluctuations des taux de change, du coût des matières premières (acier, laiton, plastique), de l'énergie ou des tarifs de transport. Le Donneur d'ordre sera informé de ces modifications avant la facturation définitive.</p>
+                </div>
+                
+                <div class="sub-article">
+                    <h3 class="sub-article-title"><span class="num">5.2</span> Paiement</h3>
+                    <p>Les factures émises par AKA France seront réglées conformément aux indications présentes sur la Pro forma.</p>
+                    <p>Toute somme non acquittée à l'échéance donne lieu de plein droit et sans mise en demeure préalable, au paiement d'intérêts de retard calculés sur la base de <strong>5 fois le taux d'intérêt légal</strong> en vigueur au jour de la facturation et ce sans préjudice des droits de AKA France. Le Donneur d'ordre s'interdit d'exercer un droit de rétention quelconque et à quelque titre que ce soit sur le montant du prix dû aux échéances prévues, y compris en cas d'émission d'un procès-verbal de non conformité. Tous les frais et honoraires de recouvrement sont à la charge du Donneur d'ordre.</p>
+                </div>
+            </div>
+        </article>
+        
+        <!-- Article 6 -->
+        <article class="article" id="art6">
+            <div class="article-header">
+                <div class="article-number">6</div>
+                <h2 class="article-title">Réserve de propriété</h2>
+            </div>
+            <div class="article-content">
+                <p>AKA France se réserve expressément la propriété des produits livrés jusqu'au complet paiement du prix de vente et des intérêts, des frais et accessoires.</p>
+                <p>A cet égard, le paiement ne sera considéré comme effectué que lors de l'encaissement effectif du prix par AKA France.</p>
+                <p>Jusqu'au paiement intégral, le Donneur d'ordre ne mettra pas en gage ni n'utilisera les produits comme garantie. Le Donneur d'ordre pourra cependant les utiliser, les transformer et les vendre. AKA France se réserve la possibilité de mettre fin à cette autorisation par simple lettre recommandée avec accusé de réception dès le premier incident de paiement.</p>
+                <p>Dans les cas d'une revente des produits, le Donneur d'ordre s'engage à céder à AKA France le prix d'achat à titre de garantie du paiement des produits et AKA France est autorisé, par la présente, à réclamer paiement directement aux acheteurs du Donneur d'ordre, qui devra fournir leurs coordonnées à première demande.</p>
+                <p>En cas de non-paiement à l'échéance de même qu'en cas de cessation des paiements du Donneur d'ordre, AKA France pourra, sans perdre aucun de ses droits, revendiquer les produits aux frais et risques du Donneur d'ordre. En outre, AKA France pourra immédiatement faire dresser un inventaire des produits impayés et détenus par le Donneur d'ordre, sans que celui-ci puisse s'y opposer de quelque manière que ce soit. Tous acomptes antérieurement payés resteront acquis à AKA France à titre de clause pénale.</p>
+                <p>Il est rappelé au Donneur d'ordre que les risques lui sont transférés dès la livraison des produits. Le Donneur d'ordre s'engage donc à souscrire toutes assurances afin de couvrir les dommages et sinistres susceptibles d'être causés aux produits ou par ceux-ci.</p>
+            </div>
+        </article>
+        
+        <!-- Article 7 -->
+        <article class="article" id="art7">
+            <div class="article-header">
+                <div class="article-number">7</div>
+                <h2 class="article-title">Contrôles des produits</h2>
+            </div>
+            <div class="article-content">
+                <p>Nonobstant les dispositions prévues à l'article 3.4 des présentes, le Donneur d'ordre dispose, sauf accord contraire exprès, d'un délai de <strong>10 jours</strong> à compter de la date de livraison des prototypes, échantillons ou produits pour effectuer les contrôles, essais et tests. Les résultats devront être adressés par écrit à AKA France dans les 7 jours suivant leur réception par le Donneur d'ordre.</p>
+                <p>Aucune réclamation ne sera admise par AKA France passé ces délais. En outre, seuls les contrôles, essais et tests dont la nature et l'étendue auront été indiquées dans le Cahier des charges, approuvé par AKA France, pourront donner lieu à réclamation.</p>
+            </div>
+        </article>
+        
+        <!-- Article 8 -->
+        <article class="article" id="art8">
+            <div class="article-header">
+                <div class="article-number">8</div>
+                <h2 class="article-title">Garantie</h2>
+            </div>
+            <div class="article-content">
+                <div class="sub-article">
+                    <h3 class="sub-article-title"><span class="num">8.1</span> Conditions de garantie</h3>
+                    <p>Sous réserve de l'accomplissement de l'ensemble des obligations contractuelles du Donneur d'ordre, les produits propres et spécifiques fabriqués par AKA France dans le cadre de l'exécution de sa prestation bénéficieront d'une garantie contractuelle, dans les conditions ci-après définies, à l'exclusion de toute autre garantie de quelque nature que ce soit, implicite ou autre. La garantie n'est accordée qu'au Donneur d'ordre.</p>
+                </div>
+                
+                <div class="sub-article">
+                    <h3 class="sub-article-title"><span class="num">8.2</span> Durée et notification</h3>
+                    <p>Les produits livrés par AKA France sont garantis contre tout défaut de matière ou vice de fabrication porté par écrit à la connaissance de AKA France dans les <strong>7 jours</strong> de sa découverte. Passé ce délai, les demandes en garantie du Donneur d'ordre sont irrecevables.</p>
+                    <p>Les produits sont garantis, dans les conditions définies au présent article pour une durée de <strong>3 mois</strong> à compter de la livraison.</p>
+                </div>
+                
+                <div class="sub-article">
+                    <h3 class="sub-article-title"><span class="num">8.3</span> Étendue de la garantie</h3>
+                    <p>La garantie est strictement limitée, à la discrétion de AKA France, soit à la réparation ou au remplacement des produits reconnus défectueux par AKA France, soit au remboursement du prix d'achat payé, sans aucune autre indemnité de quelque nature que ce soit. Les frais de port des produits en cause sont à la charge de AKA France qui assure l'organisation du retour.</p>
+                    <p>Le remplacement des produits n'a pas pour conséquence de prolonger la durée de la garantie précisée au 8.3. AKA France ne sera en aucun cas responsable pour tous dommages directs ou indirects, manque à gagner ou retards dus à un défaut de matière ou vice de fabrication des produits.</p>
+                </div>
+                
+                <div class="sub-article">
+                    <h3 class="sub-article-title"><span class="num">8.4</span> Exclusions</h3>
+                    <p>Toute garantie est exclue en cas d'usure ou d'évènement extérieur, d'accident, d'utilisation anormale et en particulier non conforme aux indications fournies par AKA France, cas fortuit ou de force majeure, négligence, défaut de surveillance ou d'entretien, défaut de montage ou d'assemblage, non respect des procédures de contrôles mentionnées au Cahier des charges.</p>
+                    <p>La garantie définie dans cette clause exprime la totalité de la garantie de AKA France en vertu du contrat liant les parties. AKA France ne consent aucune garantie d'une quelconque commercialité ou de convenance à un usage particulier et ne saurait en conséquence courir aucune responsabilité à cet égard.</p>
+                    <p>La garantie ne jouera pas pour les vices apparents et les défauts de conformité dont le Donneur d'ordre devra se prévaloir conformément aux dispositions de l'article 3.4.</p>
+                </div>
+            </div>
+        </article>
+        
+        <!-- Article 9 -->
+        <article class="article" id="art9">
+            <div class="article-header">
+                <div class="article-number">9</div>
+                <h2 class="article-title">Responsabilité</h2>
+            </div>
+            <div class="article-content">
+                <p>Chacune des parties s'engage à faire ses meilleurs efforts pour prendre les mesures nécessaires afin de minimiser les dommages subis par l'autre partie et qui lui sont imputables.</p>
+                <p>Le Donneur d'ordre garantit être titulaire des droits attachés aux éléments transmis à AKA France et/ou avoir obtenu les autorisations nécessaires pour que AKA France puisse les utiliser. Le Donneur d'ordre garantit AKA France contre toute action, réclamation, revendication ou opposition de toute personne invoquant un droit de propriété industrielle ou intellectuelle et tendant à interdire l'utilisation par AKA France des éléments transmis.</p>
+                <p>Les obligations de AKA France, en ce qui concerne les produits spécifiques sont réputées être des <strong>obligations de moyens</strong> excluant toute obligation de résultat ou de performance.</p>
+                <p>L'éventuelle responsabilité de AKA France ne pourra être recherchée que dans le cadre de la fabrication des produits indiqués dans la Pro forma, à l'exclusion de toute recherche de responsabilité concernant la conception des produits, dont le Donneur d'ordre reste seul responsable.</p>
+                <p>La responsabilité de AKA France ne pourra jamais être recherchée sur le fondement des produits défectueux pour les dommages qui seraient causés à des biens professionnels.</p>
+                <p>La responsabilité de AKA France pour toute violation de garantie ne pourra pas excéder le prix (hors taxe) payé pour les produits propres et les produits spécifiques réalisés par AKA France et visés dans la demande du Donneur d'ordre.</p>
+                <p>Par ailleurs, le Donneur d'ordre reste responsable des choix des matières premières, des composants et des éléments nécessaires à la fabrication des produits, quand bien même aurait-il omis de préciser ses choix lors de sa commande.</p>
+            </div>
+        </article>
+        
+        <!-- Article 10 -->
+        <article class="article" id="art10">
+            <div class="article-header">
+                <div class="article-number">10</div>
+                <h2 class="article-title">Propriété industrielle et confidentialité</h2>
+            </div>
+            <div class="article-content">
+                <p>Chaque partie se réserve expressément la propriété et la jouissance exclusive de tous droits de propriété industrielle et de savoir-faire qui lui appartiennent et dont l'autre partie pourra être amenée à avoir connaissance lors de l'exécution des prestations.</p>
+                <p>Les parties s'interdisent réciproquement et formellement de divulguer les renseignements techniques et/ou commerciaux concernant l'autre partie, et ce quelque soit le moment où elles auront été amenées à en connaître, qu'ils soient ou non couverts par un droit de propriété industrielle ou intellectuelle. La présente clause survivra à la fin des relations commerciales entre les parties pour une durée de <strong>2 ans</strong>.</p>
+                <p>Les parties garantissent le respect des présentes stipulations par leurs dirigeants et leurs personnels.</p>
+            </div>
+        </article>
+        
+        <!-- Article 11 -->
+        <article class="article" id="art11">
+            <div class="article-header">
+                <div class="article-number">11</div>
+                <h2 class="article-title">Indépendance des parties</h2>
+            </div>
+            <div class="article-content">
+                <p>AKA France agit en son nom et sous sa seule responsabilité dans ses rapports avec les tiers. Le personnel de AKA France ne peut, en aucun cas, être considéré comme subordonné au Donneur d'ordre pour l'exécution des prestations.</p>
+                <p>A défaut de convention spéciale écrite, aucune partie, dans le cadre des présentes CGVS, ne pourra agir, ni se présenter en tant qu'agent, associé, partenaire ou représentant de l'autre.</p>
+            </div>
+        </article>
+        
+        <!-- Article 12 -->
+        <article class="article" id="art12">
+            <div class="article-header">
+                <div class="article-number">12</div>
+                <h2 class="article-title">Résiliation</h2>
+            </div>
+            <div class="article-content">
+                <div class="highlight">
+                    <p>En cas de manquement du Donneur d'ordre à l'une de ses obligations essentielles (<strong>paiement, respect des MOQ, validation des EI</strong>), AKA France pourra résilier le contrat de plein droit <strong>15 jours</strong> après une mise en demeure restée infructueuse. Les acomptes versés et les prestations déjà réalisées resteront acquis à AKA France.</p>
+                </div>
+            </div>
+        </article>
+        
+        <!-- Article 13 -->
+        <article class="article" id="art13">
+            <div class="article-header">
+                <div class="article-number">13</div>
+                <h2 class="article-title">Force majeure</h2>
+            </div>
+            <div class="article-content">
+                <p>Tout événement ou circonstance revêtant les caractéristiques de la force majeure justifiera de la non exécution, par la partie qui l'invoque, de ses obligations. L'évènement de force majeure est celui qui présente les trois caractéristiques d'irrésistibilité, d'imprévisibilité et d'extériorité. Il est convenu que lorsque l'une ou l'autre des parties aura connaissance d'un évènement ou d'une circonstance risquant d'empêcher l'exécution des prestations, elle devra en avertir l'autre dès que possible.</p>
+                <p>En cas de survenance de l'événement de force majeure la partie défaillante notifiera à l'autre partie son incapacité à remplir ses obligations contractuelles par lettre recommandée, dans les <strong>48 heures</strong> après la survenance de l'événement de force majeure. Le retard dû à l'événement ou à la circonstance de force majeure prolongera d'autant le délai d'exécution des obligations de la partie subissant la force majeure. Toutefois, les quantités prêtes à livrer et les prestations réalisées par AKA France au moment de la survenance de l'événement devront être acceptées et réglées par le Client.</p>
+                <p>En cas de suspension de l'exécution de l'une des prestations due à la force majeure, pour une durée supérieure à <strong>3 mois</strong>, la partie non défaillante pourra demander la résiliation du contrat par l'envoi d'une lettre recommandée avec accusé de réception. La résiliation interviendra de plein droit 15 jours après la réception de la lettre.</p>
+            </div>
+        </article>
+        
+        <!-- Article 14 -->
+        <article class="article" id="art14">
+            <div class="article-header">
+                <div class="article-number">14</div>
+                <h2 class="article-title">Loi applicable et juridiction</h2>
+            </div>
+            <div class="article-content">
+                <p>Les présentes CGVS sont exclusivement régies par le <strong>droit français</strong>.</p>
+                <p>Tout litige relatif à la conclusion, la validité, l'exécution, l'interprétation et la résiliation des présentes CGVS, et n'ayant pu être solutionné à l'amiable, relèvera de la compétence exclusive du <strong>Tribunal de commerce de Nantes</strong>, même en cas de pluralité de défendeurs ou d'appel en garantie.</p>
+            </div>
+        </article>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>AKA France</h3>
+                <p>Alliance industrielle Franco-Chinoise<br>
+                Fabrication sur mesure depuis Nantes</p>
+                <p style="margin-top: 1rem;">
+                    6, rue Mazagran<br>
+                    44100 Nantes, France
+                </p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <a href="mailto:contact@akafrance.com">contact@akafrance.com</a>
+                <a href="tel:+33XXXXXXXXX">+33 (0)2 51 84 92 92</a>
+                <a href="https://www.akafrance.com">www.akafrance.com</a>
+            </div>
+            <div class="footer-section">
+                <h3>Informations légales</h3>
+                <p>SAS au capital de 50 000 €<br>
+                RCS Nantes<br>
+                CGVS applicables au 1er janvier 2026</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 AKA France — Alliance of Knowledge & Accuracy — Tous droits réservés
+        </div>
+    </footer>
+    
+    <button class="back-to-top" id="backToTop" aria-label="Retour en haut">↑</button>
+    
+    <script>
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Smooth scroll for TOC links
+        document.querySelectorAll('.toc-list a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+</html>
